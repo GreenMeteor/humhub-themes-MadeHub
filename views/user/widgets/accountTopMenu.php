@@ -19,8 +19,11 @@ use \yii\helpers\Url;
 	<nav id="nav" ui-nav><ul class="nav">
 		<?php foreach ($this->context->getItems() as $item): ?>
 			<?php if ($item['label'] == '---'): ?>
-			<?php else: ?>
-				<li><a href="<?php echo $item['url']; ?>" class="waves"><?php echo $item['icon'] . ' ' . $item['label']; ?></a></li>
+			<?php else {
+    : ?>
+				<li><a href="<?php echo $item['url'];
+}
+?>" class="waves"><?php echo $item['icon'] . ' ' . $item['label']; ?></a></li>
 			<?php endif; ?>
 		<?php endforeach; ?>
 <?php endif; ?>
