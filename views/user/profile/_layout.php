@@ -15,22 +15,25 @@ $user = $this->context->getUser();
 			<div class="col-md-10 layout-content-container">
 				<?php echo $content; ?>
 			</div>
-		<?php else: ?>
+		<?php else {
+    : ?>
 			<div class="col-md-7 layout-content-container">
-				<?php echo $content; ?>
+				<?php echo $content;
+}
+?>
 			</div>
 			<div class="col-md-3 layout-sidebar-container">
 				<?php
-				echo \humhub\modules\user\widgets\ProfileSidebar::widget([
-					'user' => $this->context->user,
-					'widgets' => [
-						[\humhub\modules\user\widgets\UserTags::className(), ['user' => $this->context->user], ['sortOrder' => 10]],
-						[\humhub\modules\user\widgets\UserSpaces::className(), ['user' => $this->context->user], ['sortOrder' => 20]],
-						[\humhub\modules\friendship\widgets\FriendsPanel::className(), ['user' => $this->context->user], ['sortOrder' => 30]],
-						[\humhub\modules\user\widgets\UserFollower::className(), ['user' => $this->context->user], ['sortOrder' => 40]],
-					]
-				]);
-				?>
+                echo \humhub\modules\user\widgets\ProfileSidebar::widget([
+                    'user' => $this->context->user,
+                    'widgets' => [
+                        [\humhub\modules\user\widgets\UserTags::className(), ['user' => $this->context->user], ['sortOrder' => 10]],
+                        [\humhub\modules\user\widgets\UserSpaces::className(), ['user' => $this->context->user], ['sortOrder' => 20]],
+                        [\humhub\modules\friendship\widgets\FriendsPanel::className(), ['user' => $this->context->user], ['sortOrder' => 30]],
+                        [\humhub\modules\user\widgets\UserFollower::className(), ['user' => $this->context->user], ['sortOrder' => 40]],
+                    ]
+                ]);
+                ?>
 			</div>
 		<?php endif; ?>
 	</div>

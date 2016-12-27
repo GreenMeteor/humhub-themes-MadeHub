@@ -67,10 +67,10 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="banner-image-upload-edit-button"
                        style="<?php
-                       if (!$space->getProfileBannerImage()->hasImage()) {
-                           echo 'display: none;';
-                       }
-                       ?>"
+                        if (!$space->getProfileBannerImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
                        href="<?php echo $space->createUrl('/space/manage/image/crop-banner'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -102,8 +102,11 @@ if ($space->isAdmin()) {
                    data-footer='<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo Yii::t('SpaceModule.widgets_views_profileHeader', 'Close'); ?></button>'>
                        <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
                 </a>
-            <?php else : ?>
-                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
+            <?php else {
+    : ?>
+                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]);
+}
+?>
             <?php endif; ?>
 
             <!-- check if the current user is the profile owner and can change the images -->
@@ -127,10 +130,10 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="profile-image-upload-edit-button"
                        style="<?php
-                       if (!$space->getProfileImage()->hasImage()) {
-                           echo 'display: none;';
-                       }
-                       ?>"
+                        if (!$space->getProfileImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
                        href="<?php echo $space->createUrl('/space/manage/image/crop'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>

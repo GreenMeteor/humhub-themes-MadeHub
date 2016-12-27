@@ -156,11 +156,11 @@ use humhub\modules\space\models\Space;
     function setDefaultVisibility() {
         <?php if ($defaultVisibility == humhub\modules\content\models\Content::VISIBILITY_PRIVATE) : ?>
             setPrivateVisibility();
-        <?php endif ;?>
+        <?php endif; ?>
                 
         <?php if ($defaultVisibility == humhub\modules\content\models\Content::VISIBILITY_PUBLIC) : ?>
             setPublicVisibility();
-        <?php endif ;?>
+        <?php endif; ?>
     }
     
     function setPublicVisibility() {

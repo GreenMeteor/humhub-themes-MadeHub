@@ -10,7 +10,7 @@ use \humhub\compat\CHtml;
 
     <?php echo $form->field($model, 'tags'); ?>
 
-    <?php if(count($languages) > 1) : ?>
+    <?php if (count($languages) > 1) : ?>
         <?php echo $form->field($model, 'language')->dropdownList($languages); ?>
     <?php endif; ?>
 

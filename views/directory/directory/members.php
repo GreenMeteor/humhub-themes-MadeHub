@@ -9,8 +9,11 @@ use humhub\modules\friendship\models\Friendship;
     <div class="panel-heading">
         <?php if ($group === null) : ?>
             <?php echo Yii::t('DirectoryModule.views_directory_members', '<strong>Member</strong> directory'); ?>
-        <?php else: ?>
-            <?php echo Yii::t('DirectoryModule.views_directory_members', '<strong>Group</strong> members - {group}', ['{group}' => $group->name]); ?>
+        <?php else {
+    : ?>
+            <?php echo Yii::t('DirectoryModule.views_directory_members', '<strong>Group</strong> members - {group}', ['{group}' => $group->name]);
+}
+?>
         <?php endif; ?>
     </div>
 

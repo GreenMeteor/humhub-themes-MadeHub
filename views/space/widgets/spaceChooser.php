@@ -12,19 +12,19 @@ $this->registerJsVar('scSpaceListUrl', Url::to(['/space/list', 'ajax' => 1]));
 		<!-- start: Show space image and name if chosen -->
 		<?php if ($currentSpace) { ?>
 			<?php echo \humhub\modules\space\widgets\Image::widget([
-				'space' => $currentSpace,
-				'width' => 24,
-				'htmlOptions' => [
-					'class' => 'current-space-image',
-				]
-			]); ?>
+                'space' => $currentSpace,
+                'width' => 24,
+                'htmlOptions' => [
+                    'class' => 'current-space-image',
+                ]
+            ]); ?>
 		<?php } ?>
 
 		<?php
-		if (!$currentSpace) {
-			echo '<i class="material-icons">assignment_turned_in</i>';
-		}
-		?>
+        if (!$currentSpace) {
+            echo '<i class="material-icons">assignment_turned_in</i>';
+        }
+        ?>
 		<!-- end: Show space image and name if chosen -->
 	</a>
 	<ul class="dropdown-menu" id="space-menu-dropdownXXX">
@@ -52,12 +52,12 @@ $this->registerJsVar('scSpaceListUrl', Url::to(['/space/list', 'ajax' => 1]));
 							<div class="media">
 								<!-- Show space image -->
 								<?php echo \humhub\modules\space\widgets\Image::widget([
-									'space' => $membership->space,
-									'width' => 24,
-									'htmlOptions' => [
-										'class' => 'pull-left',
-									]
-								]); ?>
+                                    'space' => $membership->space,
+                                    'width' => 24,
+                                    'htmlOptions' => [
+                                        'class' => 'pull-left',
+                                    ]
+                                ]); ?>
 								<div class="media-body">
 									<strong><?php echo Html::encode($membership->space->name); ?></strong>
 									<?php if ($newItems != 0): ?>

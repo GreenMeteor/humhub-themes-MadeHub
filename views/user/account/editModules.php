@@ -28,8 +28,11 @@ use yii\helpers\Url;
                     <?php if ($module->getContentContainerConfigUrl($user)) : ?>
                         <?php echo Html::a(Yii::t('UserModule.views_account_editModules', 'Configure'), $module->getContentContainerConfigUrl($user), array('class' => 'btn btn-sm')); ?>
                     <?php endif; ?>
-                <?php else: ?>
-                    <?php echo Html::a(Yii::t('UserModule.views_account_editModules', 'Enable'), Url::to(['/user/account/enable-module', 'moduleId' => $module->id]), array('data-method' => 'POST', 'class' => 'btn btn-sm btn-primary', 'data-ui-loader' => '')); ?>
+                <?php else {
+    : ?>
+                    <?php echo Html::a(Yii::t('UserModule.views_account_editModules', 'Enable'), Url::to(['/user/account/enable-module', 'moduleId' => $module->id]), array('data-method' => 'POST', 'class' => 'btn btn-sm btn-primary', 'data-ui-loader' => ''));
+}
+?>
                 <?php endif; ?>
             </div>
         </div>

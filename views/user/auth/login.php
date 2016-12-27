@@ -25,10 +25,13 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                 </div>
             <?php endif; ?>
 
-            <?php if(AuthChoice::hasClients()): ?>
+            <?php if (AuthChoice::hasClients()): ?>
                 <?= AuthChoice::widget([]) ?>
-            <?php else: ?>
-                <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password."); ?></p>
+            <?php else {
+    : ?>
+                <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password.");
+}
+?></p>
             <?php endif; ?>
             
             <?php $form = ActiveForm::begin(['id' => 'account-login-form', 'enableClientValidation' => false]); ?>
