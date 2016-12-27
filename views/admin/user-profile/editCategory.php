@@ -11,8 +11,11 @@ use yii\helpers\Html;
 
     <?php if (!$category->isNewRecord) : ?>
         <h4><?php echo Yii::t('AdminModule.views_userprofile_editCategory', 'Edit profile category'); ?></h4>
-    <?php else: ?>
-        <h4><?php echo Yii::t('AdminModule.views_userprofile_editCategory', 'Create new profile category'); ?></h4>
+    <?php else {
+    : ?>
+        <h4><?php echo Yii::t('AdminModule.views_userprofile_editCategory', 'Create new profile category');
+}
+?></h4>
     <?php endif; ?>
     <br />
 

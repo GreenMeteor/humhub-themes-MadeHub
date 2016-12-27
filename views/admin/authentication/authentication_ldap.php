@@ -14,9 +14,12 @@ use humhub\models\Setting;
         <?php if ($errorMessage != ""): ?>
             <div
                 class="alert alert-danger"><?php echo Yii::t('AdminModule.views_setting_authentication_ldap', 'Status: Error! (Message: {message})', array('{message}' => $errorMessage)); ?></div>
-            <?php else: ?>
+            <?php else {
+    : ?>
             <div
-                class="alert alert-success"><?php echo Yii::t('AdminModule.views_setting_authentication_ldap', 'Status: OK! ({userCount} Users)', array('{userCount}' => $userCount)); ?></div>
+                class="alert alert-success"><?php echo Yii::t('AdminModule.views_setting_authentication_ldap', 'Status: OK! ({userCount} Users)', array('{userCount}' => $userCount));
+}
+?></div>
             <?php endif; ?>
         <?php endif; ?>
 

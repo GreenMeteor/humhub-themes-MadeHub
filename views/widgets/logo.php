@@ -19,7 +19,10 @@ use yii\helpers\Html;
 			<img class="img-rounded" src="<?php echo $logo->getUrl(); ?>" id="img-logo"/>
 		</a>
 		<br>
-	<?php else: ?>
-		<h1 id="app-title" class="animated fadeIn"><?php echo Html::encode(Yii::$app->name); ?></h1>
+	<?php else {
+    : ?>
+		<h1 id="app-title" class="animated fadeIn"><?php echo Html::encode(Yii::$app->name);
+}
+?></h1>
 	<?php endif; ?>
 <?php endif; ?>

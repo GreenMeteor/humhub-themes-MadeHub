@@ -40,10 +40,10 @@ $this->registerJsFile('@web/resources/admin/uploadLogo.js');
 
             <img class="img-rounded" id="logo-image"
                  src="<?php
-                 if ($logo->hasImage()) {
-                     echo $logo->getUrl();
-                 }
-                 ?>"
+                    if ($logo->hasImage()) {
+                        echo $logo->getUrl();
+                    }
+                    ?>"
                  data-src="holder.js/140x140"
                  alt="<?php echo Yii::t('AdminModule.views_setting_index', "You're using no logo at the moment. Upload your logo now."); ?>"
                  style="max-height: 40px;"/>

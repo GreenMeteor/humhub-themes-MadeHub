@@ -19,8 +19,11 @@ use yii\helpers\Html;
                     echo \yii\helpers\Markdown::process($content);
                     ?>
 
-                <?php else: ?>
-                    <?php echo $description; ?>
+                <?php else {
+    : ?>
+                    <?php echo $description;
+}
+?>
                     <br/>
                     <br/>
 

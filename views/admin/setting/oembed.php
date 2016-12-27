@@ -17,8 +17,11 @@ use yii\helpers\Url;
             <li><?php echo Html::a($providerUrl, Url::to(['oembed-edit', 'prefix' => $providerUrl]), array('data-method' => 'POST')); ?></li>
         <?php endforeach; ?>
     </ul>
-<?php else: ?>
-    <p><strong><?php echo Yii::t('AdminModule.views_setting_oembed', 'Currently no provider active!'); ?></strong></p>
+<?php else {
+    : ?>
+    <p><strong><?php echo Yii::t('AdminModule.views_setting_oembed', 'Currently no provider active!');
+}
+?></strong></p>
 <?php endif; ?>
 
 <?php $this->endContent(); ?>

@@ -54,7 +54,7 @@ use yii\widgets\ActiveForm;
                 'visible' => $isManagerApprovalSetting,
                 'label' => Yii::t('AdminModule.views_user_index', 'Group Manager'),
                 'format' => 'raw',
-                'value' => function ($data) use ($group) {
+                'value' => function($data) use ($group) {
                     $isManager = $group->isManager($data);
                     $yesSelected = ($isManager) ? 'selected' : '';
                     $noSelected = ($isManager) ? '' : 'selected';

@@ -21,10 +21,10 @@ use humhub\widgets\GridView;
                 'header' => 'Actions',
                 'class' => 'yii\grid\ActionColumn',
                 'buttons' => [
-                    'update' => function ($url, $model) {
+                    'update' => function($url, $model) {
                         return Html::a('Accept', ['/friendship/request/add', 'userId' => $model->id], ['class' => 'btn btn-success btn-sm', 'data-method' => 'POST']);
                     },
-                            'view' => function () {
+                            'view' => function() {
                         return;
                     },
                             'delete' => function($url, $model) {

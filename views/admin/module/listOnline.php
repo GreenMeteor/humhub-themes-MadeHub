@@ -34,12 +34,15 @@ use yii\helpers\Html;
                 <br/><br/>
             </div>
 
-        <?php else: ?>
+        <?php else {
+    : ?>
 
 
             <?php foreach ($modules as $module): ?>
                 <hr/>
-                <div class="media <?php if (Yii::$app->moduleManager->hasModule($module['id'])): ?>module-installed<?php endif; ?>">
+                <div class="media <?php if (Yii::$app->moduleManager->hasModule($module['id'])): ?>module-installed<?php endif;
+}
+?>">
 
                     <?php
                     $moduleImageUrl = Yii::getAlias('@web/img/default_module.jpg');
@@ -85,14 +88,20 @@ use yii\helpers\Html;
                                     <?php if (isset($module['price_eur']) && $module['price_eur'] != 0 && !$module['purchased']) : ?>
                                         <?php $checkoutUrl = str_replace('-returnToUrl-', Url::to(['/admin/module/list-purchases'], true), $module['checkoutUrl']); ?>
                                         &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_listOnline', 'Buy (%price%)', ['%price%' => $module['price_eur'] . '&euro;']), $checkoutUrl, array('style' => 'font-weight:bold', 'target' => '_blank')); ?>
-                                    <?php else: ?>
-                                        &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_listOnline', 'Install'), Url::to(['install', 'moduleId' => $module['id']]), array('style' => 'font-weight:bold', 'data-loader' => "modal", 'data-message' => Yii::t('AdminModule.views_module_listOnline', 'Installing module...'), 'data-method' => 'POST')); ?>
+                                    <?php else {
+    : ?>
+                                        &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_listOnline', 'Install'), Url::to(['install', 'moduleId' => $module['id']]), array('style' => 'font-weight:bold', 'data-loader' => "modal", 'data-message' => Yii::t('AdminModule.views_module_listOnline', 'Installing module...'), 'data-method' => 'POST'));
+}
+?>
                                     <?php endif; ?>
                                 <?php endif; ?>
 
-                            <?php else : ?>
+                            <?php else {
+    : ?>
                                 &middot; <span
-                                    style="color:red"><?php echo Yii::t('AdminModule.views_module_listOnline', 'No compatible module version found!'); ?></span>
+                                    style="color:red"><?php echo Yii::t('AdminModule.views_module_listOnline', 'No compatible module version found!');
+}
+?></span>
                             <?php endif; ?>
                             &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_listOnline', 'More info'), $module['marketplaceUrl'], array('target' => '_blank')); ?>
                             <?php if (isset($module['showDisclaimer']) && $module['showDisclaimer'] == 1): ?>

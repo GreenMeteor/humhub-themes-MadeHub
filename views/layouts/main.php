@@ -83,10 +83,10 @@ AppAsset::register($this);
 		<ul class="nav nav-sm navbar-tool pull-right">
 			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
 			<?php
-			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-			]]);
-			?>
+            echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+                [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+            ]]);
+            ?>
 
 					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
 		</ul>
@@ -97,8 +97,11 @@ AppAsset::register($this);
 		<!-- start: show content (and check, if exists a sublayout -->
 		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
 			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
-		<?php else: ?>
-			<?php echo $content; ?>
+		<?php else {
+    : ?>
+			<?php echo $content;
+}
+?>
 		<?php endif; ?>
 		<!-- end: show content -->
 
