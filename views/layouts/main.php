@@ -17,13 +17,11 @@ AppAsset::register($this);
 	<?= Html::csrfMetaTags() ?>
 	<?php $this->head() ?>
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
+	
 		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
 		<link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css" rel = "stylesheet" >
-	<![endif]-->
-	<!--[if IE 9]>
 		<link id="ie9style" href="<?php echo Yii::getAlias(" @web"); ?>/css/ie9.css" rel="stylesheet">
-	<![endif]-->
+	
 	<!-- start: render additional head (css and js files) -->
 	<?php echo $this->render('head'); ?>
 	<!-- start: Favicon and Touch Icons -->
@@ -58,18 +56,19 @@ AppAsset::register($this);
 		<div class="box-row"><div class="box-cell scrollable hover"><div class="box-inner">
 				<?php echo \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
 				<li class="b-b"></li>
-				<li><a href="<?php echo Yii::getAlias("@web"); ?>https://futayuriverse.com/" class="waves"><i class="material-icons md-dark m-r">home</i><span><?php echo Yii::t('AdminModule.base', 'Home'); ?></span></a></li>
+				<li><a href="<?php echo Yii::getAlias("@web"); ?>#" class="waves"><i class="material-icons md-dark m-r">home</i><span><?php echo Yii::t('AdminModule.base', 'Home'); ?></span></a></li>
 				<li><a href="<?php echo Yii::$app->homeUrl; ?>" class="waves"><i class="material-icons md-dark m-r">dashboard</i><span><?php echo Yii::t('DashboardModule.base', 'Dashboard'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/spaces" class="waves"><i class="material-icons md-dark m-r">weekend</i><span><?php echo Yii::t('AdminModule.base', 'Spaces'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/members" class="waves"><i class="material-icons md-dark m-r">people</i><span><?php echo Yii::t('DirectoryModule.base', 'Members'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/profiles" class="waves"><i class="material-icons md-dark m-r">graphic_eq</i><span><?php echo Yii::t('AdminModule.base', 'User posts'); ?></span></a></li>
 				<li class="b-b"></li>
-				<li><a href="<?php echo Yii::getAlias("@web"); ?>mailto:admin@futayuriverse.com" class="waves"><span>Help &amp; Feedback</span></a></li>
-				<!-- <li><a class="waves"><i class="material-icons md-dark m-r">report_problem</i><span>Privacy &amp; Terms</span></a></li> -->				<li><a href="<?php echo Yii::getAlias("@web"); ?>/p/faq" class="waves"><i class="material-icons md-dark m-r">help</i><span><?php echo Yii::t('AdminModule.base', 'FAQ'); ?></span></a></li>
+				<li><a href="<?php echo Yii::getAlias("@web"); ?>mailto:admin@example.com" class="waves"><span>Help &amp; Feedback</span></a></li>
+				<li><a class="waves"><i class="material-icons md-dark m-r">report_problem</i><span>Privacy &amp; Terms</span></a></li>
+			        <li><a href="<?php echo Yii::getAlias("@web"); ?>/#" class="waves"><i class="material-icons md-dark m-r">help</i><span><?php echo Yii::t('AdminModule.base', 'FAQ'); ?></span></a></li>
 			</ul></nav>
 			        <li class="b-b"></li>
 			<footer>
-				<!-- <?= humhub\widgets\LanguageChooser::widget(); ?> -->
+				<?= humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
 			</footer>
 		</div></div></div>
@@ -114,19 +113,6 @@ AppAsset::register($this);
 </div>
 
 <?php $this->endBody() ?>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/58619a11ddb8373fd2b3e052/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 </html>
 <?php $this->endPage() ?>
