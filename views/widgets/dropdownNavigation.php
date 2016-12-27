@@ -9,7 +9,10 @@
 <?php foreach ($this->context->getItemGroups() as $group) : ?>
 
     <?php $items = $this->context->getItems($group['id']); ?>
-    <?php if (count($items) == 0) continue; ?>
+    <?php if (count($items) == 0) {
+    continue;
+}
+?>
 
     <div class="btn-group dropdown-navigation">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"

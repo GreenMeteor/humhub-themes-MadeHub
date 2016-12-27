@@ -9,8 +9,11 @@ $this->registerJsFile('@web/resources/like/like.js', ['position' => humhub\compo
 
     <?php if (Yii::$app->user->isGuest): ?>
         <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Like'), Yii::$app->user->loginUrl, array('data-target' => '#globalModal')); ?>
-    <?php else: ?>
-        <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Like'), $likeUrl, ['style' => 'display:' . ((!$currentUserLiked) ? 'inline' : 'none'), 'class' => 'like likeAnchor', 'data-objectId' => $id]); ?>
+    <?php else {
+    : ?>
+        <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Like'), $likeUrl, ['style' => 'display:' . ((!$currentUserLiked) ? 'inline' : 'none'), 'class' => 'like likeAnchor', 'data-objectId' => $id]);
+}
+?>
         <?php echo Html::a(Yii::t('LikeModule.widgets_views_likeLink', 'Unlike'), $unlikeUrl, ['style' => 'display:' . (($currentUserLiked) ? 'inline' : 'none'), 'class' => 'unlike likeAnchor', 'data-objectId' => $id]); ?>
     <?php endif; ?>
 

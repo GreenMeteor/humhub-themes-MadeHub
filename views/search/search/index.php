@@ -32,11 +32,11 @@ use humhub\modules\content\components\ContentContainerActiveRecord;
 								<?php echo Yii::t('SearchModule.views_search_index', 'Search only in certain spaces:'); ?>
 								<?php echo Html::textInput('limitSpaceGuids', $limitSpaceGuids, array('placeholder' => 'Specify space', 'style' => 'width:200px', 'id' => 'space_filter')); ?>
 								<?php
-								echo humhub\modules\space\widgets\Picker::widget([
-									'inputId' => 'space_filter',
-									'value' => $limitSpaceGuids
-								]);
-								?>
+                                echo humhub\modules\space\widgets\Picker::widget([
+                                    'inputId' => 'space_filter',
+                                    'value' => $limitSpaceGuids
+                                ]);
+                                ?>
 							</div>
 							<br>
 							<?php echo Html::endForm(); ?>
@@ -103,16 +103,22 @@ use humhub\modules\content\components\ContentContainerActiveRecord;
 
 							<?php if ($result instanceof ContentActiveRecord || $result instanceof ContentContainerActiveRecord) : ?>
 								<?php echo $result->getWallOut(); ?>
-							<?php else: ?>
-								No Output for Class <?php echo get_class($result); ?>
+							<?php else {
+    : ?>
+								No Output for Class <?php echo get_class($result);
+}
+?>
 							<?php endif; ?>
 						<?php endforeach; ?>
-					<?php else: ?>
+					<?php else {
+    : ?>
 
 
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<p><strong><?php echo Yii::t('SearchModule.views_search_index', 'Your search returned no matches.'); ?></strong></p>
+								<p><strong><?php echo Yii::t('SearchModule.views_search_index', 'Your search returned no matches.');
+}
+?></strong></p>
 							</div>
 						</div>
 					<?php endif; ?>

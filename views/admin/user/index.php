@@ -41,7 +41,7 @@ use humhub\widgets\GridView;
                         'attribute' => 'last_login',
                         'options' => ['style' => 'width:86px;', 'class' => 'form-control'],
                     ]),
-                    'value' => function ($data) {
+                    'value' => function($data) {
                 return ($data->last_login == NULL) ? Yii::t('AdminModule.views_user_index', 'never') : Yii::$app->formatter->asDate($data->last_login);
             }
                 ],

@@ -8,9 +8,12 @@
                         <i class="fa fa-check-circle check-ok animated bounceIn"></i>
                     <?php elseif ($check['state'] == 'WARNING') : ?>
                         <i class="fa fa-exclamation-triangle check-warning animated swing"></i>
-                    <?php else : ?>
+                    <?php else {
+    : ?>
                         <i class="fa fa-minus-circle check-error animated wobble"></i>
-                    <?php endif; ?>
+                    <?php endif;
+}
+?>
 
                     <strong><?php echo $check['title']; ?></strong>
 

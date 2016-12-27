@@ -46,8 +46,11 @@ use yii\helpers\Url;
 
                             &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_list', 'Disable'), Url::to(['/admin/module/disable', 'moduleId' => $moduleId]), array('data-method' => 'POST', 'data-confirm' => Yii::t('AdminModule.views_module_list', 'Are you sure? *ALL* module data will be lost!'))); ?>
 
-                        <?php else: ?>
-                            &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_list', 'Enable'), Url::to(['/admin/module/enable', 'moduleId' => $moduleId]), array('data-method' => 'POST', 'style' => 'font-weight:bold', 'data-loader' => "modal", 'data-message' => Yii::t('AdminModule.views_module_list', 'Enable module...'))); ?>
+                        <?php else {
+    : ?>
+                            &middot; <?php echo Html::a(Yii::t('AdminModule.views_module_list', 'Enable'), Url::to(['/admin/module/enable', 'moduleId' => $moduleId]), array('data-method' => 'POST', 'style' => 'font-weight:bold', 'data-loader' => "modal", 'data-message' => Yii::t('AdminModule.views_module_list', 'Enable module...')));
+}
+?>
                         <?php endif; ?>
 
                         <?php if (Yii::$app->moduleManager->canRemoveModule($moduleId)): ?>

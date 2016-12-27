@@ -56,7 +56,7 @@ use yii\helpers\Url;
                                         'url' => $space->createUrl('/space/manage/module/enable', ['moduleId' => $moduleId]),
                                     ],
                                     'htmlOptions' => [
-                                        'class' => 'btn btn-sm btn-primary '. $enable,
+                                        'class' => 'btn btn-sm btn-primary ' . $enable,
                                         'id' => 'btn-enable-module-' . $moduleId
                                     ]
                                 ]);
@@ -76,7 +76,7 @@ use yii\helpers\Url;
                                         'url' => $space->createUrl('/space/manage/module/disable', ['moduleId' => $moduleId]),
                                     ],
                                     'htmlOptions' => [
-                                        'class' => 'btn btn-sm btn-info '. $disable,
+                                        'class' => 'btn btn-sm btn-info ' . $disable,
                                         'id' => 'btn-disable-module-' . $moduleId
                                     ]
                                 ]);
