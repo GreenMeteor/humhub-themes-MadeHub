@@ -1,3 +1,4 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/build-status/master)
 # MadeHub
 
 ## Discription
