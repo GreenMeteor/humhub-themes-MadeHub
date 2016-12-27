@@ -27,8 +27,11 @@ use yii\helpers\Url;
                         <?php echo Html::a(Yii::t('UserModule.base', 'Currently in use'), '#', ['class' => 'btn btn-default btn-sm', 'data-method' => 'POST', 'disabled' => 'disabled']); ?>
                     <?php elseif (in_array($client->getId(), $activeAuthClientIds)) : ?>
                         <?php echo Html::a(Yii::t('UserModule.base', 'Disconnect account'), ['connected-accounts', 'disconnect' => $client->getId()], ['class' => 'btn btn-danger btn-sm', 'data-method' => 'POST']); ?>
-                    <?php else: ?>
-                        <?php echo Html::a(Yii::t('UserModule.base', 'Connect account'), Url::to(['/user/auth/external', 'authclient' => $client->getId()]), ['class' => 'btn btn-success  btn-sm']); ?>
+                    <?php else {
+    : ?>
+                        <?php echo Html::a(Yii::t('UserModule.base', 'Connect account'), Url::to(['/user/auth/external', 'authclient' => $client->getId()]), ['class' => 'btn btn-success  btn-sm']);
+}
+?>
                     <?php endif; ?>
                 </td>
             </tr>

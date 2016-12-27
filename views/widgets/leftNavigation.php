@@ -12,7 +12,10 @@
     <?php foreach ($this->context->getItemGroups() as $group) : ?>
 
         <?php $items = $this->context->getItems($group['id']); ?>
-        <?php if (count($items) == 0) continue; ?>
+        <?php if (count($items) == 0) {
+    continue;
+}
+?>
 
         <?php if ($group['label'] != "") : ?>
             <div class="panel-heading"><?php echo $group['label']; ?></div>
@@ -20,7 +23,7 @@
         <div class="list-group">
             <?php foreach ($items as $item) : ?>
                 <?php $item['htmlOptions']['class'] .= " list-group-item"; ?>
-                <?php echo \yii\helpers\Html::a($item['icon']."<span>".$item['label']."</span>", $item['url'], $item['htmlOptions']); ?>
+                <?php echo \yii\helpers\Html::a($item['icon'] . "<span>" . $item['label'] . "</span>", $item['url'], $item['htmlOptions']); ?>
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>

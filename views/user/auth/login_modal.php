@@ -34,10 +34,13 @@ use humhub\modules\user\widgets\AuthChoice;
             <div class="tab-content">
                 <div class="tab-pane <?php echo (!isset($_POST['Invite'])) ? "active" : ""; ?>" id="login">
 
-                    <?php if(AuthChoice::hasClients()): ?>
+                    <?php if (AuthChoice::hasClients()): ?>
                         <?= AuthChoice::widget([]) ?>
-                    <?php else: ?>
-                        <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password."); ?></p>
+                    <?php else {
+    : ?>
+                        <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password.");
+}
+?></p>
                     <?php endif; ?>
 
                     <?php $form = ActiveForm::begin(); ?>
