@@ -1,8 +1,8 @@
-<?php return array (
+<?php return array(
     'components' => 
-    array (
+    array(
     'db' => 
-    array (
+    array(
         'class' => 'yii\\db\\Connection',
         'dsn' => 'mysql:host=127.0.0.1;dbname=installer',
         'username' => 'root',
@@ -10,38 +10,38 @@
         'charset' => 'utf8',
     ),
     'user' => 
-    array (
+    array(
     ),
     'mailer' => 
-    array (
+    array(
         'transport' => 
-        array (
+        array(
         'class' => 'Swift_MailTransport',
         ),
     ),
     'view' => 
-    array (
+    array(
         'theme' => 
-        array (
+        array(
         'name' => 'HumHub',
         ),
     ),
     'formatter' => 
-    array (
+    array(
         'defaultTimeZone' => 'Europe/Berlin',
     ),
     'formatterApp' => 
-    array (
+    array(
         'defaultTimeZone' => 'Europe/Berlin',
         'timeZone' => 'Europe/Berlin',
     ),
     ),
     'params' => 
-    array (
+    array(
     'installer' => 
-    array (
+    array(
         'db' => 
-        array (
+        array(
         'installer_hostname' => '127.0.0.1',
         'installer_database' => 'installer',
         ),
