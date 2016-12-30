@@ -2,6 +2,8 @@
 
 # MadeHub
 
+[![Join the chat at https://gitter.im/MadeHub/Lobby](https://badges.gitter.im/MadeHub/Lobby.svg)](https://gitter.im/MadeHub/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Discription
 MadeHub - light material theme for HumHub [Original Post](https://community.humhub.com/content/perma?id=72146)
 
