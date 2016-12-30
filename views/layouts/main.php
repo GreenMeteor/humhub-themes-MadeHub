@@ -68,7 +68,7 @@ AppAsset::register($this);
 			</ul></nav>
 			        <li class="b-b"></li>
 			<footer>
-				<?= humhub\widgets\LanguageChooser::widget(); ?>
+				<?= @humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
 			</footer>
 		</div></div></div>
