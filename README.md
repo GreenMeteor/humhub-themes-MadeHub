@@ -1,8 +1,6 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/quality-score.png?b=dev)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/?branch=dev) [![Build Status](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/build.png?b=dev)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/build-status/dev)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/quality-score.png?b=dev)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/?branch=dev) [![Build Status](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/badges/build.png?b=dev)](https://scrutinizer-ci.com/g/Felli/humhub-themes-MadeHub/build-status/dev) [![Join the chat at https://gitter.im/MadeHub/Lobby](https://badges.gitter.im/MadeHub/Lobby.svg)](https://gitter.im/MadeHub/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # MadeHub
-
-[![Join the chat at https://gitter.im/MadeHub/Lobby](https://badges.gitter.im/MadeHub/Lobby.svg)](https://gitter.im/MadeHub/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Discription
 MadeHub - light material theme for HumHub [Original Post](https://community.humhub.com/content/perma?id=72146)
