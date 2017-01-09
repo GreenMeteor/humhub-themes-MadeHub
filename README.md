@@ -13,7 +13,7 @@ You'll find this [Help Guide](https://github.com/Felli/humhub-themes-MadeHub/wik
 - Put folder in: yousite.com/themes
 
 ## Screenshot
-![](https://github.com/Felli/humhub-themes-MadeHub/blob/Felli-patch-1/screenshots/screenshot.png)
+![](https://github.com/Felli/humhub-themes-MadeHub/blob/dev/screenshots/screenshot.png)
 > Note: Your's will not have some of the features mine has because of added code and modules.
 
 ## Author
