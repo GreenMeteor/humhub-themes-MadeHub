@@ -9,7 +9,7 @@ MadeHub - light material theme for HumHub [Original Post](https://community.humh
 You'll find this [Help Guide](https://github.com/Felli/humhub-themes-MadeHub/wiki) helpful. ;)
 
 ## Install
-- Extract archive and rename to MadeHub.
+- Extract archive and rename to ```MadeHub```.
 - Put folder in: yousite.com/themes
 
 ## Screenshot
