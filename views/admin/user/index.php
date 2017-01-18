@@ -23,7 +23,7 @@ use humhub\widgets\GridView;
             'columns' => [
                 [
                     'attribute' => 'id',
-                    'options' => ['style' => 'width:40px;'],
+                    'options' => ['style' => 'width:100%;'],
                     'format' => 'raw',
                     'value' => function($data) {
                 return $data->id;
@@ -39,16 +39,16 @@ use humhub\widgets\GridView;
                     'filter' => \yii\jui\DatePicker::widget([
                         'model' => $searchModel,
                         'attribute' => 'last_login',
-                        'options' => ['style' => 'width:86px;', 'class' => 'form-control'],
+                        'options' => ['style' => 'width:100%;' , 'class' => 'form-control'],
                     ]),
-                    'value' => function($data) {
+                    'value' => function ($data) {
                 return ($data->last_login == NULL) ? Yii::t('AdminModule.views_user_index', 'never') : Yii::$app->formatter->asDate($data->last_login);
             }
                 ],
                 [
                     'header' => Yii::t('AdminModule.views_user_index', 'Actions'),
                     'class' => 'yii\grid\ActionColumn',
-                    'options' => ['style' => 'width:80px; min-width:80px;'],
+                    'options' => ['style' => 'width:100%; min-width:100%;'],
                     'buttons' => [
                         'view' => function($url, $model) {
                             return Html::a('<i class="fa fa-eye"></i>', $model->getUrl(), ['class' => 'btn btn-primary btn-xs tt']);

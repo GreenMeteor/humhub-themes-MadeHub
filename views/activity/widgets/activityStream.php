@@ -5,6 +5,7 @@
 $this->registerJsFile('@web/resources/activity/activies.js');
 $this->registerJsVar('activityStreamUrl', $streamUrl);
 $this->registerJsVar('activityInfoUrl', $infoUrl);
+
 ?>
 
 <div class="panel panel-default panel-activities">
@@ -42,5 +43,3 @@ $this->registerJsVar('activityInfoUrl', $infoUrl);
     })
 
 </script>
-
-
