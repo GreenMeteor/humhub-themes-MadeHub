@@ -12,7 +12,7 @@
             <?php if (!Yii::$app->controller instanceof \humhub\modules\content\components\ContentContainerController && $record->content->space !== null): ?>
                 <?php echo \humhub\modules\space\widgets\Image::widget([
                     'space' => $record->content->space,
-                    'width' => 20px,
+                    'width' => 20,
                     'htmlOptions' => [
                         'class' => 'img-space pull-left',
                     ]
