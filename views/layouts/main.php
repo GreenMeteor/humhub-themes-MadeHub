@@ -1,13 +1,9 @@
 <?php
-
 use yii\helpers\Html;
 use humhub\assets\AppAsset;
-
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 AppAsset::register($this);
-
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -17,7 +13,7 @@ AppAsset::register($this);
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $this->pageTitle; ?></title>
-	<meta name="description" content="YOUR_SITE_NAME - YOUR DESCRIPTION HERE.">
+	<meta name="description" content="Futayuriverse - A simply elegant social networking site, for all those that wish to join it.">
 	<?= Html::csrfMetaTags() ?>
 	<?php $this->head() ?>
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -72,7 +68,7 @@ AppAsset::register($this);
 				<li><a class="waves"><span>Privacy &amp; Terms</span></a></li>
 			</ul></nav>
 			<footer>
-				<?= humhub\widgets\LanguageChooser::widget(); ?>
+				<?php echo \humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
 			</footer>
 		</div></div></div>
@@ -107,13 +103,15 @@ AppAsset::register($this);
 
 		<?= \humhub\widgets\LayoutAddons::widget(); ?>
 
-           </div>
-        </div>
-     </div>
-		
+	</div>
     </div>
+  </div>
+
  </div>
 </div>
+
+         
+    </div>
     
     <?php $this->endBody() ?>
 </body>
