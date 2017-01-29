@@ -1,9 +1,13 @@
 <?php
+
 use yii\helpers\Html;
 use humhub\assets\AppAsset;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
+
 AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -13,38 +17,28 @@ AppAsset::register($this);
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $this->pageTitle; ?></title>
-	<meta name="description" content="Futayuriverse - A simply elegant social networking site, for all those that wish to join it.">
-	<?= Html::csrfMetaTags() ?>
-	<?php $this->head() ?>
+	<meta name="description" content="SITENAME - SITE-DESCRIPTION.">
+	
+	<!-- start: Mobile Specific -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- end: Mobile Specific -->
+        <?php echo Html::csrfMetaTags() ?>
+        <?php $this->head() ?>
+	
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
-<?php
-use yii\helpers\Html;
-use humhub\assets\AppAsset;
-/* @var $this \yii\web\View */
-/* @var $content string */
-AppAsset::register($this);
-?>
-<?php $this->beginPage() ?>
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $this->pageTitle; ?></title>
-	<meta name="description" content="Futayuriverse - A simply elegant social networking site, for all those that wish to join it.">
-	<?= Html::csrfMetaTags() ?>
-	<?php $this->head() ?>
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
-		<link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css" rel = "stylesheet" >
-	<![endif]-->
-	<!--[if IE 9]>
-		<link id="ie9style" href="<?php echo Yii::getAlias(" @web"); ?>/css/ie9.css" rel="stylesheet">
-	<![endif]-->
+        <!--[if lt IE 9]>
+        <script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
+        <link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css rel = "stylesheet" >
+        <![endif]-->
+
+        <!--[if IE 9]>
+        <link id="ie9style" href="<?php echo Yii::getAlias(" @web"); ?>/css/ie9.css" rel="stylesheet">
+        <![endif]-->
+
+        <!-- start: render additional head (css and js files) -->
+        <?php echo $this->render('head'); ?>
+        <!-- end: render additional head -->
 	<!-- start: render additional head (css and js files) -->
 	<?php echo $this->render('head'); ?>
 	<!-- start: Favicon and Touch Icons -->
@@ -133,7 +127,6 @@ AppAsset::register($this);
  </div>
 </div>
 
-         
     </div>
     
     <?php $this->endBody() ?>
@@ -172,7 +165,6 @@ AppAsset::register($this);
  </div>
 </div>
 
-         
     </div>
     
     <?php $this->endBody() ?>
