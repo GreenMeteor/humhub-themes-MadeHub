@@ -19,6 +19,27 @@ AppAsset::register($this);
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
+<?php
+use yii\helpers\Html;
+use humhub\assets\AppAsset;
+/* @var $this \yii\web\View */
+/* @var $content string */
+AppAsset::register($this);
+?>
+<?php $this->beginPage() ?>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $this->pageTitle; ?></title>
+	<meta name="description" content="Futayuriverse - A simply elegant social networking site, for all those that wish to join it.">
+	<?= Html::csrfMetaTags() ?>
+	<?php $this->head() ?>
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
 		<link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css" rel = "stylesheet" >
 	<![endif]-->
 	<!--[if IE 9]>
@@ -68,6 +89,8 @@ AppAsset::register($this);
 				<li><a class="waves"><span>Privacy &amp; Terms</span></a></li>
 			</ul></nav>
 			<footer>
+			
+			        <!-- The languageChooser only works for those that aren't logged in -->
 				<?php echo \humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
 			</footer>
@@ -79,6 +102,45 @@ AppAsset::register($this);
 
 	<div class="navbar md-whiteframe-z1 no-radius blue">
 		<a data-toggle="modal" data-target="#aside" class="navbar-item pull-left visible-xs visible-sm waves"><i class="material-icons">menu</i></a>
+		<ul class="nav nav-sm navbar-tool pull-right">
+			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
+			<?php
+			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+			]]);
+			?>
+
+					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
+		</ul>
+	</div>
+
+	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
+              
+		<!-- start: show content (and check, if exists a sublayout -->
+		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
+			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
+		<?php else: ?>
+			<?php echo $content; ?>
+		<?php endif; ?>
+		<!-- end: show content -->
+
+		<?= \humhub\widgets\LayoutAddons::widget(); ?>
+
+	</div>
+    </div>
+  </div>
+
+ </div>
+</div>
+
+         
+    </div>
+    
+    <?php $this->endBody() ?>
+</body>
+</html>
+<?php $this->endPage() ?>
+
 		<ul class="nav nav-sm navbar-tool pull-right">
 			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
 			<?php
