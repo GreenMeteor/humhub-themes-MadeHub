@@ -1,9 +1,13 @@
 <?php
+
 use yii\helpers\Html;
 use humhub\assets\AppAsset;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
+
 AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
@@ -13,15 +17,28 @@ AppAsset::register($this);
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $this->pageTitle; ?></title>
-	<meta name="description" content="Demo - Your social networking site, for all those that wish to join it.">
-	<?= Html::csrfMetaTags() ?>
-	<?php $this->head() ?>
+	<meta name="description" content="SITENAME - SITE-DESCRIPTION.">
+	
+	<!-- start: Mobile Specific -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- end: Mobile Specific -->
+        <?php echo Html::csrfMetaTags() ?>
+        <?php $this->head() ?>
+	
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	
-		<script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
-		<link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css" rel = "stylesheet" >
-		<link id="ie9style" href="<?php echo Yii::getAlias(" @web"); ?>/css/ie9.css" rel="stylesheet">
-	
+        <!--[if lt IE 9]>
+        <script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
+        <link id = "ie-style" href = "<?php echo Yii::getAlias("@web"); ?>/css/ie.css rel = "stylesheet" >
+        <![endif]-->
+
+        <!--[if IE 9]>
+        <link id="ie9style" href="<?php echo Yii::getAlias(" @web"); ?>/css/ie9.css" rel="stylesheet">
+        <![endif]-->
+
+        <!-- start: render additional head (css and js files) -->
+        <?php echo $this->render('head'); ?>
+        <!-- end: render additional head -->
 	<!-- start: render additional head (css and js files) -->
 	<?php echo $this->render('head'); ?>
 	<!-- start: Favicon and Touch Icons -->
@@ -56,19 +73,19 @@ AppAsset::register($this);
 		<div class="box-row"><div class="box-cell scrollable hover"><div class="box-inner">
 				<?php echo \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
 				<li class="b-b"></li>
-				<li><a href="<?php echo Yii::getAlias("@web"); ?>#" class="waves"><i class="material-icons md-dark m-r">home</i><span><?php echo Yii::t('AdminModule.base', 'Home'); ?></span></a></li>
+				<li><a href="<?php echo Yii::$app->homeUrl; ?>" class="waves"><i class="material-icons md-dark m-r">home</i><span><?php echo Yii::t('DashboardModule.base', 'Home'); ?></span></a></li>
 				<li><a href="<?php echo Yii::$app->homeUrl; ?>" class="waves"><i class="material-icons md-dark m-r">dashboard</i><span><?php echo Yii::t('DashboardModule.base', 'Dashboard'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/spaces" class="waves"><i class="material-icons md-dark m-r">weekend</i><span><?php echo Yii::t('AdminModule.base', 'Spaces'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/members" class="waves"><i class="material-icons md-dark m-r">people</i><span><?php echo Yii::t('DirectoryModule.base', 'Members'); ?></span></a></li>
 				<li><a href="<?php echo Yii::getAlias("@web"); ?>/directory/profiles" class="waves"><i class="material-icons md-dark m-r">graphic_eq</i><span><?php echo Yii::t('AdminModule.base', 'User posts'); ?></span></a></li>
 				<li class="b-b"></li>
-				<li><a href="<?php echo Yii::getAlias("@web"); ?>mailto:admin@example.com" class="waves"><span>Help &amp; Feedback</span></a></li>
-				<li><a class="waves"><i class="material-icons md-dark m-r">report_problem</i><span>Privacy &amp; Terms</span></a></li>
-			        <li><a href="<?php echo Yii::getAlias("@web"); ?>/#" class="waves"><i class="material-icons md-dark m-r">help</i><span><?php echo Yii::t('AdminModule.base', 'FAQ'); ?></span></a></li>
+				<li><a class="waves"><span>Help &amp; Feedback</span></a></li>
+				<li><a class="waves"><span>Privacy &amp; Terms</span></a></li>
 			</ul></nav>
-			        <li class="b-b"></li>
 			<footer>
-				<?= @humhub\widgets\LanguageChooser::widget(); ?>
+			
+			        <!-- The languageChooser only works for those that aren't logged in -->
+				<?php echo \humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
 			</footer>
 		</div></div></div>
@@ -82,37 +99,75 @@ AppAsset::register($this);
 		<ul class="nav nav-sm navbar-tool pull-right">
 			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
 			<?php
-            echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-                [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-            ]]);
-            ?>
+			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+			]]);
+			?>
 
 					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
 		</ul>
 	</div>
 
 	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
-
+              
 		<!-- start: show content (and check, if exists a sublayout -->
 		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
 			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
-		<?php else {
-    : ?>
-			<?php echo $content;
-}
-?>
+		<?php else: ?>
+			<?php echo $content; ?>
 		<?php endif; ?>
 		<!-- end: show content -->
 
 		<?= \humhub\widgets\LayoutAddons::widget(); ?>
 
-	</div></div></div>
+	</div>
+    </div>
+  </div>
 
-	</div></div>
-
+ </div>
 </div>
 
-<?php $this->endBody() ?>
+    </div>
+    
+    <?php $this->endBody() ?>
+</body>
+</html>
+<?php $this->endPage() ?>
+
+		<ul class="nav nav-sm navbar-tool pull-right">
+			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
+			<?php
+			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+			]]);
+			?>
+
+					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
+		</ul>
+	</div>
+
+	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
+              
+		<!-- start: show content (and check, if exists a sublayout -->
+		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
+			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
+		<?php else: ?>
+			<?php echo $content; ?>
+		<?php endif; ?>
+		<!-- end: show content -->
+
+		<?= \humhub\widgets\LayoutAddons::widget(); ?>
+
+	</div>
+    </div>
+  </div>
+
+ </div>
+</div>
+
+    </div>
+    
+    <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
