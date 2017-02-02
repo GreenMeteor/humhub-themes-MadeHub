@@ -166,7 +166,7 @@ AppAsset::register($this);
 </div>
 
     </div>
-<script src="<?php echo $this->theme->getBaseUrl().'/js/plugins-scroll.js'; ?>"></script>
+
 	<script>
 	$(document).ready(function() {
 		try {
