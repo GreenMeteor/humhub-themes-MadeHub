@@ -15,5 +15,4 @@
 
 <!-- start: JS file imports -->
 <?php $this->registerJsFile($this->theme->getBaseUrl() . '/js/script.js'); ?>
-<?php $this->registerJsFile($this->theme->getBaseUrl() . '/js/waves.js'); ?>
 <!-- end: JS -->
