@@ -1,4 +1,5 @@
 <!-- start: Font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 <link href="<?php echo $this->theme->getBaseUrl() . '/fonts/material-icons.css'; ?>" rel="stylesheet">
 <!-- end: Font -->
 
