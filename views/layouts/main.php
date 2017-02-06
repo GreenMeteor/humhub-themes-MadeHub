@@ -156,7 +156,7 @@ AppAsset::register($this);
 		<?php endif; ?>
 		<!-- end: show content -->
 
-		<?= \humhub\widgets\LayoutAddons::widget(); ?>
+		<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
 
 	</div>
     </div>
