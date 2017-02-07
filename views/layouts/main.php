@@ -39,8 +39,7 @@ AppAsset::register($this);
         <!-- start: render additional head (css and js files) -->
         <?php echo $this->render('head'); ?>
         <!-- end: render additional head -->
-	<!-- start: render additional head (css and js files) -->
-	<?php echo $this->render('head'); ?>
+
 	<!-- start: Favicon and Touch Icons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $this->theme->getBaseUrl() . '/ico/apple-icon-57x57.png' ?>">
 	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $this->theme->getBaseUrl() . '/ico/apple-icon-60x60.png' ?>">
@@ -68,8 +67,8 @@ AppAsset::register($this);
 	<!-- aside -->
 	<aside id="aside" class="app-aside modal fade"><div class="left"><div class="box bg-white">
 		<div class="navbar md-whiteframe-z1 no-radius blue">
-			<?php echo \humhub\widgets\SiteLogo::widget(); ?>
-		</div>
+                    <?php echo \humhub\widgets\SiteLogo::widget(); ?>
+                </div>
 		<div class="box-row"><div class="box-cell scrollable hover"><div class="box-inner">
 				<?php echo \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
 				<li class="b-b"></li>
@@ -99,12 +98,13 @@ AppAsset::register($this);
 		<ul class="nav nav-sm navbar-tool pull-right">
 			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
 			<?php
-			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-			]]);
-			?>
+                    echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+                            [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+                    ]]);
+                    ?>
 
-					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
+					<!-- load space chooser widget -->
+                    <?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
 		</ul>
 	</div>
 
@@ -118,9 +118,8 @@ AppAsset::register($this);
 		<?php endif; ?>
 		<!-- end: show content -->
 
-		<?= \humhub\widgets\LayoutAddons::widget(); ?>
-
-	</div>
+		<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
+     </div>
     </div>
   </div>
 
@@ -168,6 +167,6 @@ AppAsset::register($this);
     </div>
     
     <?php $this->endBody() ?>
-</body>
+    </body>
 </html>
 <?php $this->endPage() ?>
