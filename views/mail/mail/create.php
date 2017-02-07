@@ -21,8 +21,7 @@ use yii\widgets\ActiveForm;
                 <?php echo $form->field($model, 'recipient', ['inputOptions' => ['id' => 'recipient']]); ?>
             </div>
 
-            <?php
-            echo \humhub\modules\user\widgets\UserPicker::widget(array(
+            <?php echo \humhub\modules\user\widgets\UserPicker::widget(array(
                 'inputId' => 'recipient',
                 'model' => $model,
                 'attribute' => 'recipient',
@@ -44,8 +43,7 @@ use yii\widgets\ActiveForm;
 
         </div>
         <div class="modal-footer">
-            <?php
-            echo \humhub\widgets\AjaxButton::widget([
+            <?php echo \humhub\widgets\AjaxButton::widget([
                 'label' => Yii::t('MailModule.views_mail_create', 'Send'),
                 'ajaxOptions' => [
                     'type' => 'POST',
