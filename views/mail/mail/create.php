@@ -49,7 +49,7 @@ use yii\widgets\ActiveForm;
                     'type' => 'POST',
                     'beforeSend' => '$.proxy(function() { $(this).prop("disabled",true); },this)',
                     'success' => 'function(html){ $("#globalModal").html(html); }',
-                    'url' => Url::to(['/mail/mail/create']),
+                    'url' => Url::toRoute(['/mail/mail/create']),
                 ],
                 'htmlOptions' => [
                     'class' => 'btn btn-primary'
@@ -65,7 +65,6 @@ use yii\widgets\ActiveForm;
     </div>
 
 </div>
-
 
 <script type="text/javascript">
     // set focus to input for space name
