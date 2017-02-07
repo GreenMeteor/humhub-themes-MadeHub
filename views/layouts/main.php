@@ -11,7 +11,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo Yii::$app->language ?>">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
