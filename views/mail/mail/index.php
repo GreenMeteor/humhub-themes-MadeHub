@@ -1,5 +1,7 @@
 <?php
+
 use yii\helpers\Html;
+
 if ($messageId != "") {
     $this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
 }
@@ -27,7 +29,7 @@ if ($messageId != "") {
 				</ul>
 			</div>
 			<div class="pagination-container">
-				<?= \humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
+				<?php echo \humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
 			</div>
 		</div>
 		<div class="col-sm-8 messages">
