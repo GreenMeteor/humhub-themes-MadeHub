@@ -21,8 +21,7 @@ use yii\widgets\ActiveForm;
                 <?php echo $form->field($model, 'recipient', ['inputOptions' => ['id' => 'recipient']]); ?>
             </div>
 
-            <?php
-            echo \humhub\modules\user\widgets\UserPicker::widget(array(
+            <?php echo \humhub\modules\user\widgets\UserPicker::widget(array(
                 'inputId' => 'recipient',
                 'model' => $model,
                 'attribute' => 'recipient',
@@ -44,14 +43,13 @@ use yii\widgets\ActiveForm;
 
         </div>
         <div class="modal-footer">
-            <?php
-            echo \humhub\widgets\AjaxButton::widget([
+            <?php echo \humhub\widgets\AjaxButton::widget([
                 'label' => Yii::t('MailModule.views_mail_create', 'Send'),
                 'ajaxOptions' => [
                     'type' => 'POST',
                     'beforeSend' => '$.proxy(function() { $(this).prop("disabled",true); },this)',
                     'success' => 'function(html){ $("#globalModal").html(html); }',
-                    'url' => Url::to(['/mail/mail/create']),
+                    'url' => Url::toRoute(['/mail/mail/create']),
                 ],
                 'htmlOptions' => [
                     'class' => 'btn btn-primary'
@@ -67,7 +65,6 @@ use yii\widgets\ActiveForm;
     </div>
 
 </div>
-
 
 <script type="text/javascript">
     // set focus to input for space name

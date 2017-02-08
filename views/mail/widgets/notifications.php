@@ -1,10 +1,15 @@
 <?php
+
 use yii\helpers\Html;
 use yii\helpers\Url;
+
 use humhub\modules\mail\Assets;
+
 $this->registerjsVar('mail_loadMessageUrl', Url::to(['/mail/mail/show', 'id' => '-messageId-']));
 $this->registerjsVar('mail_viewMessageUrl', Url::to(['/mail/mail/index', 'id' => '-messageId-']));
+
 Assets::register($this);
+
 ?>
 <li>
 	<a id="icon-messages" class="waves" data-toggle="modal" data-target="#dropdown-messages"><i class="material-icons">mail</i>
