@@ -4,7 +4,7 @@
 
 ## Discription
 MadeHub - light material theme for HumHub [Original Post](https://community.humhub.com/content/perma?id=72146)
-> Notice This theme does not work right with the beta version of Humhub 1.2.0-beta.1 will be doing some fixing later on.
+> Notice: This theme does not work right with any versions of Humhub above 1.1.2, and we will not be actively working on this theme anymore, if you wish to fork this and do the updates yourself please do some now. :)
 
 ## Help Guide
 You'll find this [Help Guide](https://github.com/Felli/humhub-themes-MadeHub/wiki) helpful. ;)
