@@ -1,91 +1,149 @@
 <?php
-
-use yii\helpers\Html;
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2016 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
+namespace humhub\modules\content\widgets;
+use Yii;
+use humhub\components\Widget;
 use humhub\modules\space\models\Space;
-use humhub\modules\content\components\ContentContainerController;
-
-$user = $object->content->user;
-$container = $object->content->container;
-?>
-
-<div class="panel panel-default wall_<?php echo $object->getUniqueId(); ?>">
-    <div class="panel-body">
-
-        <div class="media">
-
-            <!-- start: show wall entry options -->
-            <ul class="nav nav-pills preferences">
-                <li class="dropdown ">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                        <?php echo \humhub\modules\content\widgets\WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
-                    </ul>
-                </li>
-            </ul>
-            <!-- end: show wall entry options -->
-
-            <a href="<?php echo $user->getUrl(); ?>" class="pull-left">
-                <img class="media-object img-rounded user-image user-<?php echo $user->guid; ?>" alt="40x40"
-                     data-src="holder.js/40x40" style="width: 40px; height: 40px;"
-                     src="<?php echo $user->getProfileImage()->getUrl(); ?>"
-                     width="40" height="40"/>
-            </a>
-
-            <!-- Show space image, if you are outside from a space -->
-            <?php if (!Yii::$app->controller instanceof ContentContainerController && $object->content->container instanceof Space): ?>
-                <?php echo \humhub\modules\space\widgets\Image::widget([
-                    'space' => $object->content->container,
-                    'width' => 20,
-                    'htmlOptions' => [
-                        'class' => 'img-space',
-                    ],
-                    'link' => 'true',
-                    'linkOptions' => [
-                        'class' => 'pull-left',
-                    ],
-                ]); ?>
-
-            <?php endif; ?>
-
-
-            <div class="media-body">
-
-                <!-- show username with link and creation time-->
-                <h4 class="media-heading"><a
-                        href="<?php echo $user->getUrl(); ?>"><?php echo Html::encode($user->displayName); ?></a>
-                    <small>
-                        <?php echo \humhub\widgets\TimeAgo::widget(['timestamp' => $object->content->created_at]); ?>
-
-                        <?php if ($object->content->created_at !== $object->content->updated_at && $object->content->updated_at != ''): ?>
-                            (<?php echo Yii::t('ContentModule.views_wallLayout', 'Updated :timeago', array(':timeago' => \humhub\widgets\TimeAgo::widget(['timestamp' => $object->content->updated_at]))); ?>)
-                        <?php endif; ?>
-
-                        <!-- show space name -->
-                        <?php if (!Yii::$app->controller instanceof ContentContainerController && $container instanceof Space): ?>
-                            <?php echo Yii::t('ContentModule.views_wallLayout', 'in'); ?> <strong><a
-                                    href="<?php echo $container->getUrl(); ?>"><?php echo Html::encode($container->name); ?></a></strong>&nbsp;
-                        <?php endif; ?>
-
-                        <?php echo \humhub\modules\content\widgets\WallEntryLabels::widget(['object' => $object]); ?>
-
-                    </small>
-                </h4>
-                <h5><?php echo Html::encode($user->profile->title); ?></h5>
-
-            </div>
-            <hr/>
-
-            <div class="content" id="wall_content_<?php echo $object->getUniqueId(); ?>">
-                <?php if (!$object instanceof \humhub\modules\post\models\Post) : ?>
-                    <span class="label label-default pull-right"><?php echo $object->getContentName(); ?></span>
-                <?php endif; ?>
-                <?php echo $content; ?>
-            </div>
-
-            <?php echo \humhub\modules\content\widgets\WallEntryAddons::widget(['object' => $object]); ?>
-        </div>
-
-
-    </div>
-
-</div>
+/**
+ * WallEntry is responsible to show a content inside a stream/wall.
+ * 
+ * @see \humhub\modules\content\components\ContentActiveRecord
+ * @since 0.20
+ * @author luke
+ */
+class WallEntry extends Widget
+{
+    /**
+     * Edit form is loaded to the wallentry itself.
+     */
+    const EDIT_MODE_INLINE = 'inline';
+    
+    /**
+     * Edit form is loaded into a modal.
+     */
+    const EDIT_MODE_MODAL = 'modal';
+    
+    /**
+     * The content object
+     *
+     * @var \humhub\modules\content\components\ContentActiveRecord
+     */
+    public $contentObject;
+    /**
+     * Indicates the post was just edited
+     *
+     * @var boolean
+     */
+    public $justEdited = false;
+    /**
+     * Route to edit the content
+     * 
+     * @var string
+     */
+    public $editRoute = "";
+    
+    /**
+     * Defines the way the edit of this wallentry is displayed.
+     * 
+     * @var type 
+     */
+    public $editMode = self::EDIT_MODE_INLINE;
+    /**
+     * The wall entry layout to use
+     * 
+     * @var string
+     */
+    public $wallEntryLayout = "@humhub/modules/content/widgets/views/wallEntry.php";
+    /**
+     * @deprecated since version 1.2 use file model 'show_in_stream' attribute instead
+     * @var boolean show files widget containing a list of all assigned files
+     */
+    public $showFiles = true;
+    /**
+     * @inheritdoc
+     */
+    public static function widget($config = [])
+    {
+        ob_start();
+        ob_implicit_flush(false);
+        try {
+            /* @var $widget Widget */
+            $config['class'] = get_called_class();
+            $widget = Yii::createObject($config);
+            $out = $widget->render($widget->wallEntryLayout, ['content' => $widget->run(), 'object' => $widget->contentObject, 'wallEntryWidget' => $widget]);
+        } catch (\Exception $e) {
+            ob_end_clean();
+            throw $e;
+        }
+        return ob_get_clean() . $out;
+    }
+    /**
+     * Returns the edit url to edit the content (if supported)
+     * 
+     * @return string url
+     */
+    public function getEditUrl()
+    {
+        if (empty($this->editRoute)) {
+            return;
+        }
+        // Don't show edit link, when content container is space and archived
+        if ($this->contentObject->content->container instanceof Space && $this->contentObject->content->container->status == Space::STATUS_ARCHIVED) {
+            return "";
+        }
+        return $this->contentObject->content->container->createUrl($this->editRoute, ['id' => $this->contentObject->id]);
+    }
+    /**
+     * Returns an array of contextmenu items either in form of a single array:
+     * 
+     * ['label' => 'mylabel', icon => 'fa-myicon', 'data-action-click' => 'myaction', ...]
+     * 
+     * or as widget type definition:
+     * 
+     * [MyWidget::class, [...], [...]]
+     * 
+     * If an $editRoute is set this function will include an edit button.
+     * The edit logic can be changed by changing the $editMode.
+     * 
+     * @return array
+     * @since 1.2
+     */
+    public function getContextMenu()
+    {
+        $result = [];
+        if (!empty($this->editRoute)) {
+            if($this->editMode === self::EDIT_MODE_INLINE) {
+                $result[] = [EditLink::class, ['model' => $this->contentObject, 'url' => $this->getEditUrl()], ['sortOrder' => 200]];
+            } else if($this->editMode === self::EDIT_MODE_MODAL) {
+                $result[] = [EditLinkModal::class, ['model' => $this->contentObject, 'url' =>$this->getEditUrl()], ['sortOrder' => 200]];
+            }
+        }
+        return $result;
+    }
+    /**
+     * Renders the wall entry output 
+     * 
+     * @return string the output
+     * @throws \Exception
+     */
+    public function renderWallEntry()
+    {
+        ob_start();
+        ob_implicit_flush(false);
+        try {
+            $out = $this->render($this->wallEntryLayout, [
+                'content' => $this->run(),
+                'object' => $this->contentObject,
+                'wallEntryWidget' => $this
+            ]);
+        } catch (\Exception $e) {
+            ob_end_clean();
+            throw $e;
+        }
+        return ob_get_clean() . $out;
+    }
+}
