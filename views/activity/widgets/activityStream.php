@@ -1,9 +1,6 @@
 <?php
-
 /* @var $this humhub\components\View */
-
 \humhub\modules\activity\assets\ActivityAsset::register($this);
-
 $this->registerJsConfig([
     'activity' => [
         'text' => [
@@ -11,7 +8,6 @@ $this->registerJsConfig([
         ]
     ]
 ]);
-
 ?>
 
 <div class="panel panel-default panel-activities">
