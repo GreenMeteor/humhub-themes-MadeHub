@@ -102,11 +102,15 @@ AppAsset::register($this);
                             [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
                     ]]);
                     ?>
-
+			<!-- start: second top navigation bar -->
+		<div id="topbar-second" class="topbar">
+				<div class="container">
+						<ul class="nav" id="top-menu-nav">
 					<!-- load space chooser widget -->
                     <?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
 		</ul>
 	</div>
+    </div>
 
 	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
               
