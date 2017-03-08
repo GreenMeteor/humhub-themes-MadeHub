@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 if ($isProfileOwner) {
-    $this->registerJsFile('@web/resources/user/profileHeaderImageUpload.js');
+    $this->registerJsFile('@web-static/resources/user/profileHeaderImageUpload.js');
     $this->registerJs("var profileImageUploaderUserGuid='" . $user->guid . "';", \yii\web\View::POS_BEGIN);
     $this->registerJs("var profileImageUploaderCurrentUserGuid='" . Yii::$app->user->getIdentity()->guid . "';", \yii\web\View::POS_BEGIN);
     $this->registerJs("var profileImageUploaderUrl='" . Url::to(['/user/account/profile-image-upload', 'userGuid' => $user->guid]) . "';", \yii\web\View::POS_BEGIN);
@@ -31,7 +31,6 @@ if ($isProfileOwner) {
                 <?php
                 // set standard padding for banner progressbar
                 $padding = '90px 350px';
-
                 // if the default banner image is displaying
                 if (!$user->getProfileBannerImage()->hasImage()) {
                     // change padding to the lower image height
@@ -66,10 +65,10 @@ if ($isProfileOwner) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="banner-image-upload-edit-button"
                        style="<?php
-                        if (!$user->getProfileBannerImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
+                       if (!$user->getProfileBannerImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
                        href="<?php echo Url::to(['/user/account/crop-banner-image', 'userGuid' => $user->guid]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -95,18 +94,14 @@ if ($isProfileOwner) {
         <div class="image-upload-container profile-user-photo-container" style="width: 140px; height: 140px;">
 
             <?php if ($user->profileImage->hasImage()) : ?>
-                <a data-toggle="lightbox" data-gallery="" href="<?= $user->profileImage->getUrl('_org'); ?>"
-                   data-footer='<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo Yii::t('FileModule.widgets_views_showFiles', 'Close'); ?></button>'>
+                <a data-ui-gallery="profileHeader"  href="<?php echo $user->profileImage->getUrl('_org'); ?>">
                     <img class="img-rounded profile-user-photo" id="user-profile-image"
                          src="<?php echo $user->getProfileImage()->getUrl(); ?>"
                          data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                 </a>
-            <?php else {
-    : ?>
+            <?php else : ?>
                 <img class="img-rounded profile-user-photo" id="user-profile-image"
-                     src="<?php echo $user->getProfileImage()->getUrl();
-}
-?>"
+                     src="<?php echo $user->getProfileImage()->getUrl(); ?>"
                      data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                  <?php endif; ?>
 
@@ -131,10 +126,10 @@ if ($isProfileOwner) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="profile-image-upload-edit-button"
                        style="<?php
-                        if (!$user->getProfileImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
+                       if (!$user->getProfileImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
                        href="<?php echo Url::to(['/user/account/crop-profile-image', 'userGuid' => $user->guid]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -170,7 +165,7 @@ if ($isProfileOwner) {
                     <div class="statistics pull-left">
 
                         <?php if ($friendshipsEnabled): ?>
-                            <a href="<?= Url::to(['/friendship/list/popup', 'userId' => $user->id]); ?>" data-target="#globalModal">
+                            <a href="<?php echo Url::to(['/friendship/list/popup', 'userId' => $user->id]); ?>" data-target="#globalModal">
                                 <div class="pull-left entry">
                                     <span class="count"><?php echo $countFriends; ?></span>
                                     <br>
@@ -179,21 +174,21 @@ if ($isProfileOwner) {
                             </a>
                         <?php endif; ?>
 
-                        <a href="<?= $user->createUrl('/user/profile/follower-list'); ?>" data-target="#globalModal">
+                        <a href="<?php echo $user->createUrl('/user/profile/follower-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?php echo $countFollowers; ?></span>
                                 <br>
                                 <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Followers'); ?></span>
                             </div>
                         </a>
-                        <a href="<?= $user->createUrl('/user/profile/followed-users-list'); ?>" data-target="#globalModal">
+                        <a href="<?php echo $user->createUrl('/user/profile/followed-users-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?php echo $countFollowing; ?></span>
                                 <br>
                                 <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Following'); ?></span>
                             </div>
                         </a>
-                        <a href="<?= $user->createUrl('/user/profile/space-membership-list'); ?>" data-target="#globalModal">
+                        <a href="<?php echo $user->createUrl('/user/profile/space-membership-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?php echo $countSpaces; ?></span><br>
                                 <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Spaces'); ?></span>
