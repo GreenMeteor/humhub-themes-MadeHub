@@ -1,12 +1,12 @@
 <?php
+
 /* @var $this \humhub\components\View */
 /* @var $currentSpace \humhub\modules\space\models\Space */
 
-use yii\helpers\Url;
 use yii\helpers\Html;
 
 if ($space->isAdmin()) {
-    $this->registerJsFile('@web/resources/space/spaceHeaderImageUpload.js');
+    $this->registerJsFile('@web-static/resources/space/spaceHeaderImageUpload.js');
     $this->registerJsVar('profileImageUploaderUrl', $space->createUrl('/space/manage/image/upload'));
     $this->registerJsVar('profileHeaderUploaderUrl', $space->createUrl('/space/manage/image/banner-upload'));
 }
@@ -32,7 +32,6 @@ if ($space->isAdmin()) {
                 <?php
                 // set standard padding for banner progressbar
                 $padding = '90px 350px';
-
                 // if the default banner image is displaying
                 if (!$space->getProfileBannerImage()->hasImage()) {
                     // change padding to the lower image height
@@ -67,10 +66,10 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="banner-image-upload-edit-button"
                        style="<?php
-                        if (!$space->getProfileBannerImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
+                       if (!$space->getProfileBannerImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
                        href="<?php echo $space->createUrl('/space/manage/image/crop-banner'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -98,15 +97,11 @@ if ($space->isAdmin()) {
 
             <?php if ($space->profileImage->hasImage()) : ?>
                 <!-- profile image output-->
-                <a data-toggle="lightbox" data-gallery="" href="<?= $space->profileImage->getUrl('_org'); ?>"
-                   data-footer='<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo Yii::t('SpaceModule.widgets_views_profileHeader', 'Close'); ?></button>'>
+                <a data-ui-gallery="spaceHeader" href="<?= $space->profileImage->getUrl('_org'); ?>">
                        <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
                 </a>
-            <?php else {
-    : ?>
-                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]);
-}
-?>
+            <?php else : ?>
+                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
             <?php endif; ?>
 
             <!-- check if the current user is the profile owner and can change the images -->
@@ -130,10 +125,10 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="profile-image-upload-edit-button"
                        style="<?php
-                        if (!$space->getProfileImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
+                       if (!$space->getProfileImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
                        href="<?php echo $space->createUrl('/space/manage/image/crop'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -175,7 +170,7 @@ if ($space->isAdmin()) {
                                 class="title"><?php echo Yii::t('SpaceModule.widgets_views_profileHeader', 'Posts'); ?></span>
                         </div>
 
-                        <a href="<?= $space->createUrl('/space/membership/members-list'); ?>" data-target="#globalModal">
+                        <a href="<?php echo $space->createUrl('/space/membership/members-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?php echo $space->getMemberships()->count(); ?></span>
                                 <br>
@@ -184,7 +179,7 @@ if ($space->isAdmin()) {
                             </div>
                         </a>
 
-                        <a href="<?= $space->createUrl('/space/space/follower-list'); ?>" data-target="#globalModal">
+                        <a href="<?php echo $space->createUrl('/space/space/follower-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?php echo $space->getFollowerCount(); ?></span><br>
                                 <span
@@ -207,8 +202,8 @@ if ($space->isAdmin()) {
                                     ['sortOrder' => 30]]
                         ]]);
                         ?>
-                        <?=
-                        humhub\modules\space\widgets\HeaderControlsMenu::widget([
+                        <?php
+                        echo humhub\modules\space\widgets\HeaderControlsMenu::widget([
                             'space' => $space,
                             'template' => '@humhub/widgets/views/dropdownNavigation'
                         ]);
