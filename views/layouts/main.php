@@ -100,17 +100,16 @@ AppAsset::register($this);
 		<ul class="nav nav-sm navbar-tool pull-right">
 			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
 			<?php
-                    echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-                            [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-                    ]]);
-                    ?>
+			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+			]]);
+			?>
 
-					<!-- load space chooser widget -->
-                    <?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
+					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
 		</ul>
-	</div>
+		</div>
 
-	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
+		<div class="box-row"><div class="box-cell"><div class="box-inner padding">
 
 		<!-- start: show content (and check, if exists a sublayout -->
 		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
@@ -121,54 +120,17 @@ AppAsset::register($this);
 		<!-- end: show content -->
 
 		<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
-     </div>
-    </div>
-  </div>
 
- </div>
-</div>
+		</div>
+		</div>
+		</div>
 
-    </div>
+		</div>
+		</div>
 
-    <?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+		</div>
 
-<ul class="nav nav-sm navbar-tool pull-right">
-	<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
-	<?php
-	echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-		[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-	]]);
-	?>
-
-			<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
-</ul>
-</div>
-
-<div class="box-row"><div class="box-cell"><div class="box-inner padding">
-
-<!-- start: show content (and check, if exists a sublayout -->
-<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
-	<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
-<?php else: ?>
-	<?php echo $content; ?>
-<?php endif; ?>
-<!-- end: show content -->
-
-<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+		<?php $this->endBody() ?>
+		</body>
+		</html>
+		<?php $this->endPage() ?>
