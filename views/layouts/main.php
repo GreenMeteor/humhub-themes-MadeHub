@@ -1,5 +1,7 @@
 <?php
 
+use yii\base\Object;
+use yii\yii\helpers\Url;
 use yii\helpers\Html;
 use humhub\assets\AppAsset;
 
@@ -18,14 +20,14 @@ AppAsset::register($this);
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $this->pageTitle; ?></title>
 	<meta name="description" content="SITENAME - SITE-DESCRIPTION.">
-	
+
 	<!-- start: Mobile Specific -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- end: Mobile Specific -->
         <?php echo Html::csrfMetaTags() ?>
         <?php $this->head() ?>
-	
+
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="<?php echo Yii::getAlias(" @web"); ?>/js/html5shiv.js"></script>
@@ -82,7 +84,7 @@ AppAsset::register($this);
 				<li><a class="waves"><span>Privacy &amp; Terms</span></a></li>
 			</ul></nav>
 			<footer>
-			
+
 			        <!-- The languageChooser only works for those that aren't logged in -->
 				<?php echo \humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?php echo Html::encode(Yii::$app->name); ?></p>
@@ -109,7 +111,7 @@ AppAsset::register($this);
 	</div>
 
 	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
-              
+
 		<!-- start: show content (and check, if exists a sublayout -->
 		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
 			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
@@ -127,46 +129,46 @@ AppAsset::register($this);
 </div>
 
     </div>
-    
+
     <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
 
-		<ul class="nav nav-sm navbar-tool pull-right">
-			<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
-			<?php
-			echo \humhub\widgets\NotificationArea::widget(['widgets' => [
-				[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
-			]]);
-			?>
+<ul class="nav nav-sm navbar-tool pull-right">
+	<?php echo \humhub\widgets\TopMenuRightStack::widget(); ?>
+	<?php
+	echo \humhub\widgets\NotificationArea::widget(['widgets' => [
+		[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]],
+	]]);
+	?>
 
-					<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
-		</ul>
-	</div>
-
-	<div class="box-row"><div class="box-cell"><div class="box-inner padding">
-              
-		<!-- start: show content (and check, if exists a sublayout -->
-		<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
-			<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
-		<?php else: ?>
-			<?php echo $content; ?>
-		<?php endif; ?>
-		<!-- end: show content -->
-
-		<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
-
-	</div>
-    </div>
-  </div>
-
- </div>
+			<?php echo \humhub\modules\space\widgets\Chooser::widget(); ?>
+</ul>
 </div>
 
-    </div>
-    
-    <?php $this->endBody() ?>
-    </body>
+<div class="box-row"><div class="box-cell"><div class="box-inner padding">
+
+<!-- start: show content (and check, if exists a sublayout -->
+<?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
+	<?php echo $this->render($this->context->subLayout, array('content' => $content)); ?>
+<?php else: ?>
+	<?php echo $content; ?>
+<?php endif; ?>
+<!-- end: show content -->
+
+<?php echo \humhub\widgets\LayoutAddons::widget(); ?>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<?php $this->endBody() ?>
+</body>
 </html>
 <?php $this->endPage() ?>
