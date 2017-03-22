@@ -2096,7 +2096,7 @@ ul.tag_input.focus {
   padding: 20px;
   background: #f8f8f8;
 }
-..langSwitcher {
+.langSwitcher {
   display: inline-block;
 }
 // Flash message after saving
@@ -7812,14 +7812,14 @@ textarea {
 // --------------------------------------------------
 
 .status-bar-body {
-    color: white; 
-    position: fixed; 
-    width: 100%; 
-    background-color: rgba(0, 0, 0, 0.7); 
-    text-align: center; 
+    color: white;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
     padding: 20px;
-    z-index: 9999999; 
-    bottom: 0px; 
+    z-index: 9999999;
+    bottom: 0px;
     display: block;
     line-height:20px;
 }
