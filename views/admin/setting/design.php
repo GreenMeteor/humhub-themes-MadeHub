@@ -1,7 +1,8 @@
 <?php
 
+use yii;
 use yii\widgets\ActiveForm;
-use humhub\compat\CHtml;
+use yii\helper\Html;
 use yii\helpers\Url;
 
 \humhub\modules\admin\assets\AdminAsset::register($this);
