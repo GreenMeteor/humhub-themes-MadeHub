@@ -1,5 +1,4 @@
-<?php
-echo humhub\widgets\RichtextField::widget([
+<?= humhub\widgets\RichtextField::widget([
    'id' =>  'contentForm_message',
    'placeholder' => Yii::t("PostModule.widgets_views_postForm", "What's on your mind?"),
     'name' => 'message',
