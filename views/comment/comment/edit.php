@@ -1,18 +1,17 @@
 <?php
 
-use humhub\compat\CActiveForm;
+use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 ?>
 
 <div class="content_edit input-container" id="comment_edit_<?= $comment->id; ?>">
-    <?php $form = CActiveForm::begin(); ?>
-    <?php echo Html::hiddenInput('contentModel', $contentModel); ?>
-    <?php echo Html::hiddenInput('contentId', $contentId); ?>
+    <?php $form = ActiveForm::begin(); ?>
+    <?= Html::hiddenInput('contentModel', $contentModel); ?>
+    <?= Html::hiddenInput('contentId', $contentId); ?>
   
-    <?php
-    echo humhub\widgets\RichtextField::widget([
+    <?= humhub\widgets\RichtextField::widget([
             'id' => 'comment_input_'.$comment->id,
             'placeholder' => Yii::t('CommentModule.views_edit', 'Edit your comment...'),
             'model' => $comment,
@@ -21,8 +20,7 @@ use yii\helpers\Url;
 
     <div class="comment-buttons">
 
-        <?php
-        echo \humhub\modules\file\widgets\UploadButton::widget([
+        <?= \humhub\modules\file\widgets\UploadButton::widget([
             'id' => 'comment_upload_' . $comment->id,
             'model' => $comment,
             'dropZone' => '#comment_'.$comment->id,
@@ -44,13 +42,12 @@ use yii\helpers\Url;
     
     <div id="comment_upload_progress_<?= $comment->id ?>" style="display:none;margin:10px 0px;"></div>
     
-    <?php
-    echo \humhub\modules\file\widgets\FilePreview::widget([
+    <?= \humhub\modules\file\widgets\FilePreview::widget([
         'id' => 'comment_upload_preview_'.$comment->id,
         'options' => ['style' => 'margin-top:10px'],
         'model' => $comment,
         'edit' => true
     ])?>
 
-    <?php CActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 </div>
