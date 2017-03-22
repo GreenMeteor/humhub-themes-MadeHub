@@ -11,7 +11,7 @@ $this->registerJsConfig('notification', [
     ]
 ]);
 ?>
-<div id="notification_widget" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?php echo \yii\helpers\Json::encode($update); ?>' class="btn-group">
+<div id="notification_widget" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?= \yii\helpers\Json::encode($update); ?>' class="btn-group">
     <a href="#" id="icon-notifications" data-action-click='toggle' data-toggle="dropdown" >
         <i class="fa fa-bell"></i>
     </a>
@@ -23,19 +23,19 @@ $this->registerJsConfig('notification', [
         <li class="dropdown-header">
             <div class="arrow"></div><?php echo Yii::t('NotificationModule.widgets_views_list', 'Notifications'); ?>
             <div class="dropdown-header-link">
-                <a id="mark-seen-link" data-action-click='markAsSeen' data-action-url="<?php echo Url::to(['/notification/list/mark-as-seen']); ?>">
+                <a id="mark-seen-link" data-action-click='markAsSeen' data-action-url="<?= Url::to(['/notification/list/mark-as-seen']); ?>">
                     <?php echo Yii::t('NotificationModule.widgets_views_list', 'Mark all as seen'); ?>
                 </a>
             </div>
         </li>
         <ul class="media-list"></ul>
         <li id="loader_notifications">
-            <?php echo \humhub\widgets\LoaderWidget::widget(); ?>
+            <?= \humhub\widgets\LoaderWidget::widget(); ?>
         </li>
         <li>
             <div class="dropdown-footer">
-                <a class="btn btn-default col-md-12" href="<?php echo Url::to(['/notification/overview']); ?>">
-                    <?php echo Yii::t('NotificationModule.widgets_views_list', 'Show all notifications'); ?>
+                <a class="btn btn-default col-md-12" href="<?= Url::to(['/notification/overview']); ?>">
+                    <?= Yii::t('NotificationModule.widgets_views_list', 'Show all notifications'); ?>
                 </a>
             </div>
         </li>
