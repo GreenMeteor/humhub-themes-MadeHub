@@ -15,7 +15,7 @@ $object = $this->context->object;
         <?php foreach ($files as $file): ?>
             <?php if ($previewImage->applyFile($file)): ?>
                 <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>"  href="<?= $file->getUrl(); ?>#.jpeg">
-                    <?php echo $previewImage->render(); ?>
+                    <?= $previewImage->render(); ?>
                 </a>
             <?php endif; ?>
         <?php endforeach; ?>
@@ -39,7 +39,7 @@ $object = $this->context->object;
 
     <!-- Show List of all files -->
     <hr>
-    <?php echo \humhub\modules\file\widgets\FilePreview::widget([
+    <?= \humhub\modules\file\widgets\FilePreview::widget([
         'hideImageFileInfo' => $hideImageFileInfo,
         'model' => $object,
     ]);?>
