@@ -1,14 +1,14 @@
 <?php
 
-use humhub\compat\CActiveForm;
+use yii;
+use yii\widgets\ActiveForm;
 
 ?>
 <div class="content content_edit" id="post_edit_<?php echo $post->id; ?>">
-    <?php $form = CActiveForm::begin(['id' => 'post-edit-form_' . $post->id]); ?>
+    <?php $form = ActiveForm::begin(['id' => 'post-edit-form_' . $post->id]); ?>
 
     <!-- create contenteditable div for HEditorWidget to place the data -->
-        <?php
-    echo humhub\widgets\RichtextField::widget([
+        <?= humhub\widgets\RichtextField::widget([
             'id' => 'post_input_'. $post->id,
             'placeholder' => Yii::t('PostModule.views_edit', 'Edit your post...'),
             'model' => $post,
@@ -17,8 +17,7 @@ use humhub\compat\CActiveForm;
 
     <div class="comment-buttons">
 
-        <?php
-        echo \humhub\modules\file\widgets\UploadButton::widget([
+        <?= \humhub\modules\file\widgets\UploadButton::widget([
             'id' => 'post_upload_' . $post->id,
             'model' => $post,
             'dropZone' => '#post_edit_' . $post->id . ':parent',
@@ -30,15 +29,14 @@ use humhub\compat\CActiveForm;
 
         <!-- editSubmit action of surrounding StreamEntry component -->
         <button type="submit" class="btn btn-default btn-sm btn-comment-submit" data-ui-loader data-action-click="editSubmit" data-action-url="<?php echo $post->content->container->createUrl('/post/post/edit', ['id' => $post->id]) ?>">
-<?php echo Yii::t('PostModule.views_edit', 'Save') ?>
+        <?= Yii::t('PostModule.views_edit', 'Save') ?>
         </button>
 
     </div>
 
     <div id="post_upload_progress_<?php echo $post->id ?>" style="display:none;margin:10px 0px;"></div>
 
-    <?php
-    echo \humhub\modules\file\widgets\FilePreview::widget([
+    <?= \humhub\modules\file\widgets\FilePreview::widget([
         'id' => 'post_upload_preview_' . $post->id,
         'options' => ['style' => 'margin-top:10px'],
         'model' => $post,
@@ -46,5 +44,5 @@ use humhub\compat\CActiveForm;
     ])
     ?>
 
-<?php CActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 </div>
