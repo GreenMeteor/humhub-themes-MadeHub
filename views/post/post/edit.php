@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 
     <!-- create contenteditable div for HEditorWidget to place the data -->
         <?= humhub\widgets\RichtextField::widget([
-            'id' => 'post_input_'. $post->id,
+            'id' => 'post_input_' . $post->id,
             'placeholder' => Yii::t('PostModule.views_edit', 'Edit your post...'),
             'model' => $post,
             'attribute' => 'message'

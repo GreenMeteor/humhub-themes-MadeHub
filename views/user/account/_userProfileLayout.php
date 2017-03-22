@@ -1,5 +1,5 @@
 <?php 
- humhub\assets\TabbedFormAsset::register($this);
+    humhub\assets\TabbedFormAsset::register($this);
 ?>
 
 <div class="panel-heading">
