@@ -1,7 +1,8 @@
 <?php
 
+use yii;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 ?>
 
 <div class="modal-dialog">
@@ -11,17 +12,17 @@ use yii\widgets\ActiveForm;
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title"
-                id="myModalLabel"><?php echo Yii::t("MailModule.views_mail_create", "New message"); ?></h4>
+                id="myModalLabel"><?= Yii::t("MailModule.views_mail_create", "New message"); ?></h4>
         </div>
         <div class="modal-body">
 
-            <?php echo $form->errorSummary($model); ?>
+            <?= $form->errorSummary($model); ?>
 
             <div class="form-group">
-                <?php echo $form->field($model, 'recipient', ['inputOptions' => ['id' => 'recipient']]); ?>
+                <?= $form->field($model, 'recipient', ['inputOptions' => ['id' => 'recipient']]); ?>
             </div>
 
-            <?php echo \humhub\modules\user\widgets\UserPicker::widget(array(
+            <?= \humhub\modules\user\widgets\UserPicker::widget(array(
                 'inputId' => 'recipient',
                 'model' => $model,
                 'attribute' => 'recipient',
@@ -37,13 +38,13 @@ use yii\widgets\ActiveForm;
             </div>
 
             <div class="form-group">
-                <?php echo $form->field($model, 'message', ['inputOptions' => ['class' => 'form-control', 'id' => 'newMessageText']])->textarea(); ?>
-                <?php echo \humhub\widgets\MarkdownEditor::widget(array('fieldId' => 'newMessageText')); ?>
+                <?= $form->field($model, 'message', ['inputOptions' => ['class' => 'form-control', 'id' => 'newMessageText']])->textarea(); ?>
+                <?= \humhub\widgets\MarkdownEditor::widget(array('fieldId' => 'newMessageText')); ?>
             </div>
 
         </div>
         <div class="modal-footer">
-            <?php echo \humhub\widgets\AjaxButton::widget([
+            <?= \humhub\widgets\AjaxButton::widget([
                 'label' => Yii::t('MailModule.views_mail_create', 'Send'),
                 'ajaxOptions' => [
                     'type' => 'POST',
@@ -57,7 +58,7 @@ use yii\widgets\ActiveForm;
             ]);
             ?>
 
-            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo Yii::t('MailModule.views_mail_create', 'Close'); ?></button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><?= Yii::t('MailModule.views_mail_create', 'Close'); ?></button>
 
         </div>
 
