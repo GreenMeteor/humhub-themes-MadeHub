@@ -1,20 +1,11 @@
 <?php
-/**
- * @link https://www.humhub.org/
- * @copyright Copyright (c) 2016 HumHub GmbH & Co. KG
- * @license https://www.humhub.com/licences
- */
+
 namespace humhub\modules\content\widgets;
+
 use Yii;
 use humhub\components\Widget;
 use humhub\modules\space\models\Space;
-/**
- * WallEntry is responsible to show a content inside a stream/wall.
- * 
- * @see \humhub\modules\content\components\ContentActiveRecord
- * @since 0.20
- * @author luke
- */
+
 class WallEntry extends Widget
 {
     /**
