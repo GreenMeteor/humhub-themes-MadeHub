@@ -1702,6 +1702,8 @@ table td a:hover {
   top: -3px;
 }
 .comment.guest-mode .media:last-child .wall-entry-controls {
+  /* Important since 1.2 */
+  display:inline-block;
   margin-bottom: 0;
 }
 .comment.guest-mode .media:last-child hr {
@@ -2094,12 +2096,13 @@ ul.tag_input.focus {
   padding: 20px;
   background: #f8f8f8;
 }
-.langSwitcher {
+..langSwitcher {
   display: inline-block;
 }
+// Flash message after saving
 .data-saved {
   padding-left: 10px;
-  color: #6fdbe8;
+  color: @info;
 }
 .wallFilterPanel li {
   font-size: 11px;
@@ -2252,30 +2255,40 @@ textarea.placeholder {
   padding-right: 15px;
   text-align: right;
 }
+// atwho Plugin
 .atwho-view .cur {
-  border-left: 3px solid #6fdbe8;
+  border-left: 3px solid @info;
   background-color: #f7f7f7 !important;
 }
+
 .atwho-user,
 .atwho-space,
 .atwho-input a {
-  color: #6fdbe8;
+  color: @info;
 }
+
 .atwho-input a:hover {
-  color: #6fdbe8;
+  color: @info;
 }
+
 .atwho-view strong {
   background-color: #f9f0d2;
 }
+
 .atwho-view .cur strong {
   background-color: #f9f0d2;
 }
-.comment .jp-progress {
-  background-color: #dbdcdd !important;
+
+// jPlayer Extension
+.comment {
+  .jp-progress {
+    background-color: #dbdcdd !important;
+  }
+  .jp-play-bar {
+    background: #cacaca;
+  }
 }
-.comment .jp-play-bar {
-  background: #cacaca;
-}
+// SpinKit (Loader)
 .sk-spinner-three-bounce.sk-spinner {
   margin: 0 auto;
   width: 70px;
@@ -7782,4 +7795,148 @@ textarea {
 	color: rgba(0, 0, 0, 0.53);
 	padding: 0;
 	line-height: 20px;margin: 0
+}
+//
+// V1.2 Changes:
+// --------------------------------------------------
+// --------------------------------------------------
+
+#nprogress .bar {
+    height:2px;
+    background: @info;
+}
+
+
+//
+// Statusbar
+// --------------------------------------------------
+
+.status-bar-body {
+    color: white; 
+    position: fixed; 
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    text-align: center; 
+    padding: 20px;
+    z-index: 9999999; 
+    bottom: 0px; 
+    display: block;
+    line-height:20px;
+}
+
+.status-bar-close {
+    color:white;
+    fonfont-weight:bold;
+    font-size:21px;
+    cursor: pointer;
+}
+
+.status-bar-close:hover {
+    color:white;
+}
+
+.status-bar-close i {
+    vertical-align:top !important;
+    padding-top:3px;
+}
+
+.status-bar-content i {
+    margin-right:10px;
+    font-size:21px;
+    vertical-align:middle;
+}
+
+.status-bar-content .showMore {
+    color: @info;
+    float:right;
+    margin-left:10px;
+    font-size:0.7em;
+    cursor:pointer;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.status-bar-content .status-bar-details {
+    text-align:left;
+    font-size:0.7em;
+    margin-top:20px;
+    max-height:200px;
+    overflow:auto;
+}
+
+.status-bar-content span {
+    vertical-align:middle;
+}
+
+.status-bar-content i.error, .status-bar-content i.fatal {
+    color:@danger;
+}
+
+.status-bar-content i.warning {
+    color:@warning;
+}
+
+.status-bar-content i.info, .status-bar-content i.debug {
+    color:@info;
+}
+
+.status-bar-content i.success {
+    color:#85CA2B;
+}
+
+.stream-entry-loader {
+    float:right;
+    margin-top:5px;
+}
+
+#space-menu-dropdown i.type {
+    font-size:16px;
+    color: #BFBFBF;
+}
+
+#space-menu-spaces [data-space-chooser-item] {
+    cursor: pointer;
+}
+
+#space-menu-dropdown .input-group-addon {
+    border-radius: 0px 4px 4px 0px;
+}
+
+#space-menu-dropdown .input-group-addon.focus {
+    border-radius: 0px 4px 4px 0px;
+    border: 2px solid @info;
+    border-left: 0px;
+}
+
+#space-menu-search {
+    border-right: 0px;
+}
+
+#space-directory-link i {
+    margin-right:0px;
+}
+
+.file-preview-content {
+    cursor: pointer;
+}
+
+.table-middle > thead > tr > th,
+.table-middle > tbody > tr > th,
+.table-middle > tfoot > tr > th,
+.table-middle > thead > tr > td,
+.table-middle > tbody > tr > td,
+.table-middle > tfoot > tr > td {
+    vertical-align: middle !important;
+}
+
+.panel-body > .tab-menu {
+    margin-left:-10px;
+    margin-right:-10px
+}
+
+.permission-grid-editor > .table > tbody > tr:first-child > td {
+    border: none;
+}
+.permission-grid-editor {
+    padding-top:0px;
 }
