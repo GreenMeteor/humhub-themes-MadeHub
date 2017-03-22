@@ -3,11 +3,11 @@
 ?>
 
 <div class="panel-heading">
-    <?php echo Yii::t('UserModule.account', '<strong>Your</strong> profile'); ?> <?php echo \humhub\widgets\DataSaved::widget(); ?>
+    <?= Yii::t('UserModule.account', '<strong>Your</strong> profile'); ?> <?= \humhub\widgets\DataSaved::widget(); ?>
 </div>
 
-<?php echo humhub\modules\user\widgets\AccountProfilMenu::widget(); ?>
+<?= humhub\modules\user\widgets\AccountProfilMenu::widget(); ?>
 
 <div class="panel-body">
-    <?php echo $content; ?>
+    <?php $content; ?>
 </div>
