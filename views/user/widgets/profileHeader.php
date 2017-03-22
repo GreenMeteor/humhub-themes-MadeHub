@@ -65,10 +65,10 @@ if ($isProfileOwner) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="banner-image-upload-edit-button"
                        style="<?php
-                       if (!$user->getProfileBannerImage()->hasImage()) {
-                           echo 'display: none;';
-                       }
-                       ?>"
+                        if (!$user->getProfileBannerImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
                        href="<?= Url::to(['/user/account/crop-banner-image', 'userGuid' => $user->guid]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
@@ -98,9 +98,12 @@ if ($isProfileOwner) {
                          src="<?php echo $user->getProfileImage()->getUrl(); ?>"
                          data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                 </a>
-            <?php else : ?>
+            <?php else {
+    : ?>
                 <img class="img-rounded profile-user-photo" id="user-profile-image"
-                     src="<?= $user->getProfileImage()->getUrl(); ?>"
+                     src="<?= $user->getProfileImage()->getUrl();
+}
+?>"
                      data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                  <?php endif; ?>
 
@@ -125,10 +128,10 @@ if ($isProfileOwner) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="profile-image-upload-edit-button"
                        style="<?php
-                       if (!$user->getProfileImage()->hasImage()) {
-                           echo 'display: none;';
-                       }
-                       ?>"
+                        if (!$user->getProfileImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
                        href="<?php echo Url::to(['/user/account/crop-profile-image', 'userGuid' => $user->guid]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>

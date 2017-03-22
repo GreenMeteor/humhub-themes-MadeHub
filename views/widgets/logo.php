@@ -27,8 +27,11 @@ use yii\helpers\Html;
                  id="img-logo"/>
         </a>
         <br>
-    <?php else: ?>
+    <?php else {
+    : ?>
 
-		<h1 id="app-title" class="animated fadeIn"><?php echo Html::encode(Yii::$app->name); ?></h1>
+		<h1 id="app-title" class="animated fadeIn"><?php echo Html::encode(Yii::$app->name);
+}
+?></h1>
     <?php endif; ?>
 <?php endif; ?>

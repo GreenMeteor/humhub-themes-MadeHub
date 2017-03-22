@@ -107,9 +107,9 @@ class WallEntry extends Widget
     {
         $result = [];
         if (!empty($this->editRoute)) {
-            if($this->editMode === self::EDIT_MODE_INLINE) {
+            if ($this->editMode === self::EDIT_MODE_INLINE) {
                 $result[] = [EditLink::class, ['model' => $this->contentObject, 'url' => $this->getEditUrl()], ['sortOrder' => 200]];
-            } else if($this->editMode === self::EDIT_MODE_MODAL) {
+            } else if ($this->editMode === self::EDIT_MODE_MODAL) {
                 $result[] = [EditLinkModal::class, ['model' => $this->contentObject, 'url' =>$this->getEditUrl()], ['sortOrder' => 200]];
             }
         }

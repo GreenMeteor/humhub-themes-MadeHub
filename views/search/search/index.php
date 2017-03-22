@@ -32,7 +32,7 @@ use humhub\modules\content\components\ContentContainerActiveRecord;
                                     <br>
                                     <?php echo  Yii::t('SearchModule.views_search_index', 'Search only in certain spaces:'); ?>
                                     <?php
-					echo \humhub\modules\space\widgets\SpacePickerField::widget([
+                    echo \humhub\modules\space\widgets\SpacePickerField::widget([
                                         'id' => 'space_filter',
                                         'model' => $model,
                                         'attribute' => 'limitSpaceGuids',
@@ -106,16 +106,22 @@ use humhub\modules\content\components\ContentContainerActiveRecord;
 
                             <?php if ($result instanceof ContentActiveRecord || $result instanceof ContentContainerActiveRecord) : ?>
                                 <?php echo $result->getWallOut(); ?>
-                            <?php else: ?>
-                                No Output for Class <?php echo get_class($result); ?>
+                            <?php else {
+    : ?>
+                                No Output for Class <?php echo get_class($result);
+}
+?>
                             <?php endif; ?>
                         <?php endforeach; ?>
-                    <?php else: ?>
+                    <?php else {
+    : ?>
 
 
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <p><strong><?php echo Yii::t('SearchModule.views_search_index', 'Your search returned no matches.'); ?></strong></p>
+                                <p><strong><?php echo Yii::t('SearchModule.views_search_index', 'Your search returned no matches.');
+}
+?></strong></p>
                             </div>
                         </div>
                     <?php endif; ?>

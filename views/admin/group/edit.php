@@ -16,7 +16,7 @@ use humhub\modules\space\widgets\SpacePickerField;
 
     <?php if (!$group->is_admin_group): ?>
         <?php
-     echo SpacePickerField::widget([
+        echo SpacePickerField::widget([
             'form' => $form,
             'model' => $group,
             'attribute' => 'defaultSpaceGuid',
@@ -29,7 +29,7 @@ use humhub\modules\space\widgets\SpacePickerField;
     <?php if ($isManagerApprovalSetting && !$group->is_admin_group): ?>
         <?php $url = ($group->isNewRecord) ? null : Url::to(['/admin/group/admin-user-search', 'id' => $group->id]); ?>
         <?php
-     echo  UserPickerField::widget([
+        echo  UserPickerField::widget([
             'form' => $form,
             'model' => $group,
             'attribute' => 'managerGuids',

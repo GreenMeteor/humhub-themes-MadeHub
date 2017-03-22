@@ -1,6 +1,5 @@
 <?php
 
-use yii;
 use yii\helpers\Html;
 use humhub\modules\space\models\Space;
 

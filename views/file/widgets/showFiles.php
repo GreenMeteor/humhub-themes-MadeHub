@@ -42,7 +42,7 @@ $object = $this->context->object;
     <?= \humhub\modules\file\widgets\FilePreview::widget([
         'hideImageFileInfo' => $hideImageFileInfo,
         'model' => $object,
-    ]);?>
+    ]); ?>
     
 </div>
 <?php endif; ?>
