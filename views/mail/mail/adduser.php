@@ -10,12 +10,12 @@ use yii\widgets\ActiveForm;
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title"
-                id="myModalLabel"><?php echo Yii::t("MailModule.views_mail_adduser", "Add more participants to your conversation..."); ?></h4>
+                id="myModalLabel"><?= Yii::t("MailModule.views_mail_adduser", "Add more participants to your conversation..."); ?></h4>
         </div>
         <div class="modal-body">
 
             <div class="form-group">
-                <?php echo $form->field($inviteForm, 'recipient', ['inputOptions' => ['id' => 'addUserFrom_mail']]); ?>
+                <?= $form->field($inviteForm, 'recipient', ['inputOptions' => ['id' => 'addUserFrom_mail']]); ?>
             </div>
 
             <?php
@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
             ?>
         </div>
         <div class="modal-footer">
-            <?php echo \humhub\widgets\AjaxButton::widget([
+            <?= \humhub\widgets\AjaxButton::widget([
                 'label' => Yii::t('MailModule.views_mail_adduser', 'Send'),
                 'ajaxOptions' => [
                     'type' => 'POST',
@@ -58,7 +58,7 @@ use yii\widgets\ActiveForm;
             ]);
             ?>
             <button type="button" class="btn btn-primary"
-                    data-dismiss="modal"><?php echo Yii::t('MailModule.views_mail_adduser', 'Close'); ?></button>
+                    data-dismiss="modal"><?= Yii::t('MailModule.views_mail_adduser', 'Close'); ?></button>
 
         </div>
 
