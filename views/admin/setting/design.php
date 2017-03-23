@@ -1,7 +1,7 @@
 <?php
 
 use yii;
-use yii\widgets\ActiveForm;
+use yii\bootstrao\ActiveForm;
 use yii\helper\Html;
 use yii\helpers\Url;
 
@@ -17,9 +17,9 @@ $this->registerJsConfig('admin', [
 ?>
 
 <div class="panel-body">
-    <h4><?php echo Yii::t('AdminModule.setting', 'Appearance Settings'); ?></h4>
+    <h4><?= Yii::t('AdminModule.setting', 'Appearance Settings'); ?></h4>
     <div class="help-block">
-        <?php echo Yii::t('AdminModule.setting', 'These settings refer to the appearance of your social network.'); ?>
+        <?= Yii::t('AdminModule.setting', 'These settings refer to the appearance of your social network.'); ?>
     </div>
     
     <br />
@@ -27,13 +27,13 @@ $this->registerJsConfig('admin', [
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
 
-    <?php echo $form->field($model, 'theme')->dropDownList($themes); ?>
+    <?= $form->field($model, 'theme')->dropDownList($themes); ?>
 
-    <?php echo $form->field($model, 'paginationSize'); ?>
+    <?= $form->field($model, 'paginationSize'); ?>
 
-    <?php echo $form->field($model, 'displayName')->dropDownList(['{username}' => Yii::t('AdminModule.views_setting_design', 'Username (e.g. john)'), '{profile.firstname} {profile.lastname}' => Yii::t('AdminModule.views_setting_design', 'Firstname Lastname (e.g. John Doe)')]); ?>
+    <?= $form->field($model, 'displayName')->dropDownList(['{username}' => Yii::t('AdminModule.views_setting_design', 'Username (e.g. john)'), '{profile.firstname} {profile.lastname}' => Yii::t('AdminModule.views_setting_design', 'Firstname Lastname (e.g. John Doe)')]); ?>
 
-    <?php echo $form->field($model, 'spaceOrder')->dropDownList(['0' => Yii::t('AdminModule.views_setting_design', 'Alphabetical'), '1' => Yii::t('AdminModule.views_setting_design', 'Last visit')]); ?>
+    <?= $form->field($model, 'spaceOrder')->dropDownList(['0' => Yii::t('AdminModule.views_setting_design', 'Alphabetical'), '1' => Yii::t('AdminModule.views_setting_design', 'Last visit')]); ?>
 
     <?php
     echo $form->field($model, 'dateInputDisplayFormat')->dropDownList([
@@ -41,18 +41,18 @@ $this->registerJsConfig('admin', [
         'php:d/m/Y' => Yii::t('AdminModule.views_setting_design', 'Fixed format (mm/dd/yyyy) - Example: {example}', ['{example}' => Yii::$app->formatter->asDate(time(), 'php:d/m/Y')]),
     ]);
     ?>
-    <strong><?php echo Yii::t('AdminModule.views_setting_index', 'Wall entry layout'); ?></strong>
+    <strong><?= Yii::t('AdminModule.views_setting_index', 'Wall entry layout'); ?></strong>
     <br>
     <br>
-    <?php echo $form->field($model, 'horImageScrollOnMobile')->checkbox(); ?>
+    <?= $form->field($model, 'horImageScrollOnMobile')->checkbox(); ?>
 
-    <?php echo $form->field($model, 'logo')->fileInput(['id' => 'admin-logo-file-upload', 'data-action-change' => 'admin.changeLogo', 'style' => 'display: none', 'name' => 'logo[]']); ?>
+    <?= $form->field($model, 'logo')->fileInput(['id' => 'admin-logo-file-upload', 'data-action-change' => 'admin.changeLogo', 'style' => 'display: none', 'name' => 'logo[]']); ?>
 
     <div class="well">
         <div class="image-upload-container" id="logo-upload">
             <img class="img-rounded" id="logo-image" src="<?= ($logo->hasImage()) ? $logo->getUrl() : '' ?>"
                  data-src="holder.js/140x140"
-                 alt="<?php echo Yii::t('AdminModule.views_setting_index', "You're using no logo at the moment. Upload your logo now."); ?>"
+                 alt="<?= Yii::t('AdminModule.views_setting_index', "You're using no logo at the moment. Upload your logo now."); ?>"
                  style="max-height: 40px;"/>
 
             <div class="image-upload-buttons" id="logo-upload-buttons" style="display: block;">
@@ -61,14 +61,14 @@ $this->registerJsConfig('admin', [
 
                 <a id="admin-delete-logo-image" href="#" style="<?= ($logo->hasImage()) ? '' : 'display:none' ?>" class="btn btn-danger btn-sm"
                     data-action-click="admin.deletePageLogo" 
-                    data-action-url="<?php echo Url::to(['/admin/setting/delete-logo-image']) ?>" ><i class="fa fa-times"></i></a>
+                    data-action-url="<?= Url::to(['/admin/setting/delete-logo-image']) ?>" ><i class="fa fa-times"></i></a>
             </div>
         </div>
     </div>
 
     <hr>
-    <?php echo CHtml::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
+    <?= Html::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
-    <?php echo \humhub\widgets\DataSaved::widget(); ?>
+    <?= \humhub\widgets\DataSaved::widget(); ?>
     <?php ActiveForm::end(); ?>
 </div>
