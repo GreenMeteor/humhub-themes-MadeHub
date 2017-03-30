@@ -10,7 +10,7 @@ use yii\helpers\Html;
 ?>
 <?php $this->beginPage() ?>
 <!doctype html>
-<html lang="<?php echo Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,7 +23,7 @@ use yii\helpers\Html;
 
         <!-- end: Mobile Specific -->
         <?= Html::csrfMetaTags() ?>
-        <?php $this->head() ?>
+        <?= $this->head() ?>
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -36,7 +36,7 @@ use yii\helpers\Html;
         <![endif]-->
 
         <!-- start: render additional head (css and js files) -->
-        <?php echo $this->render('head'); ?>
+        <?= $this->render('head'); ?>
         <!-- end: render additional head -->
 </head>
 
