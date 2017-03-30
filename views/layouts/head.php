@@ -1,13 +1,13 @@
 <!-- start: Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-<link href="<?php echo $this->theme->getBaseUrl() . '/fonts/material-icons.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/fonts/material-icons.css'; ?>" rel="stylesheet">
 <!-- end: Font -->
 
 <!-- start: CSS -->
-<link href="<?php echo $this->theme->getBaseUrl() . '/css/theme.css'; ?>" rel="stylesheet">
-<link href="<?php echo $this->theme->getBaseUrl() . '/css/tidy.css'; ?>" rel="stylesheet">
-<link href="<?php echo $this->theme->getBaseUrl() . '/css/jquery.mCustomScrollbar.min.css'; ?>" rel="stylesheet">
-<link href="<?php echo $this->theme->getBaseUrl() . '/css/waves.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/theme.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/tidy.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/jquery.mCustomScrollbar.min.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/waves.css'; ?>" rel="stylesheet">
 <!-- end: CSS -->
 
 <!-- start: Favicon and Touch Icons -->
