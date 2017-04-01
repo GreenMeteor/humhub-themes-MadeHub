@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 if ($messageId != "") {
-    $this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
+    $this->registerJs('loadMessage(' . Html::encode($messageId) . ');
 }
 ?>
 	<div class="row">
