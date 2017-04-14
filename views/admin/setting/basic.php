@@ -1,7 +1,6 @@
 <?php
 
 use yii\helper\Html;
-use humhub\compat\CActiveForm;
 
 ?>
 
@@ -13,7 +12,7 @@ use humhub\compat\CActiveForm;
 
     <br />
 
-    <?php $form = CActiveForm::begin(); ?>
+    <?php $form = \yii\widgets\ActiveForm::begin(); ?>
 
     <?php echo $form->field($model, 'name'); ?>
 
@@ -58,5 +57,5 @@ use humhub\compat\CActiveForm;
     <!-- show flash message after saving -->
     <?php \humhub\widgets\DataSaved::widget(); ?>
 
-    <?php CActiveForm::end(); ?>
+    <?php \yii\widgets\ActiveForm::end(); ?>
 </div>
