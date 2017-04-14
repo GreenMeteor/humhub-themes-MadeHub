@@ -1,5 +1,6 @@
-<?php 
-    humhub\assets\TabbedFormAsset::register($this);
+<?php
+
+humhub\assets\TabbedFormAsset::register($this);
 ?>
 
 <div class="panel-heading">
@@ -9,5 +10,5 @@
 <?= humhub\modules\user\widgets\AccountProfilMenu::widget(); ?>
 
 <div class="panel-body">
-    <?php $content; ?>
+    <?= $content; ?>
 </div>
