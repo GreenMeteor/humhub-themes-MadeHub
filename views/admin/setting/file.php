@@ -1,7 +1,6 @@
 <?php
 
-use yii;
-use yii\bootstrap\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use humhub\models\Setting;
 use yii\helpers\Url;
@@ -10,7 +9,7 @@ use yii\helpers\Url;
 
 
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = CActiveForm::begin(); ?>
 
 <?= $form->errorSummary($model); ?>
 
@@ -75,6 +74,6 @@ use yii\helpers\Url;
 <?= Html::submitButton(Yii::t('AdminModule.views_setting_file', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
 <?= \humhub\widgets\DataSaved::widget(); ?>
-<?php ActiveForm::end(); ?>
+<?php CActiveForm::end(); ?>
 
 <?php $this->endContent(); ?>
