@@ -1,6 +1,5 @@
 <?php
 
-use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use humhub\modules\user\models\User;
 ?>
@@ -9,7 +8,7 @@ use humhub\modules\user\models\User;
     <?= Yii::t('AdminModule.views_setting_mailing', 'Define the default behaviour for sending user e-mails. These settings can be overwritten by users in their account settings.'); ?>
 </div>
 
-<?php $form = CActiveForm::begin(); ?>
+<?php $form = \yii\widgets\ActiveForm::begin(); ?>
 
 <?= $form->errorSummary($model); ?>
 
@@ -44,6 +43,6 @@ use humhub\modules\user\models\User;
 <?= Html::submitButton(Yii::t('AdminModule.views_setting_mailing', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
 <?= \humhub\widgets\DataSaved::widget(); ?>
-<?php CActiveForm::end(); ?>
+<?php \yii\widgets\ActiveForm::end(); ?>
 
 <?php $this->endContent(); ?>
