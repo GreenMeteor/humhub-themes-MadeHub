@@ -1,15 +1,15 @@
 <?php
 
-use yii;
-    humhub\assets\TabbedFormAsset::register($this);
+humhub\assets\TabbedFormAsset::register($this);
+humhub\modules\user\widgets\AccountMenu::markAsActive(['/user/account/edit-settings']);
 ?>
 
 <div class="panel-heading">
     <?= Yii::t('UserModule.account', '<strong>User</strong> settings'); ?> <?= \humhub\widgets\DataSaved::widget(); ?>
 </div>
 
-<?php // humhub\modules\user\widgets\AccountSettingsMenu::widget(); ?>
+<?= humhub\modules\user\widgets\AccountSettingsMenu::widget(); ?>
 
 <div class="panel-body">
-    <?php $content; ?>
+    <?= $content; ?>
 </div>
