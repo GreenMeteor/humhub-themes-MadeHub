@@ -2,20 +2,19 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
-use humhub\compat\CActiveForm;
 use humhub\modules\user\widgets\UserPickerField;
 use humhub\modules\space\widgets\SpacePickerField;
 ?>
 
 <?php $this->beginContent('@admin/views/group/_manageLayout.php', ['group' => $group]) ?>
 <div class="panel-body">
-    <?php $form = CActiveForm::begin(); ?>
+    <?php $form = \yii\widgets\ActiveForm::begin(); ?>
     <?= $form->field($group, 'name'); ?>
     <?= $form->field($group, 'description')->textarea(['rows' => 5]); ?>
 
     <?php if (!$group->is_admin_group): ?>
         <?=
-    SpacePickerField::widget([
+           SpacePickerField::widget([
             'form' => $form,
             'model' => $group,
             'attribute' => 'defaultSpaceGuid',
@@ -28,7 +27,7 @@ use humhub\modules\space\widgets\SpacePickerField;
     <?php if ($isManagerApprovalSetting && !$group->is_admin_group): ?>
         <?php $url = ($group->isNewRecord) ? null : Url::to(['/admin/group/admin-user-search', 'id' => $group->id]); ?>
         <?=
-    UserPickerField::widget([
+           UserPickerField::widget([
             'form' => $form,
             'model' => $group,
             'attribute' => 'managerGuids',
@@ -50,9 +49,9 @@ use humhub\modules\space\widgets\SpacePickerField;
 
     <?php
     if ($showDeleteButton) {
-        echo Html::a(Yii::t('AdminModule.views_group_edit', 'Delete'), Url::toRoute(['/admin/group/delete', 'id' => $group->id]), array('class' => 'btn btn-danger', 'data-method' => 'POST'));
+        echo Html::a(Yii::t('AdminModule.views_group_edit', 'Delete'), Url::to(['/admin/group/delete', 'id' => $group->id]), array('class' => 'btn btn-danger', 'data-method' => 'POST'));
     }
     ?>
-<?php CActiveForm::end(); ?>
+<?php \yii\widgets\ActiveForm::end(); ?>
 </div>
 <?php $this->endContent(); ?>
