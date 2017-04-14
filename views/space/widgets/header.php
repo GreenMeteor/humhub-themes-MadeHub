@@ -40,7 +40,7 @@ if ($space->isAdmin()) {
                 ?>
 
                 <div class="image-upload-loader" id="banner-image-upload-loader"
-                     style="padding: <?php $padding ?>;">
+                     style="padding: <?= $padding ?>;">
                     <div class="progress image-upload-progess-bar" id="banner-image-upload-bar">
                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="00"
                              aria-valuemin="0"
@@ -66,14 +66,15 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="banner-image-upload-edit-button"
                        style="<?php
-                        if (!$space->getProfileBannerImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
-                       href="<?php echo $space->createUrl('/space/manage/image/crop-banner'); ?>"
+                       if (!$space->getProfileBannerImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
+                       href="<?= $space->createUrl('/space/manage/image/crop-banner'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
-                        <?= humhub\widgets\ModalConfirm::widget(array(
+                        <?=
+                           humhub\widgets\ModalConfirm::widget(array(
                             'uniqueID' => 'modal_bannerimagedelete',
                             'linkOutput' => 'a',
                             'title' => Yii::t('SpaceModule.widgets_views_deleteBanner', '<strong>Confirm</strong> image deleting'),
@@ -99,11 +100,8 @@ if ($space->isAdmin()) {
                 <a data-ui-gallery="spaceHeader" href="<?= $space->profileImage->getUrl('_org'); ?>">
                        <?= \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
                 </a>
-            <?php else {
-    : ?>
-                <?= \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]);
-}
-?>
+            <?php else : ?>
+                <?= \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
             <?php endif; ?>
 
             <!-- check if the current user is the profile owner and can change the images -->
@@ -127,14 +125,15 @@ if ($space->isAdmin()) {
                             class="fa fa-cloud-upload"></i></a>
                     <a id="profile-image-upload-edit-button"
                        style="<?php
-                        if (!$space->getProfileImage()->hasImage()) {
-                            echo 'display: none;';
-                        }
-                        ?>"
-                       href="<?php echo $space->createUrl('/space/manage/image/crop'); ?>"
+                       if (!$space->getProfileImage()->hasImage()) {
+                           echo 'display: none;';
+                       }
+                       ?>"
+                       href="<?= $space->createUrl('/space/manage/image/crop'); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
-                        <?= humhub\widgets\ModalConfirm::widget(array(
+                        <?=
+                           humhub\widgets\ModalConfirm::widget(array(
                             'uniqueID' => 'modal_profileimagedelete',
                             'linkOutput' => 'a',
                             'title' => Yii::t('SpaceModule.widgets_views_deleteImage', '<strong>Confirm</strong> image deleting'),
@@ -165,18 +164,18 @@ if ($space->isAdmin()) {
                     <div class="statistics pull-left">
 
                         <div class="pull-left entry">
-                            <span class="count"><?php echo $postCount; ?></span></a>
+                            <span class="count"><?= $postCount; ?></span></a>
                             <br>
                             <span
                                 class="title"><?= Yii::t('SpaceModule.widgets_views_profileHeader', 'Posts'); ?></span>
                         </div>
 
-                        <a href="<?php echo $space->createUrl('/space/membership/members-list'); ?>" data-target="#globalModal">
+                        <a href="<?= $space->createUrl('/space/membership/members-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
                                 <span class="count"><?= $space->getMemberships()->count(); ?></span>
                                 <br>
                                 <span
-                                    class="title"><?php echo Yii::t('SpaceModule.widgets_views_profileHeader', 'Members'); ?></span>
+                                    class="title"><?= Yii::t('SpaceModule.widgets_views_profileHeader', 'Members'); ?></span>
                             </div>
                         </a>
 
@@ -192,7 +191,8 @@ if ($space->isAdmin()) {
                     <!-- end: User statistics -->
 
                     <div class="controls controls-header pull-right">
-                        <?= humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
+                        <?=
+                           humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
                                 [\humhub\modules\space\widgets\InviteButton::className(), ['space' => $space], ['sortOrder' => 10]],
                                 [\humhub\modules\space\widgets\MembershipButton::className(), ['space' => $space], ['sortOrder' => 20]],
                                 [\humhub\modules\space\widgets\FollowButton::className(), [
@@ -202,7 +202,8 @@ if ($space->isAdmin()) {
                                     ['sortOrder' => 30]]
                         ]]);
                         ?>
-                        <?= humhub\modules\space\widgets\HeaderControlsMenu::widget([
+                        <?=
+                        humhub\modules\space\widgets\HeaderControlsMenu::widget([
                             'space' => $space,
                             'template' => '@humhub/widgets/views/dropdownNavigation'
                         ]);
