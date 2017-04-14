@@ -3,14 +3,14 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use humhub\widgets\GridView;
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
 
 \humhub\modules\admin\assets\AdminGroupAsset::register($this);
 ?>
 
 <?php $this->beginContent('@admin/views/group/_manageLayout.php', ['group' => $group]) ?>
 <div class="panel-body">
-    <?php $form = ActiveForm::begin(['action' => ['/admin/group/add-members']]); ?>
+    <?php $form = CActiveForm::begin(['action' => ['/admin/group/add-members']]); ?>
     <div class="form-group">
         <div class="input-group select2-humhub-append">
             <?php
@@ -22,13 +22,13 @@ use yii\widgets\ActiveForm;
                 'focus' => true,
             ])
             ?>
-            <?php echo Html::activeHiddenInput($addGroupMemberForm, 'groupId', ['value' => $group->id]) ?>
+            <?= Html::activeHiddenInput($addGroupMemberForm, 'groupId', ['value' => $group->id]) ?>
             <span class="input-group-btn">
                 <button type="submit" class="btn btn-primary" style="height:40px;" data-ui-loader><i class="fa fa-plus"></i></button>
             </span>
         </div>
     </div>
-        <?php ActiveForm::end(); ?>
+        <?php CActiveForm::end(); ?>
 
     <div class="table-responsive">
         <?php
