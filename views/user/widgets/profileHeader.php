@@ -95,7 +95,7 @@ if ($isProfileOwner) {
             <?php if ($user->profileImage->hasImage()) : ?>
                 <a data-ui-gallery="profileHeader"  href="<?php echo $user->profileImage->getUrl('_org'); ?>">
                     <img class="img-rounded profile-user-photo" id="user-profile-image"
-                         src="<?php echo $user->getProfileImage()->getUrl(); ?>"
+                         src="<?= $user->getProfileImage()->getUrl(); ?>"
                          data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                 </a>
             <?php else {
@@ -135,7 +135,8 @@ if ($isProfileOwner) {
                        href="<?php echo Url::to(['/user/account/crop-profile-image', 'userGuid' => $user->guid]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
-                        <?= \humhub\widgets\ModalConfirm::widget(array(
+                        <?=
+                   \humhub\widgets\ModalConfirm::widget(array(
                             'uniqueID' => 'modal_profileimagedelete',
                             'linkOutput' => 'a',
                             'title' => Yii::t('UserModule.widgets_views_deleteImage', '<strong>Confirm</strong> image deleting'),
@@ -199,7 +200,8 @@ if ($isProfileOwner) {
                     <!-- end: User statistics -->
 
                     <div class="controls controls-header pull-right">
-                        <?= \humhub\modules\user\widgets\ProfileHeaderControls::widget(
+                        <?=
+                 \humhub\modules\user\widgets\ProfileHeaderControls::widget(
                                 array(
                                     'user' => $user,
                                     'widgets' => array(
