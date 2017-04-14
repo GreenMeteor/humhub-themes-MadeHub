@@ -37,7 +37,7 @@
             <div class="media-body text-break">
 
                 <!-- Show content -->
-                <?= $content; ?><br/>
+                <?= $content; ?><br>
 
                 <!-- show time -->
                 <?= \humhub\widgets\TimeAgo::widget(['timestamp' => $record->content->created_at]); ?>
