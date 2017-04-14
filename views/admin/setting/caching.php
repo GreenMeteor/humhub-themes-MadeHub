@@ -1,13 +1,13 @@
 <?php
 
-use yii\bootstrap\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use humhub\models\Setting;
 ?>
 
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = CActiveForm::begin(); ?>
 
 <?= $form->errorSummary($model); ?>
 
@@ -27,6 +27,6 @@ use humhub\models\Setting;
 <?= Html::submitButton(Yii::t('AdminModule.views_setting_caching', 'Save & Flush Caches'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
 <?= \humhub\widgets\DataSaved::widget(); ?>
-<?php ActiveForm::end(); ?>
+<?php CActiveForm::end(); ?>
 
 <?php $this->endContent(); ?>
