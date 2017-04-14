@@ -1,7 +1,6 @@
 <?php
 
-use yii;
-use yii\bootstrap\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use yii\helpers\Url;
 
@@ -24,7 +23,7 @@ $this->registerJsConfig('admin', [
     
     <br />
     
-    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = CActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
 
     <?= $form->field($model, 'theme')->dropDownList($themes); ?>
@@ -35,8 +34,8 @@ $this->registerJsConfig('admin', [
 
     <?= $form->field($model, 'spaceOrder')->dropDownList(['0' => Yii::t('AdminModule.views_setting_design', 'Alphabetical'), '1' => Yii::t('AdminModule.views_setting_design', 'Last visit')]); ?>
 
-    <?php
-    echo $form->field($model, 'dateInputDisplayFormat')->dropDownList([
+    <?=
+    $form->field($model, 'dateInputDisplayFormat')->dropDownList([
         '' => Yii::t('AdminModule.views_setting_design', 'Auto format based on user language - Example: {example}', ['{example}' => Yii::$app->formatter->asDate(time(), 'short')]),
         'php:d/m/Y' => Yii::t('AdminModule.views_setting_design', 'Fixed format (mm/dd/yyyy) - Example: {example}', ['{example}' => Yii::$app->formatter->asDate(time(), 'php:d/m/Y')]),
     ]);
@@ -70,5 +69,5 @@ $this->registerJsConfig('admin', [
     <?= Html::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
     <?= \humhub\widgets\DataSaved::widget(); ?>
-    <?php ActiveForm::end(); ?>
+    <?php CActiveForm::end(); ?>
 </div>
