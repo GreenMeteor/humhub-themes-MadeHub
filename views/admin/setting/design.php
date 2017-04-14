@@ -1,6 +1,5 @@
 <?php
 
-use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use yii\helpers\Url;
 
@@ -23,7 +22,7 @@ $this->registerJsConfig('admin', [
     
     <br />
     
-    <?php $form = CActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = \yii\widgets\ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
 
     <?= $form->field($model, 'theme')->dropDownList($themes); ?>
@@ -69,5 +68,5 @@ $this->registerJsConfig('admin', [
     <?= Html::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
     <?= \humhub\widgets\DataSaved::widget(); ?>
-    <?php CActiveForm::end(); ?>
+    <?php \yii\widgets\ActiveForm::end(); ?>
 </div>
