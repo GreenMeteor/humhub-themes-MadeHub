@@ -3,18 +3,17 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use humhub\widgets\GridView;
-use humhub\compat\CActiveForm;
 
 \humhub\modules\admin\assets\AdminGroupAsset::register($this);
 ?>
 
 <?php $this->beginContent('@admin/views/group/_manageLayout.php', ['group' => $group]) ?>
 <div class="panel-body">
-    <?php $form = CActiveForm::begin(['action' => ['/admin/group/add-members']]); ?>
+    <?php $form = \yii\widgets\ActiveForm::begin(['action' => ['/admin/group/add-members']]); ?>
     <div class="form-group">
         <div class="input-group select2-humhub-append">
-            <?php
-            echo humhub\modules\user\widgets\UserPickerField::widget([
+            <?=
+               humhub\modules\user\widgets\UserPickerField::widget([
                 'model' => $addGroupMemberForm,
                 'attribute' => 'userGuids',
                 'url' => Url::to(['/admin/group/new-member-search', 'id' => $group->id]),
@@ -28,7 +27,7 @@ use humhub\compat\CActiveForm;
             </span>
         </div>
     </div>
-        <?php CActiveForm::end(); ?>
+        <?php \yii\widgets\ActiveForm::end(); ?>
 
     <div class="table-responsive">
         <?php
@@ -89,4 +88,22 @@ use humhub\compat\CActiveForm;
         );?>
     </div>
 </div>
+<script>		
+            $('.managerDropDown').on('change', function () {		
+                 var $this = $(this);		
+                 var userId = $this.data('userid');		
+                 var groupId = $this.data('groupid');		
+                 $.ajax("<?= Url::toRoute(['edit-manager-role']) ?>", {		
+             method: 'POST',		
+             data: {		
+                 'id': groupId,		
+                 'userId': userId,		
+                 'value': $this.val()		
+             },		
+             success: function () {		
+                 //success handler		
+             }		
+         });		
+     });		
+ </script>
 <?php $this->endContent(); ?>
