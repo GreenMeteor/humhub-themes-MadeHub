@@ -1,6 +1,6 @@
 <?php
 
-use yii\bootstrap\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helper\Html;
 use humhub\modules\content\models\Content;
 ?>
@@ -11,7 +11,7 @@ use humhub\modules\content\models\Content;
 
 <br />
 
-<?php $form = ActiveForm::begin(['id' => 'space-settings-form']); ?>
+<?php $form = CActiveForm::begin(['id' => 'space-settings-form']); ?>
 
 <?= $form->errorSummary($model); ?>
 
@@ -44,4 +44,4 @@ use humhub\modules\content\models\Content;
 <?= Html::submitButton(Yii::t('AdminModule.views_space_settings', 'Save'), array('class' => 'btn btn-primary', 'data-ui-loader' => "")); ?>
 
 <?php \humhub\widgets\DataSaved::widget(); ?>
-<?php ActiveForm::end(); ?>
+<?php CActiveForm::end(); ?>
