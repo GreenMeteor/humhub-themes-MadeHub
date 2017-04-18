@@ -5,11 +5,11 @@
     $this->registerCssFile('@web/resources/space/colorpicker/css/bootstrap-colorpicker.min.css', ['position'=>  yii\web\View::POS_BEGIN, 'depends' => [\yii\bootstrap\BootstrapPluginAsset::className()]]);
     
     $ts = time();
-    $inputId = $ts . 'space-color-picker-edit';
-    $containerId = $ts . 'space-color-chooser-edit';
-    $addonClass = $ts . 'input-group-addon';
+    $inputId = $ts.'space-color-picker-edit';
+    $containerId = $ts.'space-color-chooser-edit';
+    $addonClass = $ts.'input-group-addon';
     
-    if ($model->color == null) {
+    if($model->color == null) {
         $model->color = '#d1d1d1';
     }
 ?>
@@ -25,7 +25,7 @@
             {input}
         </div>
         {error}{hint}'
-        ])->textInput(['placeholder' => Yii::t('SpaceModule.views_create_create', 'Space name'), 'maxlength' => 45]) ?>
+        ])->textInput(['placeholder' => Yii::t('SpaceModule.views_create_create', 'Space name'), 'maxlength' => 45 ]) ?>
 </div>
 <script type="text/javascript">
     // prevent enter key and simulate ajax button submit click

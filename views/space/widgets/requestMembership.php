@@ -38,7 +38,7 @@
                         'success' => 'function(html){
 				jQuery("#lightbox_requestWorkspace").replaceWith(html);
 			}',
-                    ), array('class' => 'input_button', 'id' => 'requestSubmit' . uniqid()));
+                    ), array('class' => 'input_button', 'id' => 'requestSubmit'.uniqid()));
                     ?>
 
                     <?php echo CHtml::link(Yii::t('SpaceModule.widgets_views_requestMembership', 'Cancel'), '#', array('onclick'=>'RequestWorkspacebox.close()', 'class' => 'button', 'style' => 'color: #fff;')); ?>

@@ -1,9 +1,7 @@
 <?php
-
 use yii\helpers\Html;
-
 if ($messageId != "") {
-    $this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
+	$this->registerJs('loadMessage(' . Html::encode($messageId) . ');');
 }
 ?>
 	<div class="row">
@@ -20,16 +18,13 @@ if ($messageId != "") {
 						<?php foreach ($userMessages as $userMessage) : ?>
 							<?php echo $this->render('_messagePreview', array('userMessage' => $userMessage)); ?>
 						<?php endforeach; ?>
-					<?php else {
-    : ?>
-						<li class="placeholder"><?php echo Yii::t('MailModule.views_mail_index', 'There are no messages yet.');
-}
-?></li>
+					<?php else: ?>
+						<li class="placeholder"><?php echo Yii::t('MailModule.views_mail_index', 'There are no messages yet.'); ?></li>
 					<?php endif; ?>
 				</ul>
 			</div>
 			<div class="pagination-container">
-				<?php echo \humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
+				<?= \humhub\widgets\LinkPager::widget(['pagination' => $pagination]); ?>
 			</div>
 		</div>
 		<div class="col-sm-8 messages">
