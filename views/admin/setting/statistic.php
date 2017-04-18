@@ -1,7 +1,7 @@
 <?php
 
-use yii\widgets\ActiveForm;
-use yii\helper\Html;
+use humhub\compat\CActiveForm;
+use humhub\compat\CHtml;
 ?>
 
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
@@ -9,7 +9,7 @@ use yii\helper\Html;
 <p><?= Yii::t('AdminModule.views_setting_statistic', 'You can add an statistics HTML code snippet - which will added to all rendered pags.')?></p>
 <br>
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = CActiveForm::begin(); ?>
 
 <?= $form->errorSummary($model); ?>
 
@@ -19,9 +19,9 @@ use yii\helper\Html;
 </div>
 <hr>
 
-<?= Html::submitButton(Yii::t('AdminModule.views_setting_statistic', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
+<?= CHtml::submitButton(Yii::t('AdminModule.views_setting_statistic', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
 
 <?= \humhub\widgets\DataSaved::widget(); ?>
-<?php ActiveForm::end(); ?>
+<?php CActiveForm::end(); ?>
 
 <?php $this->endContent(); ?>
