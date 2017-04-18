@@ -42,17 +42,17 @@ AppAsset::register($this);
 		</div>
 		<div class="box-row"><div class="box-cell scrollable hover"><div class="box-inner">
 				<?= \humhub\modules\user\widgets\AccountTopMenu::widget(); ?>
-				<li class="b-b"></li>
-				<li><a href="<?= Yii::$app->homeUrl; ?>" class="waves"><i class="material-icons md-dark m-r">dashboard</i><span><?= Yii::t('DashboardModule.base', 'Dashboard'); ?></span></a></li>
-				<li><a href="<?= Yii::getAlias("@web"); ?>/directory/spaces" class="waves"><i class="material-icons md-dark m-r">weekend</i><span><?= Yii::t('AdminModule.base', 'Spaces'); ?></span></a></li>
-				<li><a href="<?= Yii::getAlias("@web"); ?>/directory/members" class="waves"><i class="material-icons md-dark m-r">people</i><span><?= Yii::t('DirectoryModule.base', 'Members'); ?></span></a></li>
-				<li><a href="<?= Yii::getAlias("@web"); ?>/directory/profiles" class="waves"><i class="material-icons md-dark m-r">graphic_eq</i><span><?= Yii::t('AdminModule.base', 'User posts'); ?></span></a></li>
-				<li class="b-b"></li>
-				<li><a class="waves"><span>Help &amp; Feedback</span></a></li>
-				<li><a class="waves"><span>Privacy &amp; Terms</span></a></li>
+				<!-- load navigation from widget -->
+				<div class="b-b"></div><ul>
+				<div><a href="<?= Yii::$app->homeUrl; ?>" class="waves"><i class="material-icons md-dark m-r">dashboard</i><span><?= Yii::t('DashboardModule.base', 'Dashboard'); ?></span></a></div>
+				<div><a href="<?= Yii::getAlias("@web"); ?>/directory/spaces" class="waves"><i class="material-icons md-dark m-r">weekend</i><span><?= Yii::t('AdminModule.base', 'Spaces'); ?></span></a></div>
+				<div><a href="<?= Yii::getAlias("@web"); ?>/directory/members" class="waves"><i class="material-icons md-dark m-r">people</i><span><?= Yii::t('DirectoryModule.base', 'Members'); ?></span></a></div>
+				<div><a href="<?= Yii::getAlias("@web"); ?>/directory/profiles" class="waves"><i class="material-icons md-dark m-r">graphic_eq</i><span><?= Yii::t('AdminModule.base', 'User posts'); ?></span></a></div>
+				<div class="b-b"></div>
+				<div><a class="waves"><span>Help &amp; Feedback</span></a></div>
+				<div><a class="waves"><span>Privacy &amp; Terms</span></a></div>
 			</ul></nav>
 			<footer>
-				<?= humhub\widgets\LanguageChooser::widget(); ?>
 				<p class="copyright">2016 &copy; <?= Html::encode(Yii::$app->name); ?></p>
 			</footer>
 		</div></div></div>
