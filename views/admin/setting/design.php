@@ -2,7 +2,7 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
-use yii\helper\Html;
+use humhub\compat\CHtml;
 
 \humhub\modules\admin\assets\AdminAsset::register($this);
 
@@ -62,7 +62,7 @@ $this->registerJsConfig('admin', [
     </div>
 
     <hr>
-    <?= Html::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
+    <?= CHtml::submitButton(Yii::t('AdminModule.views_setting_design', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
 
     <?= \humhub\widgets\DataSaved::widget(); ?>
     <?php ActiveForm::end(); ?>
