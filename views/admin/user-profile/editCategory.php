@@ -1,6 +1,6 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helpers\Url;
 use humhub\libs\Html;
 ?>
@@ -17,7 +17,7 @@ use humhub\libs\Html;
     <?php endif; ?>
     <br>
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = CActiveForm::begin(); ?>
 
     <div class="form-group">
         <?= $form->labelEx($category, 'title') ?>
@@ -51,5 +51,5 @@ use humhub\libs\Html;
         <?= Html::a(Yii::t('AdminModule.views_userprofile_editCategory', 'Delete'), Url::to(['delete-category', 'id' => $category->id]), ['class' => 'btn btn-danger']); ?>
     <?php endif; ?>
 
-    <?php ActiveForm::end(); ?>
+    <?php CActiveForm::end(); ?>
 </div>
