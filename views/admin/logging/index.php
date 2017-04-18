@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helper\Html;
 ?>
 <div>
     <?= Yii::t('AdminModule.views_logging_index', 'Total {count} entries found.', ["{count}" => $pagination->totalCount]); ?>
