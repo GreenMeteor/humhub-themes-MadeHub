@@ -3,12 +3,13 @@
 use yii\bootstrap\Html;
 use humhub\widgets\GridView;
 ?>
+
 <div class="panel-heading">
-    <?php echo Yii::t('FriendshipModule.base', '<strong>My</strong> friends'); ?>
+    <?= Yii::t('FriendshipModule.base', '<strong>My</strong> friends'); ?>
 </div>
 
 
-<?php echo \humhub\modules\friendship\widgets\ManageMenu::widget(['user' => $user]); ?>
+<?= \humhub\modules\friendship\widgets\ManageMenu::widget(['user' => $user]); ?>
 
 <div class="panel-body">
     <?php
@@ -22,10 +23,10 @@ use humhub\widgets\GridView;
                 'header' => 'Actions',
                 'class' => 'yii\grid\ActionColumn',
                 'buttons' => [
-                    'update' => function() {
+                    'update' => function () {
                         return;
                     },
-                    'view' => function() {
+                    'view' => function () {
                         return;
                     },
                     'delete' => function($url, $model) {
@@ -37,6 +38,3 @@ use humhub\widgets\GridView;
             ?>
 
 </div>
-
-
-

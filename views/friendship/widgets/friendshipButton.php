@@ -5,7 +5,6 @@ use yii\helpers\Url;
 use humhub\modules\friendship\models\Friendship;
 ?>
 
-
 <?php if ($friendshipState === Friendship::STATE_FRIENDS) : ?>
     <div class="btn-group">
         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
