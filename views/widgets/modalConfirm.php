@@ -1,9 +1,6 @@
 <?php
 
-use humhub\compat\CActiveForm;
-use humhub\compat\CHtml;
-use humhub\models\Setting;
-use yii\helpers\Url;
+
 ?>
 
 <!-- add Tooltip to link -->
@@ -30,7 +27,7 @@ if ($confirmJS != "") {
 <?php if ($linkOutput == 'button') { ?>
 
     <!-- create button element -->
-    <button class="<?php echo $class; ?> <?php if ($tooltip != "") : ?>tt<?php endif; ?>" style="<?php echo $style; ?>"
+    <button class="<?php echo $class; ?> <?php if ($tooltip != "") : ?>tt<?php endif;?>" style="<?php echo $style; ?>"
             data-toggle="modal" data-target="#confirmModal_<?php echo $uniqueID; ?>" <?php echo $tooltip; ?>>
                 <?php echo $linkContent; ?>
     </button>
@@ -38,7 +35,7 @@ if ($confirmJS != "") {
 <?php } else if ($linkOutput == 'a') { ?>
 
     <!-- create normal link element -->
-    <a id="deleteLinkPost_<?php echo $uniqueID; ?>" class="<?php echo $class; ?> <?php if ($tooltip != "") : ?>tt<?php endif; ?>" style="<?php echo $style; ?>" href="#"
+    <a id="deleteLinkPost_<?php echo $uniqueID; ?>" class="<?php echo $class; ?> <?php if ($tooltip != "") : ?>tt<?php endif;?>" style="<?php echo $style; ?>" href="#"
        data-toggle="modal" data-target="#confirmModal_<?php echo $uniqueID; ?>" <?php echo $tooltip; ?>>
            <?php echo $linkContent; ?>
     </a>
@@ -70,7 +67,7 @@ if ($confirmJS != "") {
                         ],
                         'htmlOptions' => [
                             'return' => 'true',
-                            'class' => 'btn btn-primary',
+                            'class' => 'btn btn-primary modalConfirm',
                             'data-dismiss' => 'modal'
                         ]
                     ]);
