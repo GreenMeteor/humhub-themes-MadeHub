@@ -1,13 +1,13 @@
 <?php
 
-use yii\widgets\ActiveForm;
-use yii\helper\Html;
+use humhub\compat\CActiveForm;
+use humhub\compat\CHtml;
 use humhub\models\Setting;
 ?>
 
 <?php $this->beginContent('@admin/views/authentication/_authenticationLayout.php') ?>
 <div class="panel-body">
-    <?php $form = ActiveForm::begin(['id' => 'authentication-settings-form']); ?>
+    <?php $form = CActiveForm::begin(['id' => 'authentication-settings-form']); ?>
 
     <?= $form->errorSummary($model); ?>
 
@@ -29,9 +29,9 @@ use humhub\models\Setting;
 
     <hr>
 
-    <?= Html::submitButton(Yii::t('AdminModule.views_setting_authentication', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
+    <?= CHtml::submitButton(Yii::t('AdminModule.views_setting_authentication', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
 
     <?= \humhub\widgets\DataSaved::widget(); ?>
-    <?php ActiveForm::end(); ?>
+    <?php CActiveForm::end(); ?>
 </div>
 <?php $this->endContent(); ?>
