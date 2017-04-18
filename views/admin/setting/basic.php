@@ -1,7 +1,7 @@
 <?php
 
 use yii\widgets\ActiveForm;
-use yii\helper\Html;
+use humhub\compat\CHtml;
 ?>
 
 <div class="panel-body">
@@ -51,7 +51,7 @@ use yii\helper\Html;
 
     <hr>
 
-    <?= Html::submitButton(Yii::t('AdminModule.views_setting_index', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
+    <?= CHtml::submitButton(Yii::t('AdminModule.views_setting_index', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
 
     <!-- show flash message after saving -->
     <?php \humhub\widgets\DataSaved::widget(); ?>
