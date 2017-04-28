@@ -17,8 +17,7 @@ AppAsset::register($this);
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <?= $this->pageTitle; ?></title>
+    <title><?= $this->pageTitle; ?></title>
     <?= Html::csrfMetaTags() ?>
         <?php $this->head() ?>
         <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -65,7 +64,6 @@ AppAsset::register($this);
                                         <div><a class="waves"><span>Privacy &amp; Terms</span></a>
                                         </div>
                                     </ul>
-                                    </nav>
                                     <footer>
                                         <p class="copyright">2016 &copy;
                                             <?= Html::encode(Yii::$app->name); ?></p>
