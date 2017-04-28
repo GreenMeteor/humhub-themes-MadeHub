@@ -99,7 +99,7 @@ AppAsset::register($this);
                             <?php if (isset($this->context->subLayout) && $this->context->subLayout != "") : ?>
                             <?= $this->render($this->context->subLayout, array('content' => $content)); ?>
                                 <?php else: ?>
-                                <?=$ content; ?>
+                                <?= $content; ?>
                                     <?php endif; ?>
                                     <!-- end: show content -->
 
