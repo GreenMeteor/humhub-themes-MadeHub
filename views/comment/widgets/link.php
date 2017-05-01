@@ -10,6 +10,7 @@ $commentCountSpan = Html::tag('span', ' ('.$commentCount.')', [
     'data-count' => $commentCount,
     'style' => ($hasComments) ? null : 'display:none'
 ]);
+
 ?>
 
 <?php if ($mode == \humhub\modules\comment\widgets\CommentLink::MODE_POPUP): ?>

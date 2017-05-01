@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use humhub\compat\CHtml;
 ?>
 <div>
     <?= Yii::t('AdminModule.views_logging_index', 'Total {count} entries found.', ["{count}" => $pagination->totalCount]); ?>
@@ -29,11 +30,11 @@ use yii\helpers\Html;
                 ?>
 
                 <h4 class="media-heading">
-                    <span class="label <?= $labelClass; ?>"><?= Html::encode($levelName); ?></span>&nbsp;
+                    <span class="label <?= $labelClass; ?>"><?= CHtml::encode($levelName); ?></span>&nbsp;
                     <?= date('r', $entry->log_time); ?>&nbsp;
-                    <span class="pull-right"><?= Html::encode($entry->category); ?></span>
+                    <span class="pull-right"><?= CHtml::encode($entry->category); ?></span>
                 </h4>
-                <?= Html::encode($entry->message); ?>
+                <?= CHtml::encode($entry->message); ?>
             </div>
         </li>
 

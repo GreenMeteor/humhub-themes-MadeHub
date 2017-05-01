@@ -3,7 +3,6 @@
 use humhub\compat\CActiveForm;
 use humhub\compat\CHtml;
 ?>
-
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
 
 <p><?= Yii::t('AdminModule.views_setting_logs',

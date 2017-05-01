@@ -22,8 +22,9 @@ $isActivity = $entry->object_model == humhub\modules\activity\models\Activity::c
         
 <?php endif; ?>
 
-<?= $content; ?>
+<?php echo $content; ?>
 
 <?php if (!$isActivity) : ?>
     </div>
 <?php endif; ?>
+

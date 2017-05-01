@@ -2,7 +2,6 @@
 
 use yii\helpers\Url;
 ?>
-
 <div class="well well-small comment-container" style="display:none;" id="comment_<?= $id; ?>">
     <div class="comment <?php if (Yii::$app->user->isGuest): ?>guest-mode<?php endif; ?>" id="comments_area_<?= $id; ?>">
         <?php if ($isLimited): ?>
@@ -24,8 +23,10 @@ use yii\helpers\Url;
 <?php /* END: Comment Create Form */ ?>
 
 <script>
+
 <?php if (count($comments) != 0) { ?>
     // make comments visible at this point to fixing autoresizing issue for textareas in Firefox
     $('#comment_<?php echo $id; ?>').show();
 <?php } ?>
+
 </script>

@@ -1,11 +1,12 @@
 <?php
+    use yii\helpers\Url;
 
-use yii\helpers\Url;
 ?>
 <li>
     <?php
     $offLinkId = 'notification_off_' . $content->id;
     $onLinkId = 'notification_on_' . $content->id;
+
     echo \humhub\widgets\AjaxButton::widget([
         'tag' => 'a',
         'label' => '<i class="fa fa-bell-slash-o"></i> ' . Yii::t('ContentModule.widgets_views_notificationSwitchLink', 'Turn off notifications'),
@@ -21,6 +22,7 @@ use yii\helpers\Url;
             'id' => $offLinkId
         ]
     ]);
+
     echo \humhub\widgets\AjaxButton::widget([
         'tag' => 'a',
         'label' => '<i class="fa fa-bell-o"></i> ' . Yii::t('ContentModule.widgets_views_notificationSwitchLink', 'Turn on notifications'),

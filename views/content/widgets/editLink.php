@@ -3,8 +3,8 @@
 use humhub\modules\content\widgets\WallEntry;
 
 /* @var $this humhub\components\View */
-?>
 
+?>
 <li>
     <?php if($mode === WallEntry::EDIT_MODE_INLINE) : ?>
             <a href="#" class="stream-entry-edit-link" data-action-click="edit" data-action-url="<?= $editUrl ?>">

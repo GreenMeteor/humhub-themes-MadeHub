@@ -23,21 +23,29 @@ use yii\helpers\Url;
 </div>
 
 <script>
+
     /**
      * Switcher for Sub Forms (FormField Type)
      */
+
     // Hide all Subforms for types
     $(".fieldTypeSettings").hide();
+
     showTypeSettings = $("#profilefield-field_type_class").val();
     showTypeSettings = showTypeSettings.replace(/[\\]/g, '_');
+
     // Display only the current selected type form
     $("." + showTypeSettings).show();
+
     $("#profilefield-field_type_class").on('change', function () {
         // Hide all Subforms for types
         $(".fieldTypeSettings").hide();
+
         // Show Current Selected
         showTypeSettings = $("#profilefield-field_type_class").val();
         showTypeSettings = showTypeSettings.replace(/[\\]/g, '_');
+
         $("." + showTypeSettings).show();
     });
+
 </script>

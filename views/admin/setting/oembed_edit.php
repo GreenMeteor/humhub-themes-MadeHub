@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
+use humhub\compat\CHtml;
 ?>
 
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
@@ -22,7 +23,7 @@ use yii\widgets\ActiveForm;
 
 <br>
 
-<?php $form = ActiveForm::begin(['id' => 'authentication-settings-form']); ?>
+<?php $form = CActiveForm::begin(['id' => 'authentication-settings-form']); ?>
 
 
 <?= $form->errorSummary($model); ?>
@@ -40,8 +41,8 @@ use yii\widgets\ActiveForm;
 </div>
 
 
-<?= Html::submitButton(Yii::t('AdminModule.views_setting_oembed_edit', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
-<?php ActiveForm::end(); ?>
+<?= CHtml::submitButton(Yii::t('AdminModule.views_setting_oembed_edit', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?>
+<?php CActiveForm::end(); ?>
 
 <?php if ($prefix != ""): ?>
     <?= Html::a(Yii::t('AdminModule.views_setting_oembed_edit', 'Delete'), Url::to(['oembed-delete', 'prefix' => $prefix]), ['class' => 'btn btn-danger pull-right', 'data-method' => 'POST']); ?>

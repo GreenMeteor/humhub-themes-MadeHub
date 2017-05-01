@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this humhub\components\View */
 ?>
 <li>

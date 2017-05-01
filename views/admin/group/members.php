@@ -4,7 +4,9 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use humhub\widgets\GridView;
+
 \humhub\modules\admin\assets\AdminGroupAsset::register($this);
+
 ?>
 
 <?php $this->beginContent('@admin/views/group/_manageLayout.php', ['group' => $group]) ?>

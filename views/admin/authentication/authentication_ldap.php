@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @var $this \yii\web\View
  * @var $enabled boolean
@@ -7,10 +6,10 @@
  * @var $model \humhub\modules\admin\models\forms\AuthenticationLdapSettingsForm
  * @var $userCount string
  */
- 
 use humhub\models\Setting;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 ?>
 
 <?php $this->beginContent('@admin/views/authentication/_authenticationLayout.php') ?>

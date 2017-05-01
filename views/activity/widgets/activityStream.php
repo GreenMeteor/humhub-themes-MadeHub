@@ -17,6 +17,7 @@ $this->registerJsConfig([
         ]
     ]
 ]);
+
 ?>
 
 <div class="panel panel-default panel-activities">

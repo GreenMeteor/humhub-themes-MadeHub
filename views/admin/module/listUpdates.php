@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 ?>
-
 <div class="panel panel-default">
     <div class="panel-heading"><?= Yii::t('AdminModule.views_module_listUpdates', '<strong>Modules</strong> directory'); ?></div>
     <?= $this->render('_header'); ?>

@@ -4,7 +4,6 @@ use humhub\compat\CActiveForm;
 use humhub\compat\CHtml;
 use humhub\modules\content\models\Content;
 ?>
-
 <h4><?= Yii::t('AdminModule.views_space_settings', 'Space Settings'); ?></h4>
 <div class="help-block">
     <?= Yii::t('AdminModule.views_space_index', 'Here you can define your default settings for new spaces. These settings can be overwritten for each individual space.'); ?>

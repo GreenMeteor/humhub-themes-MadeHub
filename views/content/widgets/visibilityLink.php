@@ -3,6 +3,7 @@
 /* @var $this humhub\components\View */
 /* @var content humhub\modules\content\models\Content */
 /* @var $toggleLink string */
+
 ?>
 <li>
     <?php if($content->isPrivate()) :?>

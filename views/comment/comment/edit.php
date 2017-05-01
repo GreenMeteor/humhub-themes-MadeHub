@@ -1,12 +1,12 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 
 <div class="content_edit input-container" id="comment_edit_<?= $comment->id; ?>">
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = CActiveForm::begin(); ?>
     <?= Html::hiddenInput('contentModel', $contentModel); ?>
     <?= Html::hiddenInput('contentId', $contentId); ?>
 
@@ -54,5 +54,5 @@ use yii\helpers\Url;
     ]);
     ?>
 
-    <?php ActiveForm::end(); ?>
+    <?php CActiveForm::end(); ?>
 </div>

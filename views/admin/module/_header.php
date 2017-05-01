@@ -5,6 +5,7 @@ use yii\helpers\Url;
 
 $updatesBadge = '';
 $uploadCount = '';
+
 if (Yii::$app->controller->id == 'module') {
     if (Yii::$app->getModule('admin')->marketplaceEnabled) {
         $updatesCount = count(Yii::$app->controller->getOnlineModuleManager()->getModuleUpdates());
@@ -31,3 +32,4 @@ if (Yii::$app->controller->id == 'module') {
         <?php endif; ?>
     </ul>
 </div>
+

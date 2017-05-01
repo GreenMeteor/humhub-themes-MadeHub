@@ -1,8 +1,6 @@
 <?php
-
 humhub\modules\admin\widgets\SettingsMenu::markAsActive(['/admin/setting/advanced']);
 ?>
-
 <div class="panel-body">
     <h4><?= Yii::t('AdminModule.setting', 'Advanced Settings'); ?></h4>
     <div class="help-block">

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @var $this \humhub\components\View
  * @var \humhub\modules\admin\models\forms\FileSettingsForm $model
@@ -11,8 +10,8 @@
 use humhub\compat\CActiveForm;
 use humhub\compat\CHtml;
 use humhub\models\Setting;
-?>
 
+?>
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
 
 <?php $form = CActiveForm::begin(); ?>

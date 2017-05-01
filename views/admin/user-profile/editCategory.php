@@ -4,7 +4,6 @@ use humhub\compat\CActiveForm;
 use yii\helpers\Url;
 use humhub\libs\Html;
 ?>
-
 <div class="panel-body">
     <div class="pull-right">
         <?= Html::backButton(['index'], ['label' => Yii::t('AdminModule.base', 'Back to overview'), 'class' => 'pull-right']); ?>

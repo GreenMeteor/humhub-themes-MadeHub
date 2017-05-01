@@ -1,5 +1,4 @@
 <?php
-
 \humhub\modules\admin\widgets\AdminMenu::markAsActive(['/admin/setting']);
 ?>
 

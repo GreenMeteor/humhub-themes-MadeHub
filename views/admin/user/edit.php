@@ -1,6 +1,7 @@
 <?php
 
 use humhub\libs\Html;
+
 humhub\assets\TabbedFormAsset::register($this);
 ?>
 

@@ -1,11 +1,11 @@
 <?php
-
 /* @var $this humhub\components\View */
 
 use yii\helpers\Url;
 
 $archiveLink = Url::to(['/content/content/archive', 'id' => $id]);
 $unarchiveLink = Url::to(['/content/content/unarchive', 'id' => $id]);
+
 ?>
 <li>
     <?php if ($object->content->isArchived()): ?>

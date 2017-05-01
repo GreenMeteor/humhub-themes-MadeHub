@@ -11,6 +11,10 @@
     </div>
 <?php \humhub\widgets\ModalDialog::end() ?>
 <script type="text/javascript">
+
     // scroll to top of list
     $(".comment-modal-body").animate({scrollTop: 0}, 200);
+
 </script>
+
+

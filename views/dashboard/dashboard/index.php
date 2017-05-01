@@ -1,9 +1,9 @@
 <?php
-
 /**
  * @var \humhub\modules\user\models\User $contentContainer
  * @var bool $showProfilePostForm
  */
+
 ?>
 
 <div class="container">
@@ -15,8 +15,8 @@
             ])?>
         </div>
         <div class="col-md-4 layout-sidebar-container">
-            <?=
-             \humhub\modules\dashboard\widgets\Sidebar::widget([
+            <?php
+            echo \humhub\modules\dashboard\widgets\Sidebar::widget([
                 'widgets' => [
                     [
                         \humhub\modules\activity\widgets\Stream::className(),

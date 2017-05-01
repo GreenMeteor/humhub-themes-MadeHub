@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
-
 <div class="panel-body">
     <h4><?= Yii::t('AdminModule.views_user_delete', 'Confirm user deletion'); ?></h4>
     <br>

@@ -13,6 +13,7 @@ $this->registerJsConfig('content.form', [
         'makePublic' => Yii::t('ContentModule.widgets_views_contentForm', 'Make public'),
         'info.archived' => Yii::t('ContentModule.widgets_views_contentForm', 'This space is archived.')
 ]]);
+
 ?>
 
 <div class="panel panel-default clearfix">
@@ -58,7 +59,7 @@ $this->registerJsConfig('content.form', [
                 <?= humhub\modules\file\widgets\FileHandlerButtonDropdown::widget(['primaryButton' => $uploadButton, 'handlers' => $fileHandlers, 'cssButtonClass' => 'btn-default']); ?>
 
                 <!-- public checkbox -->
-                <?= Html::checkbox("visibility", "", array('id' => 'contentForm_visibility', 'class' => 'contentForm hidden')); ?>
+                <?php echo Html::checkbox("visibility", "", array('id' => 'contentForm_visibility', 'class' => 'contentForm hidden')); ?>
 
                 <!-- content sharing -->
                 <div class="pull-right">
@@ -72,13 +73,13 @@ $this->registerJsConfig('content.form', [
                             <ul class="dropdown-menu pull-right">
                                 <li>
                                     <a data-action-click="notifyUser">
-                                        <i class="fa fa-bell"></i> <?= Yii::t('ContentModule.widgets_views_contentForm', 'Notify members'); ?>
+                                        <i class="fa fa-bell"></i> <?php echo Yii::t('ContentModule.widgets_views_contentForm', 'Notify members'); ?>
                                     </a>
                                 </li>
                                 <?php if ($canSwitchVisibility): ?>
                                     <li>
                                         <a id="contentForm_visibility_entry" data-action-click="changeVisibility">
-                                            <i class="fa fa-unlock"></i> <?= Yii::t('ContentModule.widgets_views_contentForm', 'Make public'); ?>
+                                            <i class="fa fa-unlock"></i> <?php echo Yii::t('ContentModule.widgets_views_contentForm', 'Make public'); ?>
                                         </a>
                                     </li>
                                 <?php endif; ?>
@@ -93,7 +94,7 @@ $this->registerJsConfig('content.form', [
 
         </div>
         <!-- /contentForm_Options -->
-        <?= Html::endForm(); ?>
+        <?php echo Html::endForm(); ?>
     </div>
     <!-- /panel body -->
 </div> <!-- /panel -->

@@ -3,8 +3,8 @@
 use humhub\compat\CActiveForm;
 use humhub\compat\CHtml;
 use humhub\models\Setting;
-?>
 
+?>
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
 
 <?php $form = CActiveForm::begin(); ?>
@@ -79,6 +79,7 @@ use humhub\models\Setting;
     if ($("#mailingsettingsform-transporttype option:selected").val() != 'smtp') {
         $("#smtpOptions").hide();
     }
+
     $('#mailingsettingsform-transporttype').on('change', function () {
         if ($("#mailingsettingsform-transporttype option:selected").val() != 'smtp') {
             $("#smtpOptions").hide();
@@ -86,9 +87,11 @@ use humhub\models\Setting;
             $("#smtpOptions").show();
         }
     });
+
     if ($("#mailingsettingsform-encryption option:selected").val() == '') {
         $("#encryptionOptions").hide();
     }
+
     $('#mailingsettingsform-encryption').on('change', function () {
         if ($("#mailingsettingsform-encryption option:selected").val() == '') {
             $("#encryptionOptions").hide();
