@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-?>
 
+?>
 <tr>
     <td align="center" valign="top"   class="fix-box">
 
@@ -84,11 +84,11 @@ use yii\helpers\Html;
                                                 <tr>
                                                     <td  style="font-size: 14px; line-height: 22px; font-family:Open Sans,Arial,Tahoma, Helvetica, sans-serif; color:<?= Yii::$app->view->theme->variable('text-color-main', '#777') ?>; font-weight:300; text-align:left; ">
 
-                                                        <?= Yii::t('UserModule.views_mails_RecoverPassword', 'Hello {displayName}', array('{displayName}' => Html::encode($user->displayName))); ?>
+                                                        <?php echo Yii::t('UserModule.views_mails_RecoverPassword', 'Hello {displayName}', array('{displayName}' => Html::encode($user->displayName))); ?>
                                                         <br><br>
-                                                        <?= Yii::t('UserModule.views_mails_RecoverPassword', 'Please use the following link within the next day to reset your password.'); ?>
+                                                        <?php echo Yii::t('UserModule.views_mails_RecoverPassword', 'Please use the following link within the next day to reset your password.'); ?>
                                                         <br>
-                                                        <?= Yii::t('UserModule.views_mails_RecoverPassword', "If you don't use this link within 24 hours, it will expire."); ?>
+                                                        <?php echo Yii::t('UserModule.views_mails_RecoverPassword', "If you don't use this link within 24 hours, it will expire."); ?>
                                                         <br>
 
                                                     </td>

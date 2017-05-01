@@ -5,6 +5,7 @@ use yii\helpers\Url;
 \humhub\modules\stream\assets\StreamAsset::register($this);
 
 $sorting = Yii::$app->getModule('stream')->settings->get('defaultSort', 'c');
+
 $contentIdData = ($contentId != "") ? 'data-stream-contentid="' . $contentId . '"' : '';
 ?>
 

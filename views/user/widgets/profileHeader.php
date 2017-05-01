@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-
 use humhub\modules\user\controllers\ImageController;
+
 if ($allowModifyProfileBanner || $allowModifyProfileImage) {
     $this->registerJsFile('@web-static/resources/user/profileHeaderImageUpload.js');
     $this->registerJs("var profileImageUploaderUserGuid='" . $user->guid . "';", \yii\web\View::POS_BEGIN);
@@ -12,7 +12,6 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
     $this->registerJs("var profileHeaderUploaderUrl='" . Url::to(['/user/image/upload', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_BANNER_IMAGE]) . "';", \yii\web\View::POS_BEGIN);
 }
 ?>
-
 <div class="panel panel-default panel-profile">
 
     <div class="panel-profile-header">
@@ -20,7 +19,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
         <div class="image-upload-container" style="width: 100%; height: 100%; overflow:hidden;">
             <!-- profile image output-->
             <img class="img-profile-header-background" id="user-banner-image"
-                 src="<?= $user->getProfileBannerImage()->getUrl(); ?>"
+                 src="<?php echo $user->getProfileBannerImage()->getUrl(); ?>"
                  width="100%" style="width: 100%; max-height: 192px;">
 
             <!-- check if the current user is the profile owner and can change the images -->
@@ -33,6 +32,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 <?php
                 // set standard padding for banner progressbar
                 $padding = '90px 350px';
+
                 // if the default banner image is displaying
                 if (!$user->getProfileBannerImage()->hasImage()) {
                     // change padding to the lower image height
@@ -41,7 +41,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 ?>
 
                 <div class="image-upload-loader" id="banner-image-upload-loader"
-                     style="padding: <?= $padding ?>;">
+                     style="padding: <?php echo $padding ?>;">
                     <div class="progress image-upload-progess-bar" id="banner-image-upload-bar">
                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="00"
                              aria-valuemin="0"
@@ -54,9 +54,9 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
 
             <!-- show user name and title -->
             <div class="img-profile-data">
-                <h1><?= Html::encode($user->displayName); ?></h1>
+                <h1><?php echo Html::encode($user->displayName); ?></h1>
 
-                <h2><?= Html::encode($user->profile->title); ?></h2>
+                <h2><?php echo Html::encode($user->profile->title); ?></h2>
             </div>
 
             <!-- check if the current user is the profile owner and can change the images -->
@@ -71,7 +71,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                            echo 'display: none;';
                        }
                        ?>"
-                       href="<?= Url::to(['/user/image/crop', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_BANNER_IMAGE]); ?>"
+                       href="<?php echo Url::to(['/user/image/crop', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_BANNER_IMAGE]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
                         <?php
@@ -98,12 +98,12 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <?php if ($user->profileImage->hasImage()) : ?>
                 <a data-ui-gallery="profileHeader"  href="<?= $user->profileImage->getUrl('_org'); ?>">
                     <img class="img-rounded profile-user-photo" id="user-profile-image"
-                         src="<?= $user->getProfileImage()->getUrl(); ?>"
+                         src="<?php echo $user->getProfileImage()->getUrl(); ?>"
                          data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                 </a>
             <?php else : ?>
                 <img class="img-rounded profile-user-photo" id="user-profile-image"
-                     src="<?= $user->getProfileImage()->getUrl(); ?>"
+                     src="<?php echo $user->getProfileImage()->getUrl(); ?>"
                      data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;"/>
                  <?php endif; ?>
 
@@ -132,7 +132,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                            echo 'display: none;';
                        }
                        ?>"
-                       href="<?= Url::to(['/user/image/crop', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_IMAGE]); ?>"
+                       href="<?php echo Url::to(['/user/image/crop', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_IMAGE]); ?>"
                        class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
                             class="fa fa-edit"></i></a>
                         <?php
@@ -169,31 +169,31 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                         <?php if ($friendshipsEnabled): ?>
                             <a href="<?= Url::to(['/friendship/list/popup', 'userId' => $user->id]); ?>" data-target="#globalModal">
                                 <div class="pull-left entry">
-                                    <span class="count"><?= $countFriends; ?></span>
+                                    <span class="count"><?php echo $countFriends; ?></span>
                                     <br>
-                                    <span class="title"><?= Yii::t('UserModule.widgets_views_profileHeader', 'Friends'); ?></span>
+                                    <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Friends'); ?></span>
                                 </div>
                             </a>
                         <?php endif; ?>
 
                         <a href="<?= $user->createUrl('/user/profile/follower-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
-                                <span class="count"><?= $countFollowers; ?></span>
+                                <span class="count"><?php echo $countFollowers; ?></span>
                                 <br>
-                                <span class="title"><?= Yii::t('UserModule.widgets_views_profileHeader', 'Followers'); ?></span>
+                                <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Followers'); ?></span>
                             </div>
                         </a>
                         <a href="<?= $user->createUrl('/user/profile/followed-users-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
-                                <span class="count"><?= $countFollowing; ?></span>
+                                <span class="count"><?php echo $countFollowing; ?></span>
                                 <br>
-                                <span class="title"><?= Yii::t('UserModule.widgets_views_profileHeader', 'Following'); ?></span>
+                                <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Following'); ?></span>
                             </div>
                         </a>
                         <a href="<?= $user->createUrl('/user/profile/space-membership-list'); ?>" data-target="#globalModal">
                             <div class="pull-left entry">
-                                <span class="count"><?= $countSpaces; ?></span><br>
-                                <span class="title"><?= Yii::t('UserModule.widgets_views_profileHeader', 'Spaces'); ?></span>
+                                <span class="count"><?php echo $countSpaces; ?></span><br>
+                                <span class="title"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Spaces'); ?></span>
                             </div>
                         </a>
                     </div>
@@ -226,14 +226,14 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title"
-                    id="myModalLabel"><?= Yii::t('UserModule.widgets_views_profileHeader', '<strong>Something</strong> went wrong'); ?></h4>
+                    id="myModalLabel"><?php echo Yii::t('UserModule.widgets_views_profileHeader', '<strong>Something</strong> went wrong'); ?></h4>
             </div>
             <div class="modal-body text-center">
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary"
-                        data-dismiss="modal"><?= Yii::t('UserModule.widgets_views_profileHeader', 'Ok'); ?></button>
+                        data-dismiss="modal"><?php echo Yii::t('UserModule.widgets_views_profileHeader', 'Ok'); ?></button>
             </div>
         </div>
     </div>

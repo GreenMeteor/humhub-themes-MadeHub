@@ -1,8 +1,6 @@
 <?php
-
 $user = $this->context->getUser();
 ?>
-
 <div class="container profile-layout-container">
     <div class="row">
         <div class="col-md-12">
@@ -16,11 +14,11 @@ $user = $this->context->getUser();
 
         <?php if (isset($this->context->hideSidebar) && $this->context->hideSidebar) : ?>
             <div class="col-md-10 layout-content-container">
-                <?= $content; ?>
+                <?php echo $content; ?>
             </div>
         <?php else: ?>
             <div class="col-md-7 layout-content-container">
-                <?= $content; ?>
+                <?php echo $content; ?>
             </div>
             <div class="col-md-3 layout-sidebar-container">
                 <?php

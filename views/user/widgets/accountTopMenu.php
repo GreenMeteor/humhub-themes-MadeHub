@@ -3,7 +3,6 @@
 use \yii\helpers\Html;
 use \yii\helpers\Url;
 ?>
-
 <?php if (Yii::$app->user->isGuest): ?>
     <a href="#" class="btn btn-enter" data-action-click="ui.modal.load" data-action-url="<?= Url::toRoute('/user/auth/login'); ?>">
         <?php if (Yii::$app->getModule('user')->settings->get('auth.anonymousRegistration')): ?>

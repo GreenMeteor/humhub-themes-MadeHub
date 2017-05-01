@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
-
 <div class="panel-heading">
     <?php echo Yii::t('UserModule.views_account_editModules', '<strong>User</strong> modules'); ?>
 </div>

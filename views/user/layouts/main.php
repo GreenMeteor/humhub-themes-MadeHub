@@ -8,7 +8,6 @@ use humhub\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
-
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,7 @@ AppAsset::register($this);
         <?= $content; ?>
         <?php $this->endBody() ?>
 
-        <div class="text text-center powered">Powered by <a href="https://www.humhub.org" target="_blank">HumHub</a></div>
+        <div class="text text-center powered">Powered by <a href="http://www.humhub.org" target="_blank">HumHub</a></div>
     </body>
 
 </html>

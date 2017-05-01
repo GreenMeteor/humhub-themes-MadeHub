@@ -1,8 +1,9 @@
 <?php
 
-use yii\helpers\Html;
-?>
 
+use yii\helpers\Html;
+
+?>
 <tr>
     <td align="center" valign="top"   class="fix-box">
 
@@ -29,7 +30,7 @@ use yii\helpers\Html;
                                                     <td width="auto"  align="center" valign="middle" height="28" style=" background-color:<?= Yii::$app->view->theme->variable('background-color-main', '#fff') ?>; background-clip: padding-box; font-size:26px; font-family:Open Sans, Arial,Tahoma, Helvetica, sans-serif; text-align:center;  color:#a3a2a2; font-weight: 300; padding-left:18px; padding-right:18px; ">
 
                                                         <span style="color: #555555; font-weight: 300;">
-                                                            <?= Yii::t('UserModule.views_mails_UserInviteSpace', 'You got an invite'); ?>
+                                                            <?php echo Yii::t('UserModule.views_mails_UserInviteSpace', 'You got an invite'); ?>
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -91,9 +92,9 @@ use yii\helpers\Html;
 
                                                     <td valign="top" align="center" style="padding-right:20px;">
                                                         <!-- START: USER IMAGE -->
-                                                        <a href="<?= $originator->createUrl('/user/profile', [], true); ?>">
+                                                        <a href="<?php echo $originator->createUrl('/user/profile', [], true); ?>">
                                                             <img
-                                                                src="<?= $originator->getProfileImage()->getUrl("", true); ?>"
+                                                                src="<?php echo $originator->getProfileImage()->getUrl("", true); ?>"
                                                                 width="69"
                                                                 alt=""
                                                                 style="max-width:69px; display:block !important; border-radius: 4px;"
@@ -115,10 +116,10 @@ use yii\helpers\Html;
                                         <tr>
                                             <td style="font-size: 18px; line-height: 22px; font-family:Open Sans, Arial,Tahoma, Helvetica, sans-serif; font-weight:300; text-align:center;">
                                                 <span style="color: <?= Yii::$app->view->theme->variable('text-color-highlight', '#555') ?>; font-weight: 300;">
-                                                    <a href="<?= $originator->createUrl('/user/profile', [], true); ?>"
+                                                    <a href="<?php echo $originator->createUrl('/user/profile', [], true); ?>"
                                                        style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-highlight', '#555') ?>; font-weight: 300;">
                                                         <!-- START: USER NAME -->
-                                                        <?= Html::encode($originator->displayName); ?>
+                                                        <?php echo Html::encode($originator->displayName); ?>
                                                         <!-- END: USER NAME -->
                                                     </a>
                                                 </span>
@@ -190,10 +191,10 @@ use yii\helpers\Html;
                                                     <td  style="font-size: 14px; line-height: 22px; padding-left: 50px; padding-right: 50px; font-family:Open Sans,Arial,Tahoma, Helvetica, sans-serif; color:<?= Yii::$app->view->theme->variable('text-color-main', '#777') ?>; font-weight:300; text-align:center; ">
 
                                                         <!-- START: CONTENT -->
-                                                        <?= Yii::t('UserModule.views_mails_UserInviteSpace', 'invited you to join {space} on {name}.', ['space' => '<strong>' . Html::encode($space->name) . '</strong>', 'name' => Html::encode(Yii::$app->name)]); ?>
+                                                        <?php echo Yii::t('UserModule.views_mails_UserInviteSpace', 'invited you to join {space} on {name}.', ['space' => '<strong>' . Html::encode($space->name) . '</strong>', 'name' => Html::encode(Yii::$app->name)]); ?>
                                                         <br />
                                                         <br />
-                                                        <?= Yii::t('UserModule.views_mails_UserInviteSpace', 'Register now and participate!'); ?><br/>
+                                                        <?php echo Yii::t('UserModule.views_mails_UserInviteSpace', 'Register now and participate!'); ?><br/>
                                                         &nbsp;
                                                         <!-- END: CONTENT -->
                                                     </td>
@@ -212,8 +213,8 @@ use yii\helpers\Html;
                                                     <td width="auto"  align="center" valign="middle" height="32" style=" background-color:<?= $this->theme->variable('primary'); ?>;  border-radius:5px; background-clip: padding-box;font-size:14px; font-family:Open Sans, Arial,Tahoma, Helvetica, sans-serif; text-align:center;  color:#ffffff; font-weight: 600; padding-left:30px; padding-right:30px; padding-top: 5px; padding-bottom: 5px;">
 
                                                         <span style="color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
-                                                            <a href="<?= $registrationUrl; ?>" style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
-                                                                <strong><?= Yii::t('UserModule.views_mails_UserInviteSpace', 'Sign up now'); ?></strong>
+                                                            <a href="<?php echo $registrationUrl; ?>" style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
+                                                                <strong><?php echo Yii::t('UserModule.views_mails_UserInviteSpace', 'Sign up now'); ?></strong>
                                                             </a>
                                                         </span>
                                                     </td>

@@ -2,21 +2,20 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
 
 $this->pageTitle = Yii::t('UserModule.views_auth_recoverPassword', 'Password recovery');
 ?>
-
 <div class="container" style="text-align: center;">
-    <?= humhub\widgets\SiteLogo::widget(array('place' => 'login')); ?>
+    <?php echo humhub\widgets\SiteLogo::widget(array('place' => 'login')); ?>
     <br>
 
     <div class="row">
         <div id="password-recovery-form" class="panel panel-default animated bounceIn" style="max-width: 300px; margin: 0 auto 20px; text-align: left;">
-            <div class="panel-heading"><?= Yii::t('UserModule.views_auth_recoverPassword', '<strong>Password</strong> recovery'); ?></div>
+            <div class="panel-heading"><?php echo Yii::t('UserModule.views_auth_recoverPassword', '<strong>Password</strong> recovery'); ?></div>
             <div class="panel-body">
 
-                <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
+                <?php $form = CActiveForm::begin(['enableClientValidation' => false]); ?>
 
                 <p><?= Yii::t('UserModule.views_auth_recoverPassword', 'Just enter your e-mail address. We´ll send you recovery instructions!'); ?></p>
 
@@ -34,9 +33,9 @@ $this->pageTitle = Yii::t('UserModule.views_auth_recoverPassword', 'Password rec
                 </div>
 
                 <hr>
-                <?= Html::submitButton(Yii::t('UserModule.views_auth_recoverPassword', 'Reset password'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?> <a class="btn btn-primary" data-ui-loader href="<?= Url::home(); ?>"><?= Yii::t('UserModule.views_auth_recoverPassword', 'Back') ?></a>
+                <?= Html::submitButton(Yii::t('UserModule.views_auth_recoverPassword', 'Reset password'), ['class' => 'btn btn-primary', 'data-ui-loader' => ""]); ?> <a class="btn btn-primary" data-ui-loader href="<?php echo Url::home(); ?>"><?php echo Yii::t('UserModule.views_auth_recoverPassword', 'Back') ?></a>
 
-                <?php ActiveForm::end(); ?>
+                <?php CActiveForm::end(); ?>
 
             </div>
         </div>
@@ -44,10 +43,12 @@ $this->pageTitle = Yii::t('UserModule.views_auth_recoverPassword', 'Password rec
 </div>
 
 <script type="text/javascript">
+
     $(function () {
         // set cursor to email field
         $('#email_txt').focus();
     });
+
     // Shake panel after wrong validation
 <?php if ($model->hasErrors()) : ?>
         $('#password-recovery-form').removeClass('bounceIn');

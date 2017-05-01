@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 ?>
-
 <tr>
     <td align="center" valign="top"   class="fix-box">
 
@@ -95,9 +94,9 @@ use yii\helpers\Html;
                                                 <tr>
                                                     <td  style="font-size: 14px; line-height: 22px; font-family:Open Sans,Arial,Tahoma, Helvetica, sans-serif; color:<?= Yii::$app->view->theme->variable('text-color-main', '#777') ?>; font-weight:300; text-align:left; ">
 
-                                                        <?= Yii::t('UserModule.views_mails_ChangeEmail', 'Hello'); ?> <?= Html::encode($user->displayName); ?>,<br><br>
+                                                        <?php echo Yii::t('UserModule.views_mails_ChangeEmail', 'Hello'); ?> <?php echo Html::encode($user->displayName); ?>,<br><br>
 
-                                                        <?= Yii::t('UserModule.views_mails_ChangeEmail', 'You have requested to change your e-mail address.<br>Your new e-mail address is {newemail}.<br><br>To confirm your new e-mail address please click on the button below.', array('{newemail}' => Html::encode($newEmail))); ?>
+                                                        <?php echo Yii::t('UserModule.views_mails_ChangeEmail', 'You have requested to change your e-mail address.<br>Your new e-mail address is {newemail}.<br><br>To confirm your new e-mail address please click on the button below.', array('{newemail}' => Html::encode($newEmail))); ?>
 
                                                     </td>
                                                 </tr>
@@ -123,7 +122,7 @@ use yii\helpers\Html;
                                                     <td width="auto"  align="center" valign="middle" height="32" style="background-color:<?= $this->theme->variable('primary'); ?>;  border-radius:5px; background-clip: padding-box;font-size:14px; font-family:Open Sans, Arial,Tahoma, Helvetica, sans-serif; text-align:center;  color:#ffffff; font-weight: 600; padding-left:30px; padding-right:30px; padding-top: 5px; padding-bottom: 5px;">
 
                                                         <span style="color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
-                                                            <a href="<?= $approveUrl; ?>" style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
+                                                            <a href="<?php echo $approveUrl; ?>" style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
                                                                 <strong><?= Yii::t('UserModule.views_mails_ChangeEmail', 'Confirm'); ?></strong>
                                                             </a>
                                                         </span>

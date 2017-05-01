@@ -1,9 +1,9 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
+
 use yii\helpers\Url;
 ?>
-
 <div class="modal-dialog modal-dialog-small animated fadeIn">
     <div class="modal-content">
         <div class="modal-header">
@@ -11,7 +11,7 @@ use yii\helpers\Url;
             <h4 class="modal-title" id="myModalLabel"><?php echo Yii::t('UserModule.views_auth_recoverPassword', '<strong>Password</strong> recovery'); ?></h4>
         </div>
         <div class="modal-body">
-            <?php $form = ActiveForm::begin(['enableClientValidation' => false]); ?>
+            <?php $form = CActiveForm::begin(['enableClientValidation' => false]); ?>
 
             <p><?php echo Yii::t('UserModule.views_auth_recoverPassword', 'Just enter your e-mail address. We´ll send you recovery instructions!'); ?></p>
 
@@ -40,7 +40,7 @@ use yii\helpers\Url;
             <a href="#" class="btn btn-default" data-action-click="ui.modal.load" data-action-url="<?= Url::to(['/user/auth/login']) ?>" data-ui-loader>
                 <?= Yii::t('UserModule.views_auth_recoverPassword', 'Back') ?>
             </a>
-            <?php ActiveForm::end() ?>
+            <?php CActiveForm::end() ?>
         </div>
 
     </div>
