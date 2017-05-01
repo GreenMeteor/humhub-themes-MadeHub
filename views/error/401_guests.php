@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-?>
 
+?>
 <div class="container">
     <div class="panel panel-danger">
         <div class="panel-heading">

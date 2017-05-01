@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+
 humhub\modules\directory\assets\DirectoryAsset::register($this);
 ?>
 

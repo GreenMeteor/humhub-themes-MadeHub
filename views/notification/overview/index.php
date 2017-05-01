@@ -2,8 +2,8 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
-?>
 
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-9 layout-content-container">

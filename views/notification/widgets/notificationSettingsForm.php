@@ -1,17 +1,15 @@
 <?php
-
 /* @var $model \humhub\modules\notification\models\forms\NotificationSettings */
 /* @var $form yii\widgets\ActiveForm */
 
 use yii\bootstrap\Html
 ?>
 
-<br>
+<br />
 <?= $form->field($model, 'desktopNotifications')->checkbox(); ?>
 
 <?php if($showSpaces) : ?>
-    <?=
-     humhub\modules\space\widgets\SpacePickerField::widget([
+    <?= humhub\modules\space\widgets\SpacePickerField::widget([
         'form' => $form,
         'model' => $model,
         'attribute' => 'spaceGuids',
@@ -36,7 +34,7 @@ use yii\bootstrap\Html
             <?php foreach ($model->categories() as $category): ?>
                 <tr>
                     <td>
-                        <strong><?= $category->getTitle() ?></strong><br>
+                        <strong><?= $category->getTitle() ?></strong><br />
                         <?= $category->getDescription() ?>
                     </td>
                     <?php foreach ($model->targets() as $target): ?>
@@ -51,3 +49,4 @@ use yii\bootstrap\Html
         </tbody>
     </table>
 </div>
+

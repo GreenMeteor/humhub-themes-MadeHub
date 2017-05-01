@@ -2,6 +2,7 @@
 
 use humhub\modules\directory\widgets\Menu;
 use humhub\modules\directory\widgets\Sidebar;
+
 \humhub\assets\JqueryKnobAsset::register($this);
 ?>
 

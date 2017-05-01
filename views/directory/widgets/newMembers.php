@@ -5,7 +5,6 @@ use yii\helpers\Html;
 use humhub\widgets\PanelMenu;
 use humhub\modules\user\widgets\Image;
 ?>
-
 <div class="panel panel-default members" id="new-people-panel">
     <?= PanelMenu::widget(['id' => 'new-people-panel']); ?>
 

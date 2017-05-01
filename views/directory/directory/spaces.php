@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $keyword string */
 /* @var $spaces humhub\modules\space\models\Space[] */
@@ -13,7 +12,6 @@ use humhub\modules\space\widgets\FollowButton;
 use humhub\modules\space\widgets\Image;
 use humhub\modules\directory\widgets\SpaceTagList;
 ?>
-
 <div class="panel panel-default">
 
     <div class="panel-heading">

@@ -8,7 +8,6 @@
 use humhub\libs\Html;
 use humhub\modules\user\widgets\Image;
 ?>
-
 <?php foreach ($users as $user): ?>
     <?= Image::widget(['user' => $user, 'width' => 40, 'showTooltip' => true]); ?>
 <?php endforeach; ?>

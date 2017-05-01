@@ -3,17 +3,16 @@
 use yii\bootstrap\Html;
 use humhub\widgets\GridView;
 ?>
-
 <div class="panel-heading">
-    <?= Yii::t('FriendshipModule.base', '<strong>Sent</strong> friend requests'); ?>
+    <?php echo Yii::t('FriendshipModule.base', '<strong>Sent</strong> friend requests'); ?>
 </div>
 
 
-<?= \humhub\modules\friendship\widgets\ManageMenu::widget(['user' => $user]); ?>
+<?php echo \humhub\modules\friendship\widgets\ManageMenu::widget(['user' => $user]); ?>
 
 <div class="panel-body">
-    <?=
-     GridView::widget([
+    <?php
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             'username',
@@ -38,3 +37,6 @@ use humhub\widgets\GridView;
             ?>
 
 </div>
+
+
+

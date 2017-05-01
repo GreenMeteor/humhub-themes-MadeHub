@@ -1,7 +1,9 @@
 <?php
+
 if (!Yii::$app->user->isGuest) {
     echo humhub\modules\post\widgets\Form::widget(['contentContainer' => Yii::$app->user->getIdentity()]);
 }
+
 echo \humhub\modules\stream\widgets\StreamViewer::widget(array(
     'streamAction' => '//directory/directory/stream',
     'messageStreamEmpty' => (!Yii::$app->user->isGuest) ?
@@ -12,3 +14,4 @@ echo \humhub\modules\stream\widgets\StreamViewer::widget(array(
             '',
 ));
 ?>
+

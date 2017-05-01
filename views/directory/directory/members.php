@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $keyword string */
 /* @var $group humhub\modules\user\models\Group */
@@ -12,7 +11,6 @@ use humhub\modules\directory\widgets\MemberActionsButton;
 use humhub\modules\directory\widgets\UserTagList;
 use humhub\modules\directory\widgets\UserGroupList;
 ?>
-
 <div class="panel panel-default">
 
     <div class="panel-heading">

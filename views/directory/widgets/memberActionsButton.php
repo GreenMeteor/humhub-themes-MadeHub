@@ -8,8 +8,8 @@ use humhub\modules\user\widgets\UserFollowButton;
 use humhub\libs\Html;
 use yii\helpers\Url;
 ?>
-
 <?=
+
 UserFollowButton::widget([
     'user' => $user,
     'followOptions' => ['class' => 'btn btn-primary btn-sm'],
@@ -18,6 +18,7 @@ UserFollowButton::widget([
 ?>
 
 <?php
+
 if (!Yii::$app->user->isGuest && !$user->isCurrentUser() && Yii::$app->getModule('friendship')->getIsEnabled()) {
     $friendShipState = Friendship::getStateForUser(Yii::$app->user->getIdentity(), $user);
     if ($friendShipState === Friendship::STATE_NONE) {

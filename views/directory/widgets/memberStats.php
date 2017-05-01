@@ -1,5 +1,4 @@
 <?php
-
 humhub\modules\directory\assets\DirectoryAsset::register($this);
 ?>
 
@@ -41,6 +40,7 @@ humhub\modules\directory\assets\DirectoryAsset::register($this);
         <div style="text-align: center;">
             <strong><?= Yii::t('DirectoryModule.base', 'Follows somebody'); ?>:</strong> <?php echo $statsUserFollow; ?>
         </div>
+
 
     </div>
 </div>

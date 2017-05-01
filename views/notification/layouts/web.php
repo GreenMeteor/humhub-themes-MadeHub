@@ -5,8 +5,8 @@
 /** @var \humhub\modules\notification\models\Notification $record */
 /** @var boolean $isNew */
 /** @var string $content */
-?>
 
+?>
 <li class="<?php if ($isNew) : ?>new<?php endif; ?>" data-notification-id="<?= $record->id ?>">
     <a href="<?= $url; ?>">
         <div class="media">
@@ -16,7 +16,7 @@
                 <img class="media-object img-rounded pull-left"
                      data-src="holder.js/32x32" alt="32x32"
                      style="width: 32px; height: 32px;"
-                     src="<?= $originator->getProfileImage()->getUrl(); ?>" />
+                     src="<?php echo $originator->getProfileImage()->getUrl(); ?>" />
                  <?php endif; ?>
 
             <!-- show space image -->
@@ -24,7 +24,7 @@
                 <img class="media-object img-rounded img-space pull-left"
                      data-src="holder.js/20x20" alt="20x20"
                      style="width: 20px; height: 20px;"
-                     src="<?= $space->getProfileImage()->getUrl(); ?>">
+                     src="<?php echo $space->getProfileImage()->getUrl(); ?>">
                  <?php endif; ?>
 
             <!-- show content -->
@@ -32,7 +32,7 @@
 
                 <?= $content; ?>
 
-                <br> <?= humhub\widgets\TimeAgo::widget(['timestamp' => $record->created_at]); ?> 
+                <br> <?php echo humhub\widgets\TimeAgo::widget(['timestamp' => $record->created_at]); ?> 
                 <?php if ($isNew) : ?> <span class="label label-danger"><?= Yii::t('NotificationModule.views_notificationLayout', 'New'); ?></span><?php endif; ?>
             </div>
 

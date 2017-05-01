@@ -1,10 +1,9 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use humhub\compat\CActiveForm;
 ?>
-
 <div class="content content_edit" id="post_edit_<?php echo $post->id; ?>">
-    <?php $form = ActiveForm::begin(['id' => 'post-edit-form_' . $post->id]); ?>
+    <?php $form = CActiveForm::begin(['id' => 'post-edit-form_' . $post->id]); ?>
 
     <!-- create contenteditable div for HEditorWidget to place the data -->
         <?= humhub\widgets\RichtextField::widget([
@@ -45,5 +44,5 @@ use yii\widgets\ActiveForm;
     ])
     ?>
 
-<?php ActiveForm::end(); ?>
+<?php CActiveForm::end(); ?>
 </div>

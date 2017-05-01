@@ -10,6 +10,7 @@ $this->registerJsConfig('notification', [
         'placeholder' => Yii::t('NotificationModule.widgets_views_list', 'There are no notifications yet.')
     ]
 ]);
+
 ?>
 <div id="notification_widget" data-ui-widget="notification.NotificationDropDown" data-ui-init='<?= \yii\helpers\Json::encode($update); ?>' class="btn-group">
     <a href="#" id="icon-notifications" data-action-click='toggle' data-toggle="dropdown" >
