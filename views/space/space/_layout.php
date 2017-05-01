@@ -40,6 +40,7 @@ $space = $this->context->contentContainer;
                         [\humhub\modules\space\modules\manage\widgets\PendingApprovals::className(), ['space' => $space], ['sortOrder' => 20]],
                         [\humhub\modules\space\widgets\Members::className(), ['space' => $space], ['sortOrder' => 30]]
                 ]]);
+}
                 ?>
             </div>
         <?php endif; ?>

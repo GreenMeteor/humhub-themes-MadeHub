@@ -20,7 +20,7 @@
         <div class="list-group">
             <?php foreach ($items as $item) : ?>
                 <?php $item['htmlOptions']['class'] .= " list-group-item"; ?>
-                <?php echo \yii\helpers\Html::a($item['icon']."<span>".$item['label']."</span>", $item['url'], $item['htmlOptions']); ?>
+                <?php echo \yii\helpers\Html::a($item['icon'] . "<span>" . $item['label'] . "</span>", $item['url'], $item['htmlOptions']); ?>
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>

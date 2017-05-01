@@ -18,8 +18,8 @@ $(function() {
 			var data = {};
 			var sortable = ui.item.closest('.<?php echo $containerClassName; ?>');
 			var items = sortable.find('.<?php echo $sortableItemClassName; ?>');
-			<?php foreach($additionalAjaxParams as $name => $value) {
-			if($name != null && $name != '' && $value != null && $value != '') { ?>
+			<?php foreach ($additionalAjaxParams as $name => $value) {
+            if ($name != null && $name != '' && $value != null && $value != '') { ?>
 			data.<?php echo $name ?> = '<?php echo $value ?>';	
 			<?php } } ?>
 			data.items = [];

@@ -83,7 +83,7 @@ AppAsset::register($this);
                     <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left visible-xs visible-sm waves"><i class="material-icons">menu</i></a>
                     <ul class="nav nav-sm navbar-tool pull-right">
                         <?= \humhub\widgets\TopMenuRightStack::widget(); ?>
-                            <?= \humhub\widgets\NotificationArea::widget([ 'widgets'=> [ [\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]], ]]); ?>
+                            <?= \humhub\widgets\NotificationArea::widget(['widgets'=> [[\humhub\modules\notification\widgets\Overview::className(), [], ['sortOrder' => 10]], ]]); ?>
 
                             <?=\ humhub\modules\space\widgets\Chooser::widget(); ?>
                     </ul>

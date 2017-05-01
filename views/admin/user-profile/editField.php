@@ -12,7 +12,7 @@ use yii\helpers\Url;
     <?php if (!$field->isNewRecord) : ?>
         <h4><?= Yii::t('AdminModule.views_userprofile_editField', 'Edit profile field'); ?></h4>
     <?php else: ?>
-        <h4><?= Yii::t('AdminModule.views_userprofile_editField', 'Create new profile field'); ?></h4>
+ -        <h4><?= Yii::t('AdminModule.views_userprofile_editField', 'Create new profile field'); ?></h4>
     <?php endif; ?>
 
     <br>

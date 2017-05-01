@@ -15,8 +15,8 @@ use yii\helpers\Html;
         <title><?php echo Html::encode(Yii::$app->name); ?></title>
         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
             <style type="text/css">
-                <?php $defaultBackground =  Yii::$app->view->theme->variable('background-color-main', '#fff') ?>
-                <?php $colorPrimary =  Yii::$app->view->theme->variable('primary', '#708fa0') ?>
+                <?php $defaultBackground = Yii::$app->view->theme->variable('background-color-main', '#fff') ?>
+                <?php $colorPrimary = Yii::$app->view->theme->variable('primary', '#708fa0') ?>
                 
                 .ReadMsgBody {
                     width: 100%;

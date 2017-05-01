@@ -4,9 +4,9 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 if ($space->isAdmin()) {
-	$this->registerJsFile('@web/resources/space/spaceHeaderImageUpload.js');
-	$this->registerJsVar('profileImageUploaderUrl', $space->createUrl('/space/manage/image/upload'));
-	$this->registerJsVar('profileHeaderUploaderUrl', $space->createUrl('/space/manage/image/banner-upload'));
+    $this->registerJsFile('@web/resources/space/spaceHeaderImageUpload.js');
+    $this->registerJsVar('profileImageUploaderUrl', $space->createUrl('/space/manage/image/upload'));
+    $this->registerJsVar('profileHeaderUploaderUrl', $space->createUrl('/space/manage/image/banner-upload'));
 }
 ?>
 
@@ -47,28 +47,28 @@ if ($space->isAdmin()) {
 							class="fa fa-cloud-upload"></i></a>
 					<a id="profile-image-upload-edit-button"
 					   style="<?php
-					   if (!$space->getProfileImage()->hasImage()) {
-						   echo 'display: none;';
-					   }
-					   ?>"
+                        if (!$space->getProfileImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
 					   href="<?php echo $space->createUrl('/space/manage/image/crop'); ?>"
 					   class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static"><i
 							class="fa fa-edit"></i></a>
 						<?php
-						echo humhub\widgets\ModalConfirm::widget(array(
-							'uniqueID' => 'modal_profileimagedelete',
-							'linkOutput' => 'a',
-							'title' => Yii::t('SpaceModule.widgets_views_deleteImage', '<strong>Confirm</strong> image deleting'),
-							'message' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Do you really want to delete your profile image?'),
-							'buttonTrue' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Delete'),
-							'buttonFalse' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Cancel'),
-							'linkContent' => '<i class="fa fa-times"></i>',
-							'cssClass' => 'btn btn-danger btn-sm',
-							'style' => $space->getProfileImage()->hasImage() ? '' : 'display: none;',
-							'linkHref' => $space->createUrl("/space/manage/image/delete", array('type' => 'profile')),
-							'confirmJS' => 'function(jsonResp) { resetProfileImage(jsonResp); }'
-						));
-						?>
+                        echo humhub\widgets\ModalConfirm::widget(array(
+                            'uniqueID' => 'modal_profileimagedelete',
+                            'linkOutput' => 'a',
+                            'title' => Yii::t('SpaceModule.widgets_views_deleteImage', '<strong>Confirm</strong> image deleting'),
+                            'message' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Do you really want to delete your profile image?'),
+                            'buttonTrue' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Delete'),
+                            'buttonFalse' => Yii::t('SpaceModule.widgets_views_deleteImage', 'Cancel'),
+                            'linkContent' => '<i class="fa fa-times"></i>',
+                            'cssClass' => 'btn btn-danger btn-sm',
+                            'style' => $space->getProfileImage()->hasImage() ? '' : 'display: none;',
+                            'linkHref' => $space->createUrl("/space/manage/image/delete", array('type' => 'profile')),
+                            'confirmJS' => 'function(jsonResp) { resetProfileImage(jsonResp); }'
+                        ));
+                        ?>
 				</div>
 			<?php endif; ?>
 
@@ -97,22 +97,22 @@ if ($space->isAdmin()) {
 			</div>
 					<div  class="row no-margin p-v-sm b-b">
 						<?php
-						echo humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
-								[\humhub\modules\space\widgets\InviteButton::className(), ['space' => $space], ['sortOrder' => 10]],
-								[\humhub\modules\space\widgets\MembershipButton::className(), ['space' => $space], ['sortOrder' => 20]],
-								[\humhub\modules\space\widgets\FollowButton::className(), [
-										'space' => $space,
-										'followOptions' => ['class' => 'btn btn-primary'],
-										'unfollowOptions' => ['class' => 'btn btn-info']],
-									['sortOrder' => 30]]
-						]]);
-						?>
+                        echo humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
+                                [\humhub\modules\space\widgets\InviteButton::className(), ['space' => $space], ['sortOrder' => 10]],
+                                [\humhub\modules\space\widgets\MembershipButton::className(), ['space' => $space], ['sortOrder' => 20]],
+                                [\humhub\modules\space\widgets\FollowButton::className(), [
+                                        'space' => $space,
+                                        'followOptions' => ['class' => 'btn btn-primary'],
+                                        'unfollowOptions' => ['class' => 'btn btn-info']],
+                                    ['sortOrder' => 30]]
+                        ]]);
+                        ?>
 						<?=
-						humhub\modules\space\widgets\HeaderControlsMenu::widget([
-							'space' => $space,
-							'template' => '@humhub/widgets/views/dropdownNavigation'
-						]);
-						?>
+                        humhub\modules\space\widgets\HeaderControlsMenu::widget([
+                            'space' => $space,
+                            'template' => '@humhub/widgets/views/dropdownNavigation'
+                        ]);
+                        ?>
 					</div>
 
 
@@ -129,15 +129,15 @@ if ($space->isAdmin()) {
 				</form>
 
 				<?php
-				// set standard padding for banner progressbar
-				$padding = '90px 350px';
+                // set standard padding for banner progressbar
+                $padding = '90px 350px';
 
-				// if the default banner image is displaying
-				if (!$space->getProfileBannerImage()->hasImage()) {
-					// change padding to the lower image height
-					$padding = '50px 350px';
-				}
-				?>
+                // if the default banner image is displaying
+                if (!$space->getProfileBannerImage()->hasImage()) {
+                    // change padding to the lower image height
+                    $padding = '50px 350px';
+                }
+                ?>
 
 				<div class="image-upload-loader" id="banner-image-upload-loader" style="padding: <?php echo $padding ?>;">
 					<div class="progress image-upload-progess-bar" id="banner-image-upload-bar">
@@ -155,29 +155,29 @@ if ($space->isAdmin()) {
 						<i class="fa fa-cloud-upload"></i>
 					</a>
 					<a id="banner-image-upload-edit-button" style="<?php
-					   if (!$space->getProfileBannerImage()->hasImage()) {
-						   echo 'display: none;';
-					   }
-					   ?>"
+                        if (!$space->getProfileBannerImage()->hasImage()) {
+                            echo 'display: none;';
+                        }
+                        ?>"
 					   href="<?php echo $space->createUrl('/space/manage/image/crop-banner'); ?>"
 					   class="btn btn-info btn-sm" data-target="#globalModal" data-backdrop="static">
 					   <i class="fa fa-edit"></i>
 					</a>
 						<?php
-						echo humhub\widgets\ModalConfirm::widget(array(
-							'uniqueID' => 'modal_bannerimagedelete',
-							'linkOutput' => 'a',
-							'title' => Yii::t('SpaceModule.widgets_views_deleteBanner', '<strong>Confirm</strong> image deleting'),
-							'message' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Do you really want to delete your title image?'),
-							'buttonTrue' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Delete'),
-							'buttonFalse' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Cancel'),
-							'linkContent' => '<i class="fa fa-times"></i>',
-							'cssClass' => 'btn btn-danger btn-sm',
-							'style' => $space->getProfileBannerImage()->hasImage() ? '' : 'display: none;',
-							'linkHref' => $space->createUrl("/space/manage/image/delete", ['type' => 'banner']),
-							'confirmJS' => 'function(jsonResp) { resetProfileImage(jsonResp); }'
-						));
-						?>
+                        echo humhub\widgets\ModalConfirm::widget(array(
+                            'uniqueID' => 'modal_bannerimagedelete',
+                            'linkOutput' => 'a',
+                            'title' => Yii::t('SpaceModule.widgets_views_deleteBanner', '<strong>Confirm</strong> image deleting'),
+                            'message' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Do you really want to delete your title image?'),
+                            'buttonTrue' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Delete'),
+                            'buttonFalse' => Yii::t('SpaceModule.widgets_views_deleteBanner', 'Cancel'),
+                            'linkContent' => '<i class="fa fa-times"></i>',
+                            'cssClass' => 'btn btn-danger btn-sm',
+                            'style' => $space->getProfileBannerImage()->hasImage() ? '' : 'display: none;',
+                            'linkHref' => $space->createUrl("/space/manage/image/delete", ['type' => 'banner']),
+                            'confirmJS' => 'function(jsonResp) { resetProfileImage(jsonResp); }'
+                        ));
+                        ?>
 				</div>
 
 			<?php } ?>
@@ -201,22 +201,22 @@ if ($space->isAdmin()) {
 
 					<div class="controls controls-header pull-right">
 						<?php
-						echo humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
-								[\humhub\modules\space\widgets\InviteButton::className(), ['space' => $space], ['sortOrder' => 10]],
-								[\humhub\modules\space\widgets\MembershipButton::className(), ['space' => $space], ['sortOrder' => 20]],
-								[\humhub\modules\space\widgets\FollowButton::className(), [
-										'space' => $space,
-										'followOptions' => ['class' => 'btn btn-primary'],
-										'unfollowOptions' => ['class' => 'btn btn-info']],
-									['sortOrder' => 30]]
-						]]);
-						?>
+                        echo humhub\modules\space\widgets\HeaderControls::widget(['widgets' => [
+                                [\humhub\modules\space\widgets\InviteButton::className(), ['space' => $space], ['sortOrder' => 10]],
+                                [\humhub\modules\space\widgets\MembershipButton::className(), ['space' => $space], ['sortOrder' => 20]],
+                                [\humhub\modules\space\widgets\FollowButton::className(), [
+                                        'space' => $space,
+                                        'followOptions' => ['class' => 'btn btn-primary'],
+                                        'unfollowOptions' => ['class' => 'btn btn-info']],
+                                    ['sortOrder' => 30]]
+                        ]]);
+                        ?>
 						<?=
-						humhub\modules\space\widgets\HeaderControlsMenu::widget([
-							'space' => $space,
-							'template' => '@humhub/widgets/views/dropdownNavigation'
-						]);
-						?>
+                        humhub\modules\space\widgets\HeaderControlsMenu::widget([
+                            'space' => $space,
+                            'template' => '@humhub/widgets/views/dropdownNavigation'
+                        ]);
+                        ?>
 					</div>
 				</div>
 			</div>

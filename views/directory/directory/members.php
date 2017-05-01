@@ -17,7 +17,7 @@ use humhub\modules\directory\widgets\UserGroupList;
         <?php if ($group === null) : ?>
             <?= Yii::t('DirectoryModule.base', '<strong>Member</strong> directory'); ?>
         <?php else: ?>
-            <?= Yii::t('DirectoryModule.base', '<strong>Group</strong> members - {group}', ['{group}' => Html::encode($group->name)]); ?>
+ -            <?= Yii::t('DirectoryModule.base', '<strong>Group</strong> members - {group}', ['{group}' => Html::encode($group->name)]); ?>
         <?php endif; ?>
     </div>
 
