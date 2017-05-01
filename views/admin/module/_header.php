@@ -27,7 +27,7 @@ if (Yii::$app->controller->id == 'module') {
         <li <?php if ($this->context->action->id == 'list') {
     echo 'class="active"';
 }
-?>><?= Html::a(Yii::t('AdminModule.views_module_header', 'Installed'), Url::to(['list'])); ?></li>
+?><?= Html::a(Yii::t('AdminModule.views_module_header', 'Installed'), Url::to(['list'])); ?></li>
         <?php if (Yii::$app->getModule('admin')->marketplaceEnabled) : ?>
             <li <?php if ($this->context->action->id == 'list-online') {
     echo 'class="active"';
