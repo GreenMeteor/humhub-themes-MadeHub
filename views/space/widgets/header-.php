@@ -23,7 +23,7 @@ if ($space->isAdmin()) {
 					   <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 64]); ?>
 				</a>
 			<?php else : ?>
- -				<?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 64]); ?>
+				<?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 64]); ?>
 			<?php endif; ?>
 
 			<!-- check if the current user is the profile owner and can change the images -->
