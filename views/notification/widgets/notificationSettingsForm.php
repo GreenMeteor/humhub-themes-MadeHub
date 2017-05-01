@@ -8,7 +8,7 @@ use yii\bootstrap\Html
 <br />
 <?= $form->field($model, 'desktopNotifications')->checkbox(); ?>
 
-<?php if($showSpaces) : ?>
+<?php if ($showSpaces) : ?>
     <?= humhub\modules\space\widgets\SpacePickerField::widget([
         'form' => $form,
         'model' => $model,
@@ -16,7 +16,7 @@ use yii\bootstrap\Html
         'defaultResults' => $defaultSpaces,
         'maxSelection' => 10
     ])?>
-<?php endif;?>
+<?php endif; ?>
 
 <div class="grid-view table-responsive permission-grid-editor" style="padding-top:0px;">
     <table class="table table-middle table-hover">

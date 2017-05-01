@@ -44,8 +44,9 @@ use humhub\modules\admin\widgets\SpaceGridView;
                 'options' => ['width' => '40px'],
                 'format' => 'raw',
                 'value' => function($data) use ($visibilities) {
-                    if (isset($visibilities[$data->visibility]))
-                        return $visibilities[$data->visibility];
+                    if (isset($visibilities[$data->visibility])) {
+                                            return $visibilities[$data->visibility];
+                    }
                         return Html::encode($data->visibility);
                     },
             ],
@@ -55,8 +56,9 @@ use humhub\modules\admin\widgets\SpaceGridView;
                 'filter' => \yii\helpers\Html::activeDropDownList($searchModel, 'join_policy', array_merge(['' => ''], $joinPolicies)),
                 'format' => 'raw',
                 'value' => function($data) use ($joinPolicies) {
-                    if (isset($joinPolicies[$data->join_policy]))
-                        return $joinPolicies[$data->join_policy];
+                    if (isset($joinPolicies[$data->join_policy])) {
+                                            return $joinPolicies[$data->join_policy];
+                    }
                         return Html::encode($data->join_policy);
                     },
             ],

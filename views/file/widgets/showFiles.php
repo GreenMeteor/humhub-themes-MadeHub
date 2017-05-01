@@ -16,11 +16,11 @@ $object = $this->context->object;
                 <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" href="<?= $file->getUrl(); ?>#.jpeg" title="<?= Html::encode($file->file_name) ?>">
                     <?= $previewImage->render(); ?>
                 </a>
-            <?php elseif(FileHelper::getExtension($file->file_name) == 'mp4'): ?>
+            <?php elseif (FileHelper::getExtension($file->file_name) == 'mp4'): ?>
                 <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" type="video/mp4" href="<?= $file->getUrl(); ?>#.mp4" title="<?= Html::encode($file->file_name) ?>">
                     <video src="<?= $file->getUrl() ?>" height="130" />
                 </a>
-            <?php elseif(FileHelper::getExtension($file->file_name) == 'ogv'): ?>
+            <?php elseif (FileHelper::getExtension($file->file_name) == 'ogv'): ?>
                 <a data-ui-gallery="<?= "gallery-" . $object->getUniqueId(); ?>" type="video/ogg" href="<?= $file->getUrl(); ?>#.ogv" title="<?= Html::encode($file->file_name) ?>">
                     <video src="<?= $file->getUrl() ?>" height="130" />
                 </a>
@@ -46,7 +46,7 @@ $object = $this->context->object;
     <?= \humhub\modules\file\widgets\FilePreview::widget([
         'hideImageFileInfo' => $hideImageFileInfo,
         'model' => $object,
-    ]);?>
+    ]); ?>
     
 </div>
 <?php endif; ?>

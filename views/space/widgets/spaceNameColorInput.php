@@ -1,7 +1,7 @@
 <?php
-    $containerId = time().'space-color-chooser-edit';
+    $containerId = time() . 'space-color-chooser-edit';
     
-    if($model->color == null) {
+    if ($model->color == null) {
         $model->color = '#d1d1d1';
     }
 ?>
@@ -18,5 +18,5 @@
             {input}
         </div>
         {error}{hint}'
-        ])->textInput(['placeholder' => Yii::t('SpaceModule.views_create_create', 'Space name'), 'maxlength' => 45 ]) ?>
+        ])->textInput(['placeholder' => Yii::t('SpaceModule.views_create_create', 'Space name'), 'maxlength' => 45]) ?>
 </div>

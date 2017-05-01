@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
             </div>
 
             <?php
-            if(version_compare(Yii::$app->version, '1.0.0-beta.5', 'lt')) {
+            if (version_compare(Yii::$app->version, '1.0.0-beta.5', 'lt')) {
                 echo humhub\modules\user\widgets\UserPicker::widget(array(
                     'inputId' => 'addUserFrom_mail',
                     'model' => $inviteForm, // CForm Instanz

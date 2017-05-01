@@ -6,11 +6,11 @@ use humhub\compat\CHtml;
 <?php $this->beginContent('@admin/views/setting/_advancedLayout.php') ?>
 
 <p><?= Yii::t('AdminModule.views_setting_logs',
-	'Old logs can significantly increase the size of your database while providing little information.') ?>
+    'Old logs can significantly increase the size of your database while providing little information.') ?>
 </p>
 <p><?= Yii::t('AdminModule.views_setting_logs',
-	'Currently there are {count} records in the database dating from {dating}.',
-	['count' => $logsCount, 'dating' => $dating])?>
+    'Currently there are {count} records in the database dating from {dating}.',
+    ['count' => $logsCount, 'dating' => $dating])?>
 </p>
 <br>
 

@@ -55,11 +55,11 @@ use humhub\widgets\GridView;
                         'visible' => $isManagerApprovalSetting,
                         'label' => Yii::t('AdminModule.views_user_index', 'Group Manager'),
                         'format' => 'raw',
-                        'value' => function ($data) use ($group, $actionUrl) {
+                        'value' => function($data) use ($group, $actionUrl) {
                             $isManager = $group->isManager($data);
                             $yesSelected = ($isManager) ? 'selected' : '';
                             $noSelected = ($isManager) ? '' : 'selected';
-                            $result = '<select class="editableCell form-control" data-action-change="admin.group.setManagerRole" data-action-url="'.$actionUrl.'" data-userid="' . $data->id . '"  data-groupid="' . $group->id . '">';
+                            $result = '<select class="editableCell form-control" data-action-change="admin.group.setManagerRole" data-action-url="' . $actionUrl . '" data-userid="' . $data->id . '"  data-groupid="' . $group->id . '">';
                             $result .= '<option value="0" ' . $noSelected . '>' . Yii::t('AdminModule.views_group_manageGroupUser', 'No') . '</option>';
                             $result .= '<option value="1" ' . $yesSelected . '>' . Yii::t('AdminModule.views_group_manageGroupUser', 'Yes') . '</option>';
                             return $result;
@@ -87,7 +87,7 @@ use humhub\widgets\GridView;
                     ],
                 ],
             ]
-        );?>
+        ); ?>
     </div>
 </div>
 <?php $this->endContent(); ?>

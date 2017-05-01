@@ -16,7 +16,7 @@ use yii\helpers\Html;
             <div class="col-md-6">
                 <div class="form-group form-group-search">
                     <?= Html::textInput("licenceKey", $licenceKey, ["class" => "form-control form-search", "placeholder" => Yii::t('AdminModule.base', 'Add purchased module by licence key')]); ?>
-                    <?= Html::submitButton(Yii::t('AdminModule.module_listOnline', 'Register'), ['class' => 'btn btn-default btn-sm form-button-search' , 'data-ui-loader' => ""]); ?>
+                    <?= Html::submitButton(Yii::t('AdminModule.module_listOnline', 'Register'), ['class' => 'btn btn-default btn-sm form-button-search', 'data-ui-loader' => ""]); ?>
                 </div>
                 <?php if ($message != ""): ?>
                     <div style="color:<?= ($hasError) ? 'red' : 'green'; ?>"><?= Html::encode($message); ?></div>
@@ -44,6 +44,7 @@ use yii\helpers\Html;
 
                     <?php
                     $moduleImageUrl = Yii::getAlias('@web-static/img/default_module.jpg');
+}
                     if (isset($module['moduleImageUrl']) && $module['moduleImageUrl'] != "") {
                         $moduleImageUrl = $module['moduleImageUrl'];
                     }
