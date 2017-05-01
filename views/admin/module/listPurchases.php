@@ -45,7 +45,6 @@ use yii\helpers\Html;
                     <?php
                     $moduleImageUrl = Yii::getAlias('@web-static/img/default_module.jpg');
 }
-}
                     if (isset($module['moduleImageUrl']) && $module['moduleImageUrl'] != "") {
                         $moduleImageUrl = $module['moduleImageUrl'];
                     }
