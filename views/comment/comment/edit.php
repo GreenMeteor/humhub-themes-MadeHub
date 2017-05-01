@@ -12,7 +12,7 @@ use yii\helpers\Url;
 
     <?=
     humhub\widgets\RichtextField::widget([
-        'id' => 'comment_input_'.$comment->id,
+        'id' => 'comment_input_' . $comment->id,
         'placeholder' => Yii::t('CommentModule.views_edit', 'Edit your comment...'),
         'model' => $comment,
         'attribute' => 'message'
@@ -47,7 +47,7 @@ use yii\helpers\Url;
 
     <?=
     \humhub\modules\file\widgets\FilePreview::widget([
-        'id' => 'comment_upload_preview_'.$comment->id,
+        'id' => 'comment_upload_preview_' . $comment->id,
         'options' => ['style' => 'margin-top:10px'],
         'model' => $comment,
         'edit' => true
