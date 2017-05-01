@@ -21,12 +21,12 @@ $space = $this->context->contentContainer;
 				</nav>
 			</div>
 			<?php
-            echo \humhub\modules\space\widgets\Sidebar::widget(['space' => $space, 'widgets' => [
-                [\humhub\modules\activity\widgets\Stream::className(), ['streamAction' => '/space/space/stream', 'contentContainer' => $space], ['sortOrder' => 10]],
-                [\humhub\modules\space\modules\manage\widgets\PendingApprovals::className(), ['space' => $space], ['sortOrder' => 20]],
-                [\humhub\modules\space\widgets\Members::className(), ['space' => $space], ['sortOrder' => 30]]
-            ]]);
-            ?>
+			echo \humhub\modules\space\widgets\Sidebar::widget(['space' => $space, 'widgets' => [
+				[\humhub\modules\activity\widgets\Stream::className(), ['streamAction' => '/space/space/stream', 'contentContainer' => $space], ['sortOrder' => 10]],
+				[\humhub\modules\space\modules\manage\widgets\PendingApprovals::className(), ['space' => $space], ['sortOrder' => 20]],
+				[\humhub\modules\space\widgets\Members::className(), ['space' => $space], ['sortOrder' => 30]]
+			]]);
+			?>
 		</div>
 	</div>
 	<div class="col-sm-8">

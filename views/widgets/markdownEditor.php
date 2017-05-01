@@ -8,8 +8,8 @@ use yii\helpers\Html;
  * Register BootstrapMarkdown & changes
  */
 BootstrapMarkdownAsset::register($this);
-$this->registerCssFile('@web/css/bootstrap-markdown-override.css');
-$this->registerJsFile('@web/js/markdownEditor.js');
+$this->registerCssFile('@web-static/css/bootstrap-markdown-override.css');
+$this->registerJsFile('@web-static/js/markdownEditor.js');
 
 /**
  * Create a hidden field to store uploaded files guids
@@ -39,7 +39,9 @@ $translations = array(
     'Quote' => Yii::t('widgets_views_markdownEditor', 'Quote'),
     'quote here' => Yii::t('widgets_views_markdownEditor', 'quote here'),
     'Code' => Yii::t('widgets_views_markdownEditor', 'Code'),
-    'code text here' => Yii::t('widgets_views_markdownEditor', 'code text here')
+    'code text here' => Yii::t('widgets_views_markdownEditor', 'code text here'),
+    'Unordered List' => Yii::t('widgets_views_markdownEditor', 'Unordered List'),
+    'Ordered List' => Yii::t('widgets_views_markdownEditor', 'Ordered List'),
 );
 
 $translationsJS = "$.fn.markdown.messages['en'] = {\n";
@@ -101,7 +103,7 @@ $this->registerJs("initMarkdownEditor('" . $fieldId . "')");
     <div class="modal-body">
     <div class="form-group">
     <label for="addLinkTitle"><?php echo Yii::t('widgets_views_markdownEditor', 'Title'); ?></label>
-    <input type="text" class="form-control linkTitle" 
+    <input type="text" class="form-control linkTitle"
     placeholder="<?php echo Yii::t('widgets_views_markdownEditor', 'Title of your link'); ?>">
     </div>
     <div class="form-group">
@@ -118,4 +120,3 @@ $this->registerJs("initMarkdownEditor('" . $fieldId . "')");
     </div>
     </div>
 </script>
-    

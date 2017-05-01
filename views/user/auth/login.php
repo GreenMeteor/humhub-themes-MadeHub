@@ -27,13 +27,14 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
 
             <?php if (AuthChoice::hasClients()): ?>
                 <?= AuthChoice::widget([]) ?>
-            <?php else {
-    : ?>
-                <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password.");
-}
-?></p>
+            <?php else: ?>
+                <?php if ($canRegister) : ?>
+                    <p><?php echo Yii::t('UserModule.views_auth_login', "If you're already a member, please login with your username/email and password."); ?></p>
+                <?php else: ?>
+                    <p><?php echo Yii::t('UserModule.views_auth_login', "Please login with your username/email and password."); ?></p>
+                <?php endif; ?>
             <?php endif; ?>
-            
+
             <?php $form = ActiveForm::begin(['id' => 'account-login-form', 'enableClientValidation' => false]); ?>
             <?php echo $form->field($model, 'username')->textInput(['id' => 'login_username', 'placeholder' => $model->getAttributeLabel('username')])->label(false); ?>
             <?php echo $form->field($model, 'password')->passwordInput(['id' => 'login_password', 'placeholder' => $model->getAttributeLabel('password')])->label(false); ?>
@@ -47,8 +48,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                 <div class="col-md-8 text-right">
                     <small>
                         <?php echo Yii::t('UserModule.views_auth_login', 'Forgot your password?'); ?>
-                        <a
-                            href="<?php echo Url::toRoute('/user/password-recovery'); ?>"><br><?php echo Yii::t('UserModule.views_auth_login', 'Create a new one.') ?></a>
+                        <a id="password-recovery-link" href="<?php echo Url::toRoute('/user/password-recovery'); ?>" data-pjax-prevent><br><?php echo Yii::t('UserModule.views_auth_login', 'Create a new one.') ?></a>
                     </small>
                 </div>
             </div>
@@ -72,7 +72,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
                 <p><?php echo Yii::t('UserModule.views_auth_login', "Don't have an account? Join the network by entering your e-mail address."); ?></p>
 
                 <?php $form = ActiveForm::begin(['id' => 'invite-form']); ?>
-                <?php echo $form->field($invite, 'email')->textInput(['id' => 'register-email', 'placeholder' => $invite->getAttributeLabel('email')])->label(false); ?>
+                <?php echo $form->field($invite, 'email')->input('email', ['id' => 'register-email', 'placeholder' => $invite->getAttributeLabel('email')])->label(false); ?>
                 <hr>
                 <?php echo CHtml::submitButton(Yii::t('UserModule.views_auth_login', 'Register'), array('class' => 'btn btn-primary', 'data-ui-loader' => '')); ?>
 
@@ -89,7 +89,7 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
     $(function () {
         // set cursor to login field
         $('#login_username').focus();
-    })
+    });
 
     // Shake panel after wrong validation
 <?php if ($model->hasErrors()) { ?>

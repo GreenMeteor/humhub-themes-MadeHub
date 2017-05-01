@@ -22,10 +22,10 @@ use humhub\widgets\GridView;
                 'header' => 'Actions',
                 'class' => 'yii\grid\ActionColumn',
                 'buttons' => [
-                    'update' => function() {
+                    'update' => function () {
                         return;
                     },
-                    'view' => function() {
+                    'view' => function () {
                         return;
                     },
                     'delete' => function($url, $model) {

@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
             </div>
 
             <?php
-            if (version_compare(Yii::$app->version, '1.0.0-beta.5', 'lt')) {
+            if(version_compare(Yii::$app->version, '1.0.0-beta.5', 'lt')) {
                 echo humhub\modules\user\widgets\UserPicker::widget(array(
                     'inputId' => 'addUserFrom_mail',
                     'model' => $inviteForm, // CForm Instanz
@@ -44,13 +44,14 @@ use yii\widgets\ActiveForm;
             ?>
         </div>
         <div class="modal-footer">
-            <?php echo \humhub\widgets\AjaxButton::widget([
+            <?php
+            echo \humhub\widgets\AjaxButton::widget([
                 'label' => Yii::t('MailModule.views_mail_adduser', 'Send'),
                 'ajaxOptions' => [
                     'type' => 'POST',
                     'beforeSend' => '$.proxy(function() { $("#adduser-loader").removeClass("hidden"); $(this).prop("disabled",true); },this)',
                     'success' => 'function(html){ $("#globalModal").html(html); }',
-                    'url' => Url::toRoute(['/mail/mail/add-user', 'id'=>$inviteForm->message->id]),
+                    'url' => ['/mail/mail/add-user', 'id'=>$inviteForm->message->id]
                 ],
                 'htmlOptions' => [
                     'class' => 'btn btn-primary'

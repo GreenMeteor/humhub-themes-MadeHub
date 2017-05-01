@@ -1,17 +1,10 @@
-<?php
-
-use yii\helpers\Url;
-?>
-<?php echo $content; ?>
-
+<?= $content; ?>
 
 ---
 
 <?php if (isset(Yii::$app->view->params['showUnsubscribe']) && Yii::$app->view->params['showUnsubscribe'] === true) : ?>
-    <span style="text-decoration: none; color: #a3a2a2;">
-        <a href="<?php echo Url::to(['/user/account/emailing'], true) ?>" style="text-decoration: none; color: #a3a2a2;"><?php echo Yii::t('base', 'Unsubscribe') ?></a>
-        • 
-    </span> 
+<?php $url = (isset(Yii::$app->view->params['unsubscribeUrl'])) ? Yii::$app->view->params['unsubscribeUrl'] : \yii\helpers\Url::to(['/notification/user'], true) ?>
+<?= Yii::t('base', 'Unsubscribe') ?>: <?= $url ?>
 <?php endif; ?>
 
 Powered by HumHub (https://www.humhub.org)

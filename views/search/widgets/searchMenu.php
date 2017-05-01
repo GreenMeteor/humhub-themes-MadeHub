@@ -1,5 +1,30 @@
 <?php
+
 use yii\helpers\Url;
-use yii\helpers\Html;
+
 ?>
-<li><a href="<?php echo Url::to(['/search/search/index']); ?>" class="waves"><i class="material-icons">search</i></a></li>
+
+<li class="dropdown">
+    <a href="<?php echo Url::to(['/search/search/index']); ?>" id="search-menu" class="dropdown-toggle" >
+        <i class="fa fa-search"></i></a>
+</li>
+
+<script type="text/javascript">
+    /**
+     * Open search menu
+     */
+    $('#search-menu-nav').click(function () {
+
+        // use setIntervall to setting the focus
+        var searchFocus = setInterval(setFocus, 10);
+
+        function setFocus() {
+
+            // set focus
+            $('#search-menu-search').focus();
+            // stop interval
+            clearInterval(searchFocus);
+        }
+
+    })
+</script>
