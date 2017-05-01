@@ -101,11 +101,8 @@ if ($space->isAdmin()) {
                 <a data-ui-gallery="spaceHeader" href="<?= $space->profileImage->getUrl('_org'); ?>">
                        <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
                 </a>
-            <?php else {
-    : ?>
-                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]);
-}
-?>
+            <?php else : ?>
+ -                <?php echo \humhub\modules\space\widgets\Image::widget(['space' => $space, 'width' => 140]); ?>
             <?php endif; ?>
 
             <!-- check if the current user is the profile owner and can change the images -->
