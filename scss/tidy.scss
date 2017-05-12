@@ -1,0 +1,326 @@
+//colors
+$mercury: #e5e5e5;
+$color_mine_shaft_approx: #333;
+$white: #fff;
+$black_9_80392: rgba(0, 0, 0, 0.0980392);
+$black_30: rgba(0, 0, 0, 0.3);
+$color_fuscous_gray_approx: #555;
+$color_tapa_approx: #777;
+$color_woodsmoke_approx: #111;
+$color_spring_green_approx: #00e676;
+$color_log_cabin_approx: #212121;
+
+//fonts
+$font_0: RobotoDraft;
+$font_1: sans-serif;
+
+//urls
+$url_0: url(https://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en);
+$url_1: url(../img/appsite_hero.png);
+
+//@extend-elements
+//original selectors
+//body, html
+%extend_1 {
+	background-color: $mercury;
+	height: 100%;
+	font-family: $font_1;
+	margin: 0;
+}
+
+
+@charset UTF-8;
+@import $url_0;
+* {
+	font-family: $font_0, $font_1;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all .3s ease;
+	//Instead of the line below you could use @include user-select($select)
+	user-select: none;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	&:after {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+	}
+	&:before {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+	}
+}
+:host {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	@extend %extend_1;
+}
+html {
+	@extend %extend_1;
+}
+a {
+	&:link {
+		text-decoration: none;
+		color: $color_mine_shaft_approx;
+	}
+	&:visited {
+		text-decoration: none;
+		color: $color_mine_shaft_approx;
+	}
+	&:hover {
+		text-decoration: none;
+		color: $color_mine_shaft_approx;
+	}
+	&:active {
+		text-decoration: none;
+		color: $color_mine_shaft_approx;
+	}
+}
+.content-card {
+	width: 60%;
+	background-color: $white;
+	margin: auto;
+	margin-top: 15%;
+	position: relative;
+	padding: 50px;
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 2px;
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 2px;
+	//Instead of the line below you could use @include border-bottom-right-radius($radius)
+	border-bottom-right-radius: 2px;
+	//Instead of the line below you could use @include border-bottom-left-radius($radius)
+	border-bottom-left-radius: 2px;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: $black_9_80392 0 2px 4px, $black_9_80392 0 0 3px;
+}
+.works-card {
+	width: 16.66%;
+	height: auto;
+	float: left;
+	padding: 1%;
+}
+.work-title {
+	display: inline-block;
+	padding: 7%;
+}
+.works-subcard {
+	background-color: $white;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: $black_9_80392 0 2px 4px, $black_9_80392 0 0 3px;
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 2px;
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 2px;
+	//Instead of the line below you could use @include border-bottom-right-radius($radius)
+	border-bottom-right-radius: 2px;
+	//Instead of the line below you could use @include border-bottom-left-radius($radius)
+	border-bottom-left-radius: 2px;
+	position: relative;
+	&:hover {
+		cursor: pointer;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: $black_30 0 5px 12px 0;
+	}
+}
+.content-works {
+	width: 60%;
+	background-color: transparent;
+	margin: auto;
+	overflow: auto;
+	position: relative;
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.screenshot-item {
+	width: 24%;
+	a img {
+		width: 100%;
+	}
+}
+.intertext-padding {
+	height: 0.4em !important;
+}
+.cover-image {
+	background-image: $url_1;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	position: fixed;
+}
+.icon-and-title-flex {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.appicon {
+	width: 152px;
+	height: 152px;
+	margin-right: 2em;
+}
+.details-icon {
+	color: $color_fuscous_gray_approx;
+	width: 1.4em;
+	height: 1.4em;
+	margin-right: 3em;
+}
+.text-title {
+	font-size: 2.5em;
+	font-weight: 300;
+	color: $color_fuscous_gray_approx;
+}
+.text-subtitle {
+	font-size: 1.2em;
+	font-weight: 400;
+	color: $color_tapa_approx;
+}
+.text-description {
+	word-wrap: break-word;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.5em;
+	color: $color_woodsmoke_approx;
+}
+.detail-item {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+}
+.mobile-fab {
+	display: none;
+	z-index: 1;
+	background-color: $color_spring_green_approx !important;
+	color: $color_log_cabin_approx !important;
+	position: absolute;
+	top: -28px;
+	right: 5%;
+}
+.desktop-fab-container {
+	height: 50%;
+	width: 20%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	aliign-items: flex-end;
+	justify-content: center;
+}
+.desktop-fab {
+	z-index: 1;
+	background-color: $color_spring_green_approx !important;
+	color: $color_log_cabin_approx !important;
+	margin-bottom: -28px;
+}
+.empty-space {
+	width: 100%;
+	height: 25%;
+}
+.padtopandbottom {
+	margin-top: 1%;
+	display: block;
+}
+.top-corners-rounded {
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 2px;
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 2px;
+}
+.watermark {
+	justify-content: center;
+	margin-bottom: 0.5em;
+}
+.credits {
+	margin-top: 0.1em;
+	margin-bottom: 1em;
+}
+.lightgray {
+	color: $color_tapa_approx;
+}
+.credits-text {
+	font-size: 0.9em;
+	font-weight: 400;
+}
+.meta-container {
+	margin-top: 4em;
+}
+@media(min-width: 800px) and(max-width: 1100px) {
+	.content-card {
+		width: 70%;
+	}
+	.content-works {
+		width: 70%;
+	}
+	.desktop-fab-container {
+		width: 15%;
+	}
+}
+@media(max-width: 800px) {
+	.content-card {
+		margin-top: 20%;
+		width: 90%;
+		padding: 20px;
+	}
+	.mobile-fab {
+		display: inline;
+	}
+	.desktop-fab {
+		display: none;
+	}
+	.content-works {
+		margin-top: 0.5%;
+		width: 90%;
+	}
+	.works-card {
+		width: 33.33%;
+	}
+}
+@media(max-width: 480px) {
+	.title-container {
+		margin-left: 1em;
+		.text-title {
+			font-size: 1.9em;
+		}
+		.text-subtitle {
+			font-size: 1.2em;
+		}
+	}
+	.screenshot-item {
+		width: 49% !important;
+		margin-bottom: 10px;
+	}
+	.content-card {
+		margin-top: 45%;
+		width: 95%;
+		padding: 20px;
+	}
+	.mobile-fab {
+		display: inline;
+	}
+	.desktop-fab {
+		display: none;
+	}
+	.content-works {
+		margin-top: 0.5%;
+		width: 95%;
+	}
+	.works-card {
+		width: 33.33%;
+	}
+	.appicon {
+		width: 120px;
+		height: 120px;
+	}
+}
+.featherlight .featherlight-image {
+	height: 100% !important;
+	width: auto !important;
+	margin: 0 auto;
+}
