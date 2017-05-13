@@ -1,13 +1,13 @@
 <!-- start: Font -->
-<link href="<?= $this->theme->getBaseUrl() . '/fonts/material-icons.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/fonts/material-icons.scss'; ?>" rel="stylesheet">
 <!-- end: Font -->
 
 <!-- start: CSS -->
-<link href="<?= $this->theme->getBaseUrl() . '/css/theme.css'; ?>" rel="stylesheet">
-<link href="<?= $this->theme->getBaseUrl() . '/css/animate.css'; ?>" rel="stylesheet">
-<link href="<?= $this->theme->getBaseUrl() . '/css/flatelements.css'; ?>" rel="stylesheet">
-<link href="<?= $this->theme->getBaseUrl() . '/css/jquery.mCustomScrollbar.min.css'; ?>" rel="stylesheet">
-<link href="<?= $this->theme->getBaseUrl() . '/css/tidy.css'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/theme.scss'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/animate.scss'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/flatelements.scss'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/jquery.mCustomScrollbar.min.scss'; ?>" rel="stylesheet">
+<link href="<?= $this->theme->getBaseUrl() . '/css/tidy.scss'; ?>" rel="stylesheet">
 <!-- end: CSS -->
 
 <!-- start: JS file imports -->
