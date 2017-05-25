@@ -4,7 +4,7 @@
 
 ## Discription
 MadeHub - light material theme for HumHub [Original Post](https://community.humhub.com/content/perma?id=72146)
-> Notice: This theme does work for Humhub 1.2 but has issues within the ACP as of right now, do not use in production. :)
+> Note: This theme does work for Humhub 1.2 but has issues within the ACP as of right now, do not use in production, also there are issues found within the [SCSS version](https://github.com/GreenVolume/humhub-themes-MadeHub/tree/scss-version). :)
 
 ## Help Guide
 You'll find this [Help Guide](https://github.com/Felli/humhub-themes-MadeHub/wiki) helpful. ;)
